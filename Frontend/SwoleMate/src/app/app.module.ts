@@ -6,13 +6,15 @@ import { RegistrationPageComponent } from "./registration-page/registration-page
 import { AppRoutingModule } from "./app-routing.module";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
+import { CoachWorkoutComponent } from './coach-workout/coach-workout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationPageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CoachWorkoutComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
