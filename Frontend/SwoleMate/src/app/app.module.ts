@@ -11,7 +11,8 @@ import { RegistrationPageComponent } from './registration-page/registration-page
     RegistrationPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
