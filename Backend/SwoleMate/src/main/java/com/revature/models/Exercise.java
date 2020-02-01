@@ -7,7 +7,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,8 +22,7 @@ public class Exercise {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int exercise_id;
   
-  @Column(name = "program_id")
-  private int program_id;
+ 
   
   @Column(name = "exercise_sets")
   private int exercise_sets;
@@ -50,9 +51,9 @@ public class Exercise {
   @Column(name = "is_complete")
   private boolean is_complete;
   
-  @OneToMany(mappedBy = "program_exercises", fetch = FetchType.EAGER)
-  @JsonIgnoreProperties("program_exercises")
-  private List<Program> programs;
+  @OneToOne
+  @JoinColumn(name="program_id")
+  private int program_id;
 
   public Exercise() {
     super();
@@ -64,7 +65,7 @@ public class Exercise {
       String athlete_notes, String exercise_url, boolean is_complete, List<Program> programs) {
     super();
     this.exercise_id = exercise_id;
-    this.program_id = program_id;
+   
     this.exercise_sets = exercise_sets;
     this.exercise_reps = exercise_reps;
     this.exercise_load = exercise_load;
@@ -74,7 +75,7 @@ public class Exercise {
     this.athlete_notes = athlete_notes;
     this.exercise_url = exercise_url;
     this.is_complete = is_complete;
-    this.programs = programs;
+    this.program_id = program_id;
   }
 
   public int getExercise_id() {
@@ -165,31 +166,27 @@ public class Exercise {
     this.is_complete = is_complete;
   }
 
-  public List<Program> getPrograms() {
-    return programs;
+  
+
+  public int getProgram_table() {
+    return program_id;
   }
 
-  public void setPrograms(List<Program> programs) {
-    this.programs = programs;
+  public void setProgram_table(Program program_table) {
+    this.program_id = program_id;
   }
 
   @Override
   public String toString() {
-    
-    StringBuilder programTitles = new StringBuilder();
-    for(Program p : this.getPrograms()) {
-      programTitles.append(p.getTitle());
-      programTitles.append(", ");
-    }
-    if(this.programs != null && this.programs.size() > 0) {
-      programTitles.delete(programTitles.length()-2, programTitles.length());
-    }
     return "Exercise [exercise_id=" + exercise_id + ", program_id=" + program_id
         + ", exercise_sets=" + exercise_sets + ", exercise_reps=" + exercise_reps
         + ", exercise_load=" + exercise_load + ", exercise_name=" + exercise_name
         + ", exercise_day=" + exercise_day + ", coach_notes=" + coach_notes + ", athlete_notes="
-        + athlete_notes + ", exercise_url=" + exercise_url + ", is_complete=" + is_complete + "]"+ ", programs=" + programTitles.toString() + "]";
+        + athlete_notes + ", exercise_url=" + exercise_url + ", is_complete=" + is_complete
+        + ", program_id=" + program_id + "]";
   }
+
+
  
 
 }
