@@ -12,6 +12,7 @@ import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard
 import { MessageBoardComponent } from "./message-board/message-board.component";
 import { AthleteMessageboxComponent } from "./athlete-messagebox/athlete-messagebox.component";
 import { CoachMessageboxComponent } from "./coach-messagebox/coach-messagebox.component";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CoachMessageboxComponent } from "./coach-messagebox/coach-messagebox.co
     AthleteDashboardComponent,
     MessageBoardComponent,
     AthleteMessageboxComponent,
-    CoachMessageboxComponent
+    CoachMessageboxComponent,
+    LoginComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, NgbModule],
   providers: [],
