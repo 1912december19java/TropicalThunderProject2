@@ -1,36 +1,80 @@
 package com.revature.models;
 
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name="exercise_table")
 public class Exercise {
 
+  @Id
+  @Column(name = "exercise_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int exercise_id;
-  private int coach_id;
-  private int sets;
-  private int reps;
-  private int load;
-  private String name;
-  private int day;
-  private String video;
+  
+  @Column(name = "program_id")
+  private int program_id;
+  
+  @Column(name = "exercise_sets")
+  private int exercise_sets;
+  
+  @Column(name = "exercise_reps")
+  private int exercise_reps;
+  
+  @Column(name = "exercise_load")
+  private int exercise_load;
+  
+  @Column(name = "exercise_name")
+  private String exercise_name;
+  
+  @Column(name = "exercise_day")
+  private int exercise_day;
+  
+  @Column(name = "coach_notes")
   private String coach_notes;
+  
+  @Column(name = "athlete_notes")
   private String athlete_notes;
+  
+  @Column(name = "exercise_url")
+  private String exercise_url;
+  
+  @Column(name = "is_complete")
   private boolean is_complete;
+  
+  @OneToMany(mappedBy = "program_exercises", fetch = FetchType.EAGER)
+  @JsonIgnoreProperties("program_exercises")
+  private List<Program> programs;
 
   public Exercise() {
-   
+    super();
+    // TODO Auto-generated constructor stub
   }
-  public Exercise(int exercise_id, int coach_id, int sets, int reps, int load, String name, int day,
-      String video, String coach_notes, String athlete_notes, boolean is_complete) {
+
+  public Exercise(int exercise_id, int program_id, int exercise_sets, int exercise_reps,
+      int exercise_load, String exercise_name, int exercise_day, String coach_notes,
+      String athlete_notes, String exercise_url, boolean is_complete, List<Program> programs) {
     super();
     this.exercise_id = exercise_id;
-    this.coach_id = coach_id;
-    this.sets = sets;
-    this.reps = reps;
-    this.load = load;
-    this.name = name;
-    this.day = day;
-    this.video = video;
+    this.program_id = program_id;
+    this.exercise_sets = exercise_sets;
+    this.exercise_reps = exercise_reps;
+    this.exercise_load = exercise_load;
+    this.exercise_name = exercise_name;
+    this.exercise_day = exercise_day;
     this.coach_notes = coach_notes;
     this.athlete_notes = athlete_notes;
+    this.exercise_url = exercise_url;
     this.is_complete = is_complete;
+    this.programs = programs;
   }
 
   public int getExercise_id() {
@@ -41,60 +85,52 @@ public class Exercise {
     this.exercise_id = exercise_id;
   }
 
-  public int getCoach_id() {
-    return coach_id;
+  public int getProgram_id() {
+    return program_id;
   }
 
-  public void setCoach_id(int coach_id) {
-    this.coach_id = coach_id;
+  public void setProgram_id(int program_id) {
+    this.program_id = program_id;
   }
 
-  public int getSets() {
-    return sets;
+  public int getExercise_sets() {
+    return exercise_sets;
   }
 
-  public void setSets(int sets) {
-    this.sets = sets;
+  public void setExercise_sets(int exercise_sets) {
+    this.exercise_sets = exercise_sets;
   }
 
-  public int getReps() {
-    return reps;
+  public int getExercise_reps() {
+    return exercise_reps;
   }
 
-  public void setReps(int reps) {
-    this.reps = reps;
+  public void setExercise_reps(int exercise_reps) {
+    this.exercise_reps = exercise_reps;
   }
 
-  public int getLoad() {
-    return load;
+  public int getExercise_load() {
+    return exercise_load;
   }
 
-  public void setLoad(int load) {
-    this.load = load;
+  public void setExercise_load(int exercise_load) {
+    this.exercise_load = exercise_load;
   }
 
-  public String getName() {
-    return name;
+  public String getExercise_name() {
+    return exercise_name;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setExercise_name(String exercise_name) {
+    this.exercise_name = exercise_name;
   }
 
-  public int getDay() {
-    return day;
+  public int getExercise_day() {
+    return exercise_day;
   }
 
-  public void setDay(int day) {
-    this.day = day;
-  }
-
-  public String getVideo() {
-    return video;
-  }
-
-  public void setVideo(String video) {
-    this.video = video;
+  public void setExercise_day(int exercise_day) {
+    this.exercise_day = exercise_day;
   }
 
   public String getCoach_notes() {
@@ -113,6 +149,14 @@ public class Exercise {
     this.athlete_notes = athlete_notes;
   }
 
+  public String getExercise_url() {
+    return exercise_url;
+  }
+
+  public void setExercise_url(String exercise_url) {
+    this.exercise_url = exercise_url;
+  }
+
   public boolean isIs_complete() {
     return is_complete;
   }
@@ -121,11 +165,31 @@ public class Exercise {
     this.is_complete = is_complete;
   }
 
+  public List<Program> getPrograms() {
+    return programs;
+  }
+
+  public void setPrograms(List<Program> programs) {
+    this.programs = programs;
+  }
+
   @Override
   public String toString() {
-    return "Exercise [exercise_id=" + exercise_id + ", coach_id=" + coach_id + ", sets=" + sets
-        + ", reps=" + reps + ", load=" + load + ", name=" + name + ", day=" + day + ", video="
-        + video + ", coach_notes=" + coach_notes + ", athlete_notes=" + athlete_notes
-        + ", is_complete=" + is_complete + "]";
+    
+    StringBuilder programTitles = new StringBuilder();
+    for(Program p : this.getPrograms()) {
+      programTitles.append(p.getTitle());
+      programTitles.append(", ");
+    }
+    if(this.programs != null && this.programs.size() > 0) {
+      programTitles.delete(programTitles.length()-2, programTitles.length());
+    }
+    return "Exercise [exercise_id=" + exercise_id + ", program_id=" + program_id
+        + ", exercise_sets=" + exercise_sets + ", exercise_reps=" + exercise_reps
+        + ", exercise_load=" + exercise_load + ", exercise_name=" + exercise_name
+        + ", exercise_day=" + exercise_day + ", coach_notes=" + coach_notes + ", athlete_notes="
+        + athlete_notes + ", exercise_url=" + exercise_url + ", is_complete=" + is_complete + "]"+ ", programs=" + programTitles.toString() + "]";
   }
+ 
+
 }
