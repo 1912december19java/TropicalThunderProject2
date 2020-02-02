@@ -1,38 +1,53 @@
-package com.tropicthunder.swolemate.models;
+package com.tropicthunder.models;
 
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="athlete_table")
+@Table(name = "athlete_table")
 public class Athlete {
- @Id
- @Column
- @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+  @Id
+  @Column(name = "athlete_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private String Athlete_id;
- @Column
-  private String Coach_id;
- @Column
+
+  @OneToOne()
+  @JoinColumn(name = "coach_id")
+  private Coach coach;
+
+  @Column(name = "athlete_name")
   private String name;
- @Column
+
+  @Column(name = "athlete_email")
   private String email;
- @Column
- private  String password;
-  
-  public Athlete(String athlete_id, String coach_id, String name, String email, String password) {
+
+  @Column(name = "athlete_password")
+  private String password;
+
+
+
+  public Athlete(String athlete_id, Coach coach, String name, String email, String password) {
     super();
     Athlete_id = athlete_id;
-    Coach_id = coach_id;
+    this.coach = coach;
     this.name = name;
     this.email = email;
     this.password = password;
   }
-  
+
 
   public Athlete() {
     super();
@@ -47,13 +62,15 @@ public class Athlete {
     Athlete_id = athlete_id;
   }
 
-  public String getCoach_id() {
-    return Coach_id;
+  public Coach getCoach() {
+    return coach;
   }
 
-  public void setCoach_id(String coach_id) {
-    Coach_id = coach_id;
+
+  public void setCoach(Coach coach) {
+    this.coach = coach;
   }
+
 
   public String getName() {
     return name;
@@ -79,11 +96,13 @@ public class Athlete {
     this.password = password;
   }
 
+
   @Override
   public String toString() {
-    return "Athlete [Athlete_id=" + Athlete_id + ", Coach_id=" + Coach_id + ", name=" + name
-        + ", email=" + email + ", password=" + password + "]";
+    return "Athlete [Athlete_id=" + Athlete_id + ", coach=" + coach + ", name=" + name + ", email="
+        + email + ", password=" + password + "]";
   }
- 
+
+
 
 }
