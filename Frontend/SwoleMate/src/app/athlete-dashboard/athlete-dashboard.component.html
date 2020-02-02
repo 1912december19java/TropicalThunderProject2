@@ -1,43 +1,40 @@
+
 <div class="container">
-    <div class="row">
-        <div class="col-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title" id="userName">Ben Jobs</h5>
-                  <p class="card-text">Athlete Account</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Workout </li>
-                  <li class="list-group-item">Current Week</li>
-                  <li class="list-group-item">Workout Duration</li>
-                </ul>
-                <div class="card-body">
-                  <a href="#" class="card-link">Edit Profile</a>
-                  <a href="#" class="card-link">Edit Workout</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-9">
-            <ngb-tabset [destroyOnHide]="false">
-                <ngb-tab title="Workout">
-                  <ng-template ngbTabContent>
-                    <p id="workout">workout page</p>
-                  </ng-template>
-                </ngb-tab>
-                <ngb-tab title="Message Page">
-                    <ng-template ngbTabContent>
-                      <p id="workout">Message page</p>
-                    </ng-template>
-                  </ngb-tab>
-                  <ngb-tab title="Dashboard">
-                    <ng-template ngbTabContent>
-                      <p id="workout">Dasgboard page</p>
-                    </ng-template>
-                  </ngb-tab>
-              </ngb-tabset>
-        </div>
-    </div>
-    </div>
     
-    
+  <div class="col-12">
+      <div class="col-12" style="width: 50rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title" id="userName">Ben Jobs</h5>
+            <p class="card-text">Coach Account</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Workout </li>
+            <li class="list-group-item">Current Week</li>
+            <li class="list-group-item">Workout Duration</li>
+          </ul>
+          <ngb-tabset [destroyOnHide]="false">
+            <ngb-tab title="Workout">
+              <ng-template ngbTabContent>
+                <p id="workout">workout page</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Message Page">
+                <ng-template ngbTabContent>
+                  <p id="workout">Message page</p>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Dashboard">
+                <ng-template ngbTabContent>
+                  <p id="workout">Dashboard page</p>
+                </ng-template>
+              </ngb-tab>
+          </ngb-tabset>
+        </div>
+  </div>
+<div class="col-8">
+     
+  </div>
+
+</div>
+

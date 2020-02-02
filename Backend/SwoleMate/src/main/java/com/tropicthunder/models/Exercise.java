@@ -1,4 +1,5 @@
-package com.revature.models;
+package com.tropicthunder.models;
+
 
 import java.util.List;
 import javax.persistence.Column;
@@ -21,8 +22,6 @@ public class Exercise {
   @Column(name = "exercise_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int exercise_id;
-  
- 
   
   @Column(name = "exercise_sets")
   private int exercise_sets;

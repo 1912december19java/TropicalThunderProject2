@@ -1,4 +1,4 @@
-package com.tropicthunder.swolemate.models;
+package com.tropicthunder.models;
 
 public class Program {
 
