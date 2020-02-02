@@ -1,4 +1,4 @@
-package com.revature.models;
+package com.tropicthunder.models;
 
 import java.util.List;
 import javax.persistence.Column;
