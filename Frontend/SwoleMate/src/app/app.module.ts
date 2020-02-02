@@ -10,8 +10,6 @@ import { FooterComponent } from "./footer/footer.component";
 import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.component";
 import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard.component";
 import { MessageBoardComponent } from "./message-board/message-board.component";
-import { AthleteMessageboxComponent } from "./athlete-messagebox/athlete-messagebox.component";
-import { CoachMessageboxComponent } from "./coach-messagebox/coach-messagebox.component";
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -23,8 +21,6 @@ import { LoginComponent } from './login/login.component';
     CoachDashboardComponent,
     AthleteDashboardComponent,
     MessageBoardComponent,
-    AthleteMessageboxComponent,
-    CoachMessageboxComponent,
     LoginComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, NgbModule],

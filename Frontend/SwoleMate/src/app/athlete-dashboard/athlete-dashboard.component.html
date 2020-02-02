@@ -1,66 +1,43 @@
-<div class="bg-light mx-md-auto col-12">
-    <div class="container float">
-        <div class="row py-5">
-
-            <div class="col-3">
-                <link rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <div class="card text-center">
-                    <img id="profile_Pic"
-                        src="https://images.unsplash.com/photo-1517344687790-7338f238f7f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80"
-                        alt="Profile Pic" style="width:100%">
-                    <h1>John Doe</h1>
-                    <h4 class="title">Workout Plan</h4>
-                    <h6><a id="currentWorkout" href="#link to workout">Current Workout </a> </h6>
-                    <h4 class="title">Current Week</h4>
-                    <h5 id="currentWeek">1</h5>
-                    <h4 class="title">Duration</h4>
-                    <h5 id="program_weeks">12</h5>
-                    <h6><a id="editProfile" href="#link to workout">Edit Profile </a> </h6>
-                    <h6><a id="editWorkout" href="#link to workout">Edit Workout </a> </h6>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="userName">Ben Jobs</h5>
+                  <p class="card-text">Athlete Account</p>
                 </div>
-            </div>
-
-            <div class="col-9">
-                <h1 class="text-center">Athlete DashBoard</h1>
-                <table id="athleteDashboard" class="table table-hover responsive nowrap" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Workout Plan</th>
-                            <th>Duration</th>
-                            <th>Workout Goals</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="#">
-                                    <div class="d-flex align-items-center">
-                                        <div class="">
-                                            <p class="font-weight-bold mb-0" id="coach_name">Coach Name Space</p>
-                                            <p class="text-muted mb-0" id="athlete_email">email address</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </td>
-                            <td id="workoutName">Workout Name Here</td>
-                            <td id="workoutDuration">Workout Duration EX:12</td>
-                            <td id="workoutGoals">Upperbody, Core</td>
-
-                            <td>
-                                <div class="d-flex ">
-                                    <div>
-                                        <input href="#" type="button" class="btn-light" value="Add Workout">
-                                        <input href="#" type="button" class="btn-light" value="Message">
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Workout </li>
+                  <li class="list-group-item">Current Week</li>
+                  <li class="list-group-item">Workout Duration</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Edit Profile</a>
+                  <a href="#" class="card-link">Edit Workout</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-9">
+            <ngb-tabset [destroyOnHide]="false">
+                <ngb-tab title="Workout">
+                  <ng-template ngbTabContent>
+                    <p id="workout">workout page</p>
+                  </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Message Page">
+                    <ng-template ngbTabContent>
+                      <p id="workout">Message page</p>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Dashboard">
+                    <ng-template ngbTabContent>
+                      <p id="workout">Dasgboard page</p>
+                    </ng-template>
+                  </ngb-tab>
+              </ngb-tabset>
         </div>
     </div>
-</div>
+    </div>
+    
+    
