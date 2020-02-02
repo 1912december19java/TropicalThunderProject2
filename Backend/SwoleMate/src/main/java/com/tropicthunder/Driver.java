@@ -1,4 +1,4 @@
-package com.tropicthunder.swolemate;
+package com.tropicthunder;
 
 public class Driver {
 
