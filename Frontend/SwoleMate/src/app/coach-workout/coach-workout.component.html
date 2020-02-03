@@ -1,1 +1,15 @@
-<p>coach-workout works!</p>
+<h1>Program</h1>
+
+<form [formGroup]="layoutForm">
+  <label>
+    Length in weeks:
+    <input type="number" formControlName="lengthInWeeks" required>
+  </label>
+  <label>
+    Frequency:
+    <input type="number" formControlName="frequency" required>
+  </label>
+  <button (click)="updateProgramLayout()">update</button>
+</form>
+<app-program-form *ngFor="let e of lengthInWeeks"></app-program-form>
+<button>upload program</button>

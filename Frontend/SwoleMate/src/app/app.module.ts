@@ -7,6 +7,9 @@ import { AppRoutingModule } from "./app-routing.module";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { CoachWorkoutComponent } from './coach-workout/coach-workout.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { WorkoutFormComponent } from './workout-form/workout-form.component';
+import { ProgramFormComponent } from './program-form/program-form.component';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,11 @@ import { CoachWorkoutComponent } from './coach-workout/coach-workout.component';
     RegistrationPageComponent,
     NavbarComponent,
     FooterComponent,
-    CoachWorkoutComponent
+    CoachWorkoutComponent,
+    WorkoutFormComponent,
+    ProgramFormComponent
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

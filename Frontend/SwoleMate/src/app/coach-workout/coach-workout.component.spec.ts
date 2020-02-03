@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoachWorkoutComponent } from './coach-workout.component';
 
+
 describe('CoachWorkoutComponent', () => {
   let component: CoachWorkoutComponent;
   let fixture: ComponentFixture<CoachWorkoutComponent>;
