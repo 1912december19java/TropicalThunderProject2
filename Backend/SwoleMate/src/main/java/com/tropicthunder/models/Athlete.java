@@ -22,11 +22,11 @@ public class Athlete {
   @Id
   @Column(name = "athlete_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private String Athlete_id;
+  private Integer Athlete_id;
 
   @OneToOne()
   @JoinColumn(name = "coach_id")
-  private Coach coach;
+  private Integer coach;
 
   @Column(name = "athlete_name")
   private String name;
@@ -37,40 +37,21 @@ public class Athlete {
   @Column(name = "athlete_password")
   private String password;
 
-
-
-  public Athlete(String athlete_id, Coach coach, String name, String email, String password) {
-    super();
-    Athlete_id = athlete_id;
-    this.coach = coach;
-    this.name = name;
-    this.email = email;
-    this.password = password;
-  }
-
-
-  public Athlete() {
-    super();
-  }
-
-
-  public String getAthlete_id() {
+  public Integer getAthlete_id() {
     return Athlete_id;
   }
-
-  public void setAthlete_id(String athlete_id) {
+  
+  public void setAthlete_id(Integer athlete_id) {
     Athlete_id = athlete_id;
   }
 
-  public Coach getCoach() {
+  public Integer getCoach() {
     return coach;
   }
 
-
-  public void setCoach(Coach coach) {
+  public void setCoach(Integer coach) {
     this.coach = coach;
   }
-
 
   public String getName() {
     return name;
@@ -96,12 +77,25 @@ public class Athlete {
     this.password = password;
   }
 
+  public Athlete(Integer athlete_id, Integer coach, String name, String email, String password) {
+    super();
+    Athlete_id = athlete_id;
+    this.coach = coach;
+    this.name = name;
+    this.email = email;
+    this.password = password;
+  }
+  
+  public Athlete() {
+    super();
+  }
 
   @Override
   public String toString() {
     return "Athlete [Athlete_id=" + Athlete_id + ", coach=" + coach + ", name=" + name + ", email="
         + email + ", password=" + password + "]";
   }
+
 
 
 
