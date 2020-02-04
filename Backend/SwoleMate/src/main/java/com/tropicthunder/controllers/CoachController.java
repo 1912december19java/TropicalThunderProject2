@@ -74,4 +74,14 @@ public class CoachController {
       program.setProgramId(id);
       coachService.deleteProgram(program);
   }
+  
+  @PatchMapping("/{coachId}/{athleteId}")
+  public void addAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
+    coachService.addAthlete(coachId, athleteId);
+  }
+  
+  @DeleteMapping("/{coachId}/{athleteId}")
+  public void deleteAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
+      coachService.deleteAthlete(coachId, athleteId);
+  }
 }

@@ -44,4 +44,11 @@ public class CoachService implements ModelService<Coach>{
     coachDaoImpl.deleteProgram(program);
   }
   
+  public void addAthlete(int coachId, int athleteId) {
+    coachDaoImpl.addAthlete(coachId, athleteId);
+  }
+  
+  public void deleteAthlete(int coachId, int athleteId) {
+    coachDaoImpl.deleteAthlete(coachId, athleteId);
+  }
 }

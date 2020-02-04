@@ -79,4 +79,15 @@ public class CoachDaoImpl {
 
     session.delete(program);
   }
+  
+  public void addAthlete(int coachId, int athleteId) {
+    Session session = sf.getCurrentSession();
+    
+    
+  }
+  
+  public void deleteAthlete(int coachId, int athleteId) {
+    Session session = sf.getCurrentSession();
+    
+  }
 }
