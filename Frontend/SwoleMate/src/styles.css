@@ -1,2 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --color-minty-rgb: rgb(229,225,222);
+  --color-minty-hex: #E5FFDE;
+
+  --color-grey-rgb: rgb(187,203,203);
+  --color-grey-hex: #BBCBCB;
+
+  --color-orange-rgb: rgb(249,115,0);
+  --color-orange-hex: #F97300;
+
+  --color-teal-rgb: rgb(53,96,91);
+  --color-teal-hex: #35605B;
+
+  --color-licorice-rgb: rgb(24,2,12);
+  --color-licorice-hex: #18020C;
+}

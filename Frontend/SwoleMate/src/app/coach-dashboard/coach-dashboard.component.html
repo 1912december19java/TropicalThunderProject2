@@ -1,0 +1,38 @@
+<div class="container rounded border ">
+  <div class="row">
+    <div class="col-3" style="width: 20rem;">
+      <img class="card-img-top"
+        src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" id="userName">Coach Joe</h5>
+        <p class="card-text">Coach Account</p>
+        <P><a href="EditPage"> Edit Profile</a><br>
+        <a href="CheckRoster"> Check Roster</a>
+      </div>
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel id="static-1" title="Workout Programs">
+          <ng-template ngbPanelContent>
+            push ups
+          </ng-template>
+        </ngb-panel>
+      
+      </ngb-accordion>
+    </div>
+
+    <div class="col-9">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Athlete</th>
+          <th scope="col">Workout</th>
+          <th scope="col">Week</th>
+          <th scope="col">Duration</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
