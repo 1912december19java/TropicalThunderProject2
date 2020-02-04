@@ -7,6 +7,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
+import { CoachWorkoutComponent } from './coach-workout/coach-workout.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { WorkoutFormComponent } from './workout-form/workout-form.component';
+import { ProgramFormComponent } from './program-form/program-form.component';
 import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.component";
 import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard.component";
 import { MessageBoardComponent } from "./message-board/message-board.component";
@@ -20,6 +24,9 @@ import { AthleteWorkoutComponent } from './athlete-workout/athlete-workout.compo
     RegistrationPageComponent,
     NavbarComponent,
     FooterComponent,
+    CoachWorkoutComponent,
+    WorkoutFormComponent,
+    ProgramFormComponent,
     CoachDashboardComponent,
     AthleteDashboardComponent,
     MessageBoardComponent,
@@ -27,7 +34,7 @@ import { AthleteWorkoutComponent } from './athlete-workout/athlete-workout.compo
     EditProfileComponent,
     AthleteWorkoutComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, NgbModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })
