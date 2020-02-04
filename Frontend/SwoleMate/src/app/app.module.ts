@@ -9,8 +9,8 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { CoachWorkoutComponent } from './coach-workout/coach-workout.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { WorkoutFormComponent } from './workout-form/workout-form.component';
-import { ProgramFormComponent } from './program-form/program-form.component';
+// import { WorkoutFormComponent } from './workout-form/workout-form.component';
+// import { ProgramFormComponent } from './program-form/program-form.component';
 import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.component";
 import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard.component";
 import { MessageBoardComponent } from "./message-board/message-board.component";
@@ -25,8 +25,8 @@ import { AthleteWorkoutComponent } from './athlete-workout/athlete-workout.compo
     NavbarComponent,
     FooterComponent,
     CoachWorkoutComponent,
-    WorkoutFormComponent,
-    ProgramFormComponent,
+    // WorkoutFormComponent,
+    // ProgramFormComponent,
     CoachDashboardComponent,
     AthleteDashboardComponent,
     MessageBoardComponent,
