@@ -12,25 +12,26 @@ import { Validators } from '@angular/forms';
 })
 export class CoachWorkoutComponent implements OnInit {
 
-  layoutForm = this.fb.group({
-    lengthInWeeks: [],
-    frequency: []
-  });
+  // layoutForm = this.fb.group({
+  //   lengthInWeeks: [],
+  //   frequency: []
+  // });
   // lengthInWeeks: Array<Exercise>[] = [];
 
-  constructor(private fb: FormBuilder, private workoutService: WorkoutService) { }
-  workoutForm = this.fb.group({workout: this.fb.array([])});
-  get workout() {
-    return this.workoutForm.get('workout') as FormArray;
-  }
+  // constructor(private fb: FormBuilder, private workoutService: WorkoutService) { }
+  constructor() { }
+  // workoutForm = this.fb.group({workout: this.fb.array([])});
+  // get workout() {
+  //   return this.workoutForm.get('workout') as FormArray;
+  // }
 
   updateProgramLayout(){
-    this.workout.clear();
-    this.lengthInWeeks = [];
-    for (let index = 0; index < this.layoutForm.get('lengthInWeeks').value; index++){
-        // this.lengthInWeeks.push(new Array<Exercise> ())
-    }
-    this.workoutService.setFrequency(this.layoutForm.get('frequency').value);
+    // this.workout.clear();
+    // this.lengthInWeeks = [];
+    // for (let index = 0; index < this.layoutForm.get('lengthInWeeks').value; index++){
+    //     // this.lengthInWeeks.push(new Array<Exercise> ())
+    // }
+    // this.workoutService.setFrequency(this.layoutForm.get('frequency').value);
   }
 
   ngOnInit() {
