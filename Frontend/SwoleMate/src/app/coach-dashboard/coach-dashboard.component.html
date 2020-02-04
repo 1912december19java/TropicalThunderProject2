@@ -1,40 +1,46 @@
+<div class="container rounded border ">
+  <div class="row">
+    <div class="col-3" style="width: 20rem;">
+      <img class="card-img-top"
+        src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" id="userName">Coach Joe</h5>
+        <p class="card-text">Coach Account</p>
+        <P><a href="EditPage"> Edit Profile</a><br>
+        <a href="CheckRoster"> Check Roster</a>
+      </div>
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel id="static-1" title="Workout Programs">
+          <ng-template ngbPanelContent>
+            push ups
+          </ng-template>
+        </ngb-panel>
+      
+      </ngb-accordion>
+    </div>
 
-<div class="container">
-    
-  <div class="col-12">
-      <div class="col-12" style="width: 50rem;">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="userName">Ben Jobs</h5>
-            <p class="card-text">Coach Account</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Workout </li>
-            <li class="list-group-item">Current Week</li>
-            <li class="list-group-item">Workout Duration</li>
-          </ul>
-          <ngb-tabset [destroyOnHide]="false">
-            <ngb-tab title="Workout">
-              <ng-template ngbTabContent>
-                <p id="workout">workout page</p>
-              </ng-template>
-            </ngb-tab>
-            <ngb-tab title="Message Page">
-                <ng-template ngbTabContent>
-                  <p id="workout">Message page</p>
-                </ng-template>
-              </ngb-tab>
-              <ngb-tab title="Dashboard">
-                <ng-template ngbTabContent>
-                  <p id="workout">Dashboard page</p>
-                </ng-template>
-              </ngb-tab>
-          </ngb-tabset>
-        </div>
+    <div class="col-9">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Athlete</th>
+          <th scope="col">Workout</th>
+          <th scope="col">Week</th>
+          <th scope="col">Duration</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let country of countries; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>
+            {{ country.name }}
+          </td>
+          <td>{{ country.area | number }}</td>
+          <td>{{ country.population | number }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-<div class="col-8">
-     
-  </div>
-
-</div>
-
+  <br>
