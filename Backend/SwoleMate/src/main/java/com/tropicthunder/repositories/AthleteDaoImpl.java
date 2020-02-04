@@ -1,7 +1,6 @@
 package com.tropicthunder.repositories;
 
 
-
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;

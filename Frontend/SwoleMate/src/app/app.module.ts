@@ -11,6 +11,8 @@ import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.compo
 import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard.component";
 import { MessageBoardComponent } from "./message-board/message-board.component";
 import { LoginComponent } from './login/login.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { AthleteWorkoutComponent } from './athlete-workout/athlete-workout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LoginComponent } from './login/login.component';
     CoachDashboardComponent,
     AthleteDashboardComponent,
     MessageBoardComponent,
-    LoginComponent
+    LoginComponent,
+    EditProfileComponent,
+    AthleteWorkoutComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, NgbModule],
   providers: [],
