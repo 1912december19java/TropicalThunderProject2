@@ -13,7 +13,7 @@ public class CoachService implements ModelService<Coach> {
 	private CoachDaoImpl coachDaoImpl;
 
 	@Override
-	public List getAll() {
+	public List<Coach> getAll() {
 		return null;
 	}
 

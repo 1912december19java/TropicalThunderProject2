@@ -8,7 +8,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import com.amazonaws.services.datapipeline.model.Query;
 import com.tropicthunder.models.Exercise;
 
 @Repository
@@ -31,6 +30,7 @@ public class ExerciseDaoImpl {
 		// List<Exercise> exercises = ((org.hibernate.Query) q).list();
 
 		Criteria c = session.createCriteria(Exercise.class);
+		@SuppressWarnings("unchecked")
 		List<Exercise> exercises = c.list();
 		return exercises;
 	}

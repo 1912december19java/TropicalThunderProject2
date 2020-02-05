@@ -28,6 +28,7 @@ public class CoachDaoImpl {
 	public List<Athlete> getAthletes(int id) {
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from athlete_table where coach_id = " + id);
+		@SuppressWarnings("unchecked")
 		List<Athlete> athletes = q.list();
 		return athletes;
 	}
@@ -36,6 +37,7 @@ public class CoachDaoImpl {
 		Session session = sf.getCurrentSession();
 
 		Criteria c = session.createCriteria(Coach.class);
+		@SuppressWarnings("unchecked")
 		List<Coach> coaches = c.list();
 
 		return coaches;
@@ -64,6 +66,7 @@ public class CoachDaoImpl {
 		Session session = sf.getCurrentSession();
 		Query q = session
 				.createQuery("from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId);
+		@SuppressWarnings("unchecked")
 		List<Program> programs = q.list();
 		return programs;
 	}

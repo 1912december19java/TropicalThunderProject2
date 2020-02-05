@@ -2,7 +2,6 @@ package com.tropicthunder.repositories;
 
 import java.util.List;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +27,7 @@ public class AthleteDaoImpl {
 		Session session = sf.getCurrentSession();
 
 		Criteria c = session.createCriteria(Athlete.class);
+		@SuppressWarnings("unchecked")
 		List<Athlete> athlete = c.list();
 
 		return athlete;
