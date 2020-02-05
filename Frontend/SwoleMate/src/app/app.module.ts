@@ -17,6 +17,7 @@ import { MessageBoardComponent } from "./message-board/message-board.component";
 import { LoginComponent } from './login/login.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AthleteWorkoutComponent } from './athlete-workout/athlete-workout.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AthleteWorkoutComponent } from './athlete-workout/athlete-workout.compo
     LoginComponent,
     EditProfileComponent,
     AthleteWorkoutComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, NgbModule],
   providers: [],

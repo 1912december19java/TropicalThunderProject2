@@ -6,8 +6,15 @@
 }
 
 .login-container > .login-form {
-  width: 36.25em; /* ~580px */
-  margin: auto;
+  display: flex;
+  text-align: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.login-container > .login-form .form-group {
+  width: 100%;
+  text-align: left;
 }
 
 #chkInputIsCoach {
