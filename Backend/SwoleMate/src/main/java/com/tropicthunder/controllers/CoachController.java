@@ -82,6 +82,6 @@ public class CoachController {
   
   @DeleteMapping("/{coachId}/{athleteId}")
   public void deleteAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
-      coachService.deleteAthlete(coachId, athleteId);
+      coachService.deleteAthlete(athleteId);
   }
 }
