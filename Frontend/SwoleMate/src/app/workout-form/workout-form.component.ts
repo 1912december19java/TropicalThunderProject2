@@ -32,19 +32,4 @@ export class WorkoutFormComponent implements OnInit {
     console.log(frequency.length)
     return frequency;
   }
-  workoutForm = this.fb.group({workout: this.fb.array([])});
-
-  constructor(private fb: FormBuilder) { }
-
-  get workout() {
-    return this.workoutForm.get('workout') as FormArray;
-  }
-  
-  addExercise() {
-    this.workout.push(this.fb.control(''));
-  }
-
-  
-  ngOnInit() {
-  }
 }
