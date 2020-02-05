@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-athlete-dashboard',
@@ -9,6 +10,7 @@ export class AthleteDashboardComponent implements OnInit {
 
   isCollapsed: Boolean = false;
   
+  public isCollapsed = false;
 
   constructor() { }
 

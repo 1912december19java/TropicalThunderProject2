@@ -28,9 +28,11 @@ public class Coach {
   @Column(name = "coach_name")
   private String password;
   
-  @OneToMany(mappedBy = "coach", fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "coach_id", fetch = FetchType.EAGER)
   private List<Athlete> athletes;
   
+  @OneToMany(mappedBy = "coach_id", fetch = FetchType.EAGER)
+  private List<Program> programs;
   
   public Coach() {
     super();
