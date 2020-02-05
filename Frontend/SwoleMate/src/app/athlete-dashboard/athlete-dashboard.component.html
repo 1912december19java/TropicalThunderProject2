@@ -1,45 +1,71 @@
-<div class="container rounded border">
-  <div class="row">
-    <div class="col-3" style="width: 20rem;">
-      <img class="card-img-top"
-        src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title" id="userName">Ben Jobs</h5>
-        <p class="card-text">Athlete Account</p>
+<div class="container">
+<div class="row">
+  <div class="col-2 bg-sidenav">
+    <nav class="navbar-vertical show">
+      <p>
+        <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+          +
+        </button>
+      </p>
+      <div class="" id="collapseExample" [ngbCollapse]="!isCollapsed">
+        <div class="bg-white card">
+          <div class="card-body">
+              <p><a routerLink=""> Add Workout</a>
+                <p><a routerLink="edit-profile"> Edit Workout</a>
+                  <p><a routerLink="edit-workout"> Edit Profile</a>
+          </div>
+        </div>
       </div>
-      <ngb-accordion [closeOthers]="true" activeIds="static-1">
-        <ngb-panel id="static-1" title="Workout">
-          <ng-template ngbPanelContent>
-            push ups
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel id="static-2" title="Current Week">
-          <ng-template ngbPanelContent>
-            Week 2
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel id="static-3" title="Duration">
-          <ng-template ngbPanelContent>
-            12 weeks
-          </ng-template>
-        </ngb-panel>
-      </ngb-accordion>
-    </div>
-
-    <div class="col-9">
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th scope="col">Coach</th>
-          <th scope="col">Workout Plan</th>
-          <th scope="col">Area</th>
-          <th scope="col">Population</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-
-    </div>
+    </nav>
   </div>
+  <div class="col-4 bg-spot border-dark " style="width: 20rem;">
+    <img class="card-img-top"
+      src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+      alt="Card image cap">
+  </div>
+  <div class="col-5 bg-spot border-dark">
+    <h5 class="card-title" id="userName">Ben Jobs</h5>
+    <h3 class="card-text">Athlete Account</h3>
+
+    <ngb-accordion [closeOthers]="true" activeIds="static-1">
+      <ngb-panel id="static-1" title="Current Coach">
+        <ng-template ngbPanelContent>
+          Steve Gains
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="static-2" title="Workout">
+        <ng-template ngbPanelContent>
+          Push up
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</div>
+</div>
+<hr>
+
+
+  <h1 class="mx-auto px-3 py-4">Coach Dashboard</h1>
+  <h5 class="card-text">Search For Coach</h5>
+  <table class="stats-bar table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Coach</th>
+        <th scope="col">Workout Program</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+          {{ country.name }}
+        </td>
+        <td>{{ country.area | number }}</td>
+        <td>{{ country.population | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+
