@@ -10,6 +10,7 @@ import { CoachWorkoutComponent } from './coach-workout/coach-workout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorkoutFormComponent } from './workout-form/workout-form.component';
 import { ProgramFormComponent } from './program-form/program-form.component';
+import { ExerciseFormComponent } from './exercise-form/exercise-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProgramFormComponent } from './program-form/program-form.component';
     FooterComponent,
     CoachWorkoutComponent,
     WorkoutFormComponent,
-    ProgramFormComponent
+    ProgramFormComponent,
+    ExerciseFormComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
