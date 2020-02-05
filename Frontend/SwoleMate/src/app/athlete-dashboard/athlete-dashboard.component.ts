@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AthleteDashboardComponent implements OnInit {
 
+  isCollapsed: Boolean = false;
+  
+
   constructor() { }
 
   ngOnInit() {
