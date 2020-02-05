@@ -12,18 +12,19 @@ import { Validators } from '@angular/forms';
 })
 export class CoachWorkoutComponent implements OnInit {
 
+
+  constructor(private fb: FormBuilder, private workoutService: WorkoutService) { }
+  workoutForm = this.fb.group({workout: this.fb.array([])});
+  
+  get workout() {
+    return this.workoutForm.get('workout') as FormArray;
+  }
+  
   // layoutForm = this.fb.group({
   //   lengthInWeeks: [],
   //   frequency: []
   // });
   // lengthInWeeks: Array<Exercise>[] = [];
-
-  // constructor(private fb: FormBuilder, private workoutService: WorkoutService) { }
-  constructor() { }
-  // workoutForm = this.fb.group({workout: this.fb.array([])});
-  // get workout() {
-  //   return this.workoutForm.get('workout') as FormArray;
-  // }
 
   updateProgramLayout(){
     // this.workout.clear();

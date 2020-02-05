@@ -5,16 +5,14 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class WorkoutService {
-
+  frequency:number;
   constructor() { }
 
-  frequency:number = 0;
-
-  getFrequency(): Observable<number>{
-    return of(this.frequency);
+  setFrequency(frequency:number):void{
+    this.frequency = frequency;
   }
 
-  setFrequency(newFreq:number){
-    this.frequency = newFreq;
+  getFrequency(): Observable<number>{
+    return of(this.frequency)
   }
 }

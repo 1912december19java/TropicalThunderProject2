@@ -1,29 +1,3 @@
-<form [formGroup]="workoutForm">
-    <div formArrayName="workout">
-      <h3>workout</h3><button (click)="addExercise()">add exercise</button>
-      <div *ngFor="let x of workout.controls; let i=index">
-        <label>
-          name:
-          <input type="text" [formControlName]="i">
-        </label>
-        <label>
-          sets:
-          <input type="number" [formControlName]="i">
-        </label>
-        <label>
-          reps:
-          <input type="number" [formControlName]="i">
-        </label>
-        <label>
-          load:
-          <input type="text" [formControlName]="i">
-        </label>
-        <label>
-          coach notes:
-          <textarea [formControlName]="i" rows="3" cols="30">
-              </textarea>
-        </label>
-      </div>
-    </div> 
-  </form>
-  <br>
+
+<h2 class="jumbotron-fluid">workouts</h2>
+<app-exercise-form *ngFor="let f of frequency; let i = index"></app-exercise-form>
