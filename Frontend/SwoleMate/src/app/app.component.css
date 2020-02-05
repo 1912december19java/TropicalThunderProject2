@@ -1,1 +1,31 @@
+.container-login-register {
+  margin-top: 6em;
+}
 
+#toAdminPages {
+  margin: 4em;
+  display: flex;
+}
+
+#toAdminPages li {
+  list-style: none;
+  margin-right: 1em;
+}
+
+#toAdminPages li:last-child {
+  margin-right: 0;
+}
+
+#toAdminPages li a {
+  padding: 2em 4em;
+  background: var(--color-teal-rgb);
+  color: ivory;
+  text-decoration: none;
+  transition: all .32s ease-out;
+  border-radius: .25em;
+}
+
+#toAdminPages li a:hover {
+  background: var(--color-licorice-rgb);
+  color: var(--color-grey-rgb);
+}
