@@ -29,7 +29,7 @@ import { HomeComponent } from './home/home.component';
     CoachWorkoutComponent,
     WorkoutFormComponent,
     ProgramFormComponent,
-    ExerciseFormComponent
+    ExerciseFormComponent,
     CoachDashboardComponent,
     AthleteDashboardComponent,
     MessageBoardComponent,
