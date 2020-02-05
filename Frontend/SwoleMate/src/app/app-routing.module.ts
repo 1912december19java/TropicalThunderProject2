@@ -6,14 +6,16 @@ import { AthleteDashboardComponent } from './athlete-dashboard/athlete-dashboard
 
 const routes: Routes = [
   { path: 'coach-dashboard', component: CoachDashboardComponent },
-  { path: 'athlete-dashboard', component: AthleteDashboardComponent }
+  { path: 'athlete-dashboard', component: AthleteDashboardComponent },
 ];
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule.forRoot(routes),
+  ],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [CoachDashboardComponent, AthleteDashboardComponent ]
+export const routingComponents = [ CoachDashboardComponent, AthleteDashboardComponent ]
