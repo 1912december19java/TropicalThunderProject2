@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { WorkoutFormComponent } from './workout-form.component';
+import { WorkoutFormComponent } from "./workout-form.component";
 
-describe('WorkoutFormComponent', () => {
+describe("WorkoutFormComponent", () => {
   let component: WorkoutFormComponent;
   let fixture: ComponentFixture<WorkoutFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkoutFormComponent ]
-    })
-    .compileComponents();
+      declarations: [WorkoutFormComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('WorkoutFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

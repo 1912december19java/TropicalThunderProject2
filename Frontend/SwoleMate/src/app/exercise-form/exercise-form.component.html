@@ -1,29 +1,29 @@
 <form [formGroup]="workoutForm" class="jumbotron-fluid">
-    <h6>DAY</h6>
-    <div formArrayName="exercises">
-        <button type="button" (click)="addExercise()">Add Exercise</button>
-        <button type="button" (click)="removeExercise()">Remove Exercise</button>
-        <div *ngFor="let exercise of exercises.controls; let i=index">
-            <label>
-                exercise name:
-                <input type="text" [formControlName]="i">
-            </label>
-            <label>
-                sets:
-                <input type="text" [formControlName]="i">
-            </label>
-            <label>
-                reps:
-                <input type="text" [formControlName]="i">
-            </label>
-            <label>
-                load:
-                <input type="text" [formControlName]="i">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" [formControlName]="i"></textarea>
-            </label>
-        </div>
+  <h6>DAY</h6>
+  <div formArrayName="exercises">
+    <button type="button" (click)="addExercise()">Add Exercise</button>
+    <button type="button" (click)="removeExercise()">Remove Exercise</button>
+    <div *ngFor="let exercise of exercises.controls; let i = index">
+      <label>
+        exercise name:
+        <input type="text" [formControlName]="i" />
+      </label>
+      <label>
+        sets:
+        <input type="text" [formControlName]="i" />
+      </label>
+      <label>
+        reps:
+        <input type="text" [formControlName]="i" />
+      </label>
+      <label>
+        load:
+        <input type="text" [formControlName]="i" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" [formControlName]="i"></textarea>
+      </label>
     </div>
+  </div>
 </form>

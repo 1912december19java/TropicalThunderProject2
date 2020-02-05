@@ -1,5 +1,5 @@
-export class Coach{
-    name: String
-    email: String
-    password: String
+export class Coach {
+  name: String;
+  email: String;
+  password: String;
 }
