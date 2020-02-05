@@ -21,39 +21,35 @@ import com.tropicthunder.models.Coach;
 import com.tropicthunder.services.AthleteService;
 import com.tropicthunder.services.ModelService;
 
-
 @RestController
 @RequestMapping("/athlete")
 @CrossOrigin
 public class AthleteController {
 
-  @Autowired
-  private ModelService<Athlete> AthleteService;
-  
-  @PostMapping(consumes = "application/json")
-  @ResponseStatus(code = HttpStatus.CREATED)
-  public Integer create(@RequestBody Athlete athlete) {
-      return AthleteService.save(athlete);
-  }
+	@Autowired
+	private ModelService<Athlete> AthleteService;
 
-  @GetMapping("/{id}")
-  public Athlete get(@PathVariable int id) {
-    return AthleteService.get(id);
-  }
+	@PostMapping(consumes = "application/json")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	public Integer create(@RequestBody Athlete athlete) {
+		return AthleteService.save(athlete);
+	}
 
-  @PatchMapping(consumes = "application/json")
-  public void update(@RequestBody Athlete athlete) {
-    AthleteService.update(athlete);
-  }
-  
-  @DeleteMapping("/{id}")
-  public void delete(@PathVariable int id) {
-      Athlete athlete = new Athlete();
-      athlete.setAthlete_id(id);
-      AthleteService.delete(athlete);
-  }
+	@GetMapping("/{id}")
+	public Athlete get(@PathVariable int id) {
+		return AthleteService.get(id);
+	}
 
+	@PatchMapping(consumes = "application/json")
+	public void update(@RequestBody Athlete athlete) {
+		AthleteService.update(athlete);
+	}
+
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable int id) {
+		Athlete athlete = new Athlete();
+		athlete.setAthlete_id(id);
+		AthleteService.delete(athlete);
+	}
 
 }
-
-

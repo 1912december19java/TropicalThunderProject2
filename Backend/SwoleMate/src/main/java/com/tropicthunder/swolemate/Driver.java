@@ -8,15 +8,14 @@ import com.tropicthunder.repositories.AthleteDaoImpl;
 
 @Deprecated
 public class Driver {
-  
-  public static void main(String[] args) {
-    
-    ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-    
-    AthleteDaoImpl athleteDao = ac.getBean(AthleteDaoImpl.class);
-    
-   System.out.println(athleteDao.getAllAthlete());
-  }
-   
+
+	public static void main(String[] args) {
+
+		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+		AthleteDaoImpl athleteDao = ac.getBean(AthleteDaoImpl.class);
+
+		System.out.println(athleteDao.getAllAthlete());
+	}
 
 }
