@@ -8,6 +8,7 @@ export class Exercise {
     coachNotes?:string;
     athleteNotes?:string;
     exerciseUrl?:string;
+    isComplete?:boolean;
 
     constructor(){
 
