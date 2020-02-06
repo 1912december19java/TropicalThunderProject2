@@ -17,13 +17,13 @@ public class Exercise {
 	@Id
 	@Column(name = "exercise_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int exerciseId;
+	private Integer exerciseId;
 
 	@Column(name = "exercise_sets")
-	private int exerciseSets;
+	private Integer exerciseSets;
 
 	@Column(name = "exercise_reps")
-	private int exerciseReps;
+	private Integer exerciseReps;
 
 	@Column(name = "exercise_load")
 	private String exerciseLoad;
@@ -32,7 +32,7 @@ public class Exercise {
 	private String exerciseName;
 
 	@Column(name = "exercise_day")
-	private int exerciseDay;
+	private Integer exerciseDay;
 
 	@Column(name = "coach_notes")
 	private String coachNotes;
@@ -51,47 +51,27 @@ public class Exercise {
 	@JsonIgnoreProperties({"exercises","coach","athlete"})
 	private Program program;
 
-	public Exercise(int exerciseId, int exerciseSets, int exerciseReps, String exerciseLoad, String exerciseName,
-			int exerciseDay, String coachNotes, String athleteNotes, String exerciseUrl, boolean isComplete,
-			Program program) {
-		super();
-		this.exerciseId = exerciseId;
-		this.exerciseSets = exerciseSets;
-		this.exerciseReps = exerciseReps;
-		this.exerciseLoad = exerciseLoad;
-		this.exerciseName = exerciseName;
-		this.exerciseDay = exerciseDay;
-		this.coachNotes = coachNotes;
-		this.athleteNotes = athleteNotes;
-		this.exerciseUrl = exerciseUrl;
-		this.isComplete = isComplete;
-		this.program = program;
-	}
-	public Exercise() {
-		super();
-	}
-
-	public int getExerciseId() {
+	public Integer getExerciseId() {
 		return exerciseId;
 	}
 
-	public void setExerciseId(int exerciseId) {
+	public void setExerciseId(Integer exerciseId) {
 		this.exerciseId = exerciseId;
 	}
 
-	public int getExerciseSets() {
+	public Integer getExerciseSets() {
 		return exerciseSets;
 	}
 
-	public void setExerciseSets(int exerciseSets) {
+	public void setExerciseSets(Integer exerciseSets) {
 		this.exerciseSets = exerciseSets;
 	}
 
-	public int getExerciseReps() {
+	public Integer getExerciseReps() {
 		return exerciseReps;
 	}
 
-	public void setExerciseReps(int exerciseReps) {
+	public void setExerciseReps(Integer exerciseReps) {
 		this.exerciseReps = exerciseReps;
 	}
 
@@ -111,11 +91,11 @@ public class Exercise {
 		this.exerciseName = exerciseName;
 	}
 
-	public int getExerciseDay() {
+	public Integer getExerciseDay() {
 		return exerciseDay;
 	}
 
-	public void setExerciseDay(int exerciseDay) {
+	public void setExerciseDay(Integer exerciseDay) {
 		this.exerciseDay = exerciseDay;
 	}
 
@@ -143,11 +123,11 @@ public class Exercise {
 		this.exerciseUrl = exerciseUrl;
 	}
 
-	public boolean isComplete() {
+	public boolean setIsComplete() {
 		return isComplete;
 	}
 
-	public void setComplete(boolean isComplete) {
+	public void getIsComplete(boolean isComplete) {
 		this.isComplete = isComplete;
 	}
 
@@ -158,6 +138,28 @@ public class Exercise {
 	public void setProgram(Program program) {
 		this.program = program;
 	}
+
+	public Exercise(Integer exerciseId, Integer exerciseSets, Integer exerciseReps, String exerciseLoad,
+			String exerciseName, Integer exerciseDay, String coachNotes, String athleteNotes, String exerciseUrl,
+			boolean isComplete, Program program) {
+		super();
+		this.exerciseId = exerciseId;
+		this.exerciseSets = exerciseSets;
+		this.exerciseReps = exerciseReps;
+		this.exerciseLoad = exerciseLoad;
+		this.exerciseName = exerciseName;
+		this.exerciseDay = exerciseDay;
+		this.coachNotes = coachNotes;
+		this.athleteNotes = athleteNotes;
+		this.exerciseUrl = exerciseUrl;
+		this.isComplete = isComplete;
+		this.program = program;
+	}
+
+	public Exercise() {
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Exercise [exerciseId=" + exerciseId + ", exerciseSets=" + exerciseSets + ", exerciseReps="
@@ -167,5 +169,4 @@ public class Exercise {
 	}
 	
 	
-
 }

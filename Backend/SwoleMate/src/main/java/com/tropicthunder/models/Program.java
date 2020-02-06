@@ -85,19 +85,19 @@ public class Program {
 		this.programFrequency = programFrequency;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 
-	public boolean isComplete() {
+	public boolean getIsComplete() {
 		return isComplete;
 	}
 
-	public void setComplete(boolean isComplete) {
+	public void setIsComplete(boolean isComplete) {
 		this.isComplete = isComplete;
 	}
 

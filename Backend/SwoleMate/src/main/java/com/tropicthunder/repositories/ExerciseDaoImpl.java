@@ -34,7 +34,6 @@ public class ExerciseDaoImpl {
 
 	public Exercise getById(Integer id) {
 		Session session = sf.getCurrentSession();
-
 		int exercise_id = id;
 		Exercise exercise = (Exercise) session.get(Exercise.class, exercise_id);
 		return exercise;
