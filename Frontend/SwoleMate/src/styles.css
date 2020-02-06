@@ -16,3 +16,7 @@
   --color-licorice-rgb: rgb(24, 2, 12);
   --color-licorice-hex: #18020c;
 }
+
+body {
+  background-color: var(--color-licorice-rgb);
+}

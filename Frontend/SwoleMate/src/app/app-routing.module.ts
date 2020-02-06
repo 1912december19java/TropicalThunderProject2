@@ -7,6 +7,8 @@ import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { EditCoachProfileComponent } from "./edit-coach-profile/edit-coach-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
+import { RegistrationPageComponent } from "./registration-page/registration-page.component";
+import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
   {
@@ -33,6 +35,13 @@ const routes: Routes = [
     path: "athlete/workout-page",
     component: AthleteWorkoutComponent
   }
+    path: "register",
+    component: RegistrationPageComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
 ];
 
 @NgModule({
