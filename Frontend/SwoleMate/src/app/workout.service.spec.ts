@@ -1,11 +1,11 @@
-import { TestBed } from "@angular/core/testing";
+import { TestBed } from '@angular/core/testing';
 
-import { WorkoutService } from "./workout.service";
+import { WorkoutService } from './workout.service';
 
-describe("WorkoutService", () => {
+describe('WorkoutService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it("should be created", () => {
+  it('should be created', () => {
     const service: WorkoutService = TestBed.get(WorkoutService);
     expect(service).toBeTruthy();
   });
