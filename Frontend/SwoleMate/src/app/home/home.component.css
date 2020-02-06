@@ -1,7 +1,47 @@
 .container-home {
   height: 32.5em;
-  margin-top: 6em;
+  margin: 2em auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(https://picsum.photos/id/770/1200/800);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: ivory;
+}
+
+.container-home * {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container-home__copy-area,
+.container-home__cta-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-home__copy-area {
+  align-self: flex-start;
+}
+
+.container-home__copy-area > * {
+  text-align: left;
+}
+
+.container-home__cta-area {
+  /* background: var(--color-teal-rgb); */
+}
+
+
+/* Bootstrap Overrides */
+.jumbotron {
+  padding: 0;
+  background-color: var(--color-licorice-rgb);
+}
+
+.jumbotron-fluid {
+  margin-bottom: 0;
 }

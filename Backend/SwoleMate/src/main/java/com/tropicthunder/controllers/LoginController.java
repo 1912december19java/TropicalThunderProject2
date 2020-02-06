@@ -26,7 +26,7 @@ public class LoginController {
 		if (hasUserInfo) {
 			
 		}
-		return "\"\": \"\"";
+		return "\"message\": \"No user info returned\"";
 	}
 
 }
