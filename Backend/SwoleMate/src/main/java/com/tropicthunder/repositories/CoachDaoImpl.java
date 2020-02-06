@@ -63,7 +63,8 @@ public class CoachDaoImpl {
   
   public List<Program> getPrograms(int coachId, int athleteId) {
     Session session = sf.getCurrentSession();
-    Query q = session.createQuery("from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId);
+    Query q = session.createQuery("from Program p where p.coachId = " + coachId + " AND p.athleteId = " + athleteId);
+    q.executeUpdate();
     List<Program> programs = q.list();
     return programs;
   }
@@ -82,7 +83,7 @@ public class CoachDaoImpl {
   
   public void addAthlete(int coachId, int athleteId) {
     Session session = sf.getCurrentSession();
-    Query q = session.createQuery("update athlete_table set coach_id = :coachId where athlete_id = :athleteId");
+    Query q = session.createQuery("update Athlete a set a.coachId = :coachId where a.athleteId = :athleteId");
     q.setParameter("coachId", coachId);
     q.setParameter("athleteId", athleteId);
     q.executeUpdate();    
@@ -90,7 +91,7 @@ public class CoachDaoImpl {
   
   public void deleteAthlete(int athleteId) {
     Session session = sf.getCurrentSession();
-    Query q = session.createQuery("update athlete_table set coach_id = null where athlete_id :athleteId");
+    Query q = session.createQuery("update Athlete a set a.coachId = null where a.athleteId :athleteId");
     q.setParameter("athleteId", athleteId);
     q.executeUpdate();
   }
