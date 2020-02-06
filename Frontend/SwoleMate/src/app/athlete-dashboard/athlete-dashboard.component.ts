@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { athlete } from "../athlete";
@@ -6,10 +5,6 @@ import { AthleteService } from "../athlete.service"
 import { Observable } from "rxjs";
 import { Router } from '@angular/router';
 
-=======
-import { Component, OnInit } from "@angular/core";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
->>>>>>> Development
 
 @Component({
   selector: "app-athlete-dashboard",
@@ -17,7 +12,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./athlete-dashboard.component.css"]
 })
 export class AthleteDashboardComponent implements OnInit {
-<<<<<<< HEAD
 
   athlete: Observable<athlete[]>;
 
@@ -47,11 +41,4 @@ export class AthleteDashboardComponent implements OnInit {
 
   
 
-=======
-  public isCollapsed = false;
-
-  constructor() {}
-
-  ngOnInit() {}
->>>>>>> Development
 }
