@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
 <div class="row">
   <div class="col-2 bg-sidenav">
     <nav class="navbar-vertical show">
@@ -14,38 +15,68 @@
               <p><a routerLink=""> Add Workout Program</a>
                 <p><a routerLink="edit-workout"> Edit Workout Program</a>
                   <p><a routerLink="edit-profile"> Edit Profile</a>
+=======
+  <div class="row">
+    <div class="col-2 bg-sidenav">
+      <nav class="navbar-vertical show">
+        <p>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample"
+          >
+            +
+          </button>
+        </p>
+        <div class="" id="collapseExample" [ngbCollapse]="!isCollapsed">
+          <div class="bg-white card">
+            <div class="card-body">
+              <p><a routerLink=""> Add Workout Program</a></p>
+              <p><a routerLink="edit-profile"> Edit Workout Program</a></p>
+              <p><a routerLink="edit-workout"> Edit Profile</a></p>
+            </div>
+>>>>>>> Development
           </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  <div class="col-4 bg-spot border-dark " style="width: 20rem;">
-    
-    <img class="card-img-top"
-      src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-      alt="Card image cap">
-  </div>
-  <div class="col-5 bg-spot border-dark">
+      </nav>
+    </div>
+    <div class="col-4 bg-spot border-dark " style="width: 20rem;">
+      <img
+        class="card-img-top"
+        src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        alt="Card image cap"
+      />
+    </div>
+    <div class="col-5 bg-spot border-dark">
       <h5 class="card-title" id="userName">Ben Jobs</h5>
       <h3 class="card-text">Coach Account</h3>
-    <ngb-accordion [closeOthers]="true" activeIds="static-1">
-      <ngb-panel id="static-1" title="Current Athletes">
-        <ng-template ngbPanelContent>
-          Bill Gates
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="static-2" title="Workout Programs">
-        <ng-template ngbPanelContent>
-          Chipotle Gains Program 
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel id="static-1" title="Current Athletes">
+          <ng-template ngbPanelContent>
+            Bill Gates
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-2" title="Workout Programs">
+          <ng-template ngbPanelContent>
+            Chipotle Gains Program
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
   </div>
 </div>
+<<<<<<< HEAD
 </div>
 <hr>
 <h1 class="mx-auto px-3 py-4">Coach Dashboard</h1>
 <h5 class="card-text">Search For Athlete </h5>
+=======
+<hr />
+<h1 class="mx-auto px-3 py-4">Athlete Dashboard</h1>
+<h5 class="card-text">Search For Athlete</h5>
+>>>>>>> Development
 <table class="stats-bar table table-striped">
   <thead>
     <tr>
@@ -55,6 +86,5 @@
       <th scope="col">Duration</th>
     </tr>
   </thead>
-  <tbody>
-  </tbody>
+  <tbody></tbody>
 </table>

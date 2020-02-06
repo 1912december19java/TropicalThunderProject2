@@ -18,31 +18,31 @@ import com.tropicthunder.services.ExerciseService;
 @CrossOrigin
 public class ExerciseController {
 
-  @Autowired
-  private ExerciseService exerciseService;
-  
-  @GetMapping
-  public List<Exercise> getAll() {
-    System.out.println("here");
-      return exerciseService.getAll();
-  }
-  
-  @GetMapping("/{id}")
-  public Exercise get(@PathVariable int id) {
-      return exerciseService.get(id);
-  }
-  
-  //This endpoint accepts POST only if they're also sending JSON
-  @PostMapping(consumes = "application/json")
-  public Exercise create(Exercise exercise) {
-      exerciseService.saveOrUpdate(exercise);
-      return exercise;
-  }
-  
-  @PutMapping(value = "/{id}", consumes = "application/json")
-  public Exercise replace(@RequestBody Exercise exercise, @PathVariable int id) {
-      exercise.setExercise_id(id);
-      exerciseService.saveOrUpdate(exercise);
-      return exercise;
-  }
+	@Autowired
+	private ExerciseService exerciseService;
+
+	@GetMapping
+	public List<Exercise> getAll() {
+		System.out.println("here");
+		return exerciseService.getAll();
+	}
+
+	@GetMapping("/{id}")
+	public Exercise get(@PathVariable int id) {
+		return exerciseService.get(id);
+	}
+
+	// This endpoint accepts POST only if they're also sending JSON
+	@PostMapping(consumes = "application/json")
+	public Exercise create(Exercise exercise) {
+		exerciseService.saveOrUpdate(exercise);
+		return exercise;
+	}
+
+	@PutMapping(value = "/{id}", consumes = "application/json")
+	public Exercise replace(@RequestBody Exercise exercise, @PathVariable int id) {
+		exercise.setExercise_id(id);
+		exerciseService.saveOrUpdate(exercise);
+		return exercise;
+	}
 }

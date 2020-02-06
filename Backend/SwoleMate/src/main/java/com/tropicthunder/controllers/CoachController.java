@@ -20,68 +20,68 @@ import com.tropicthunder.services.CoachService;
 @RestController
 @RequestMapping("/coach")
 public class CoachController {
-  
-  @Autowired
-  private CoachService coachService;
-  
-  @GetMapping("/{id}/athletes")
-  public List<Athlete> getAthletes(@PathVariable int id){
-    return coachService.getAthletes(id);
-  }
-  
-  @PostMapping(consumes = "application/json")
-  @ResponseStatus(code = HttpStatus.CREATED)
-  public Integer create(@RequestBody Coach coach) {
-      return coachService.save(coach);
-  }
 
-  @GetMapping("/{id}")
-  public Coach get(@PathVariable int id) {
-    return coachService.get(id);
-  }
-  
-  @PatchMapping(consumes = "application/json")
-  public void update(@RequestBody Coach coach) {
-    coachService.saveOrUpdate(coach);
-  }
-  
-  @DeleteMapping("/{id}")
-  public void delete(@PathVariable int id) {
-      Coach coach = new Coach();
-      coach.setId(id);
-      coachService.delete(coach);
-  }
-  
-  @PostMapping(consumes = "application/json")
-  @ResponseStatus(code = HttpStatus.CREATED)
-  public void createProgram(@RequestBody Program program) {
-      coachService.saveOrUpdateProgram(program);
-  }
+	@Autowired
+	private CoachService coachService;
 
-  @GetMapping("/{coachId}/program/{athleteId}")
-  public List<Program> getPrograms(@PathVariable int coachId, @PathVariable int athleteId) {
-    return coachService.getPrograms(coachId, athleteId);
-  }
-  
-  @PatchMapping(consumes = "application/json")
-  public void updateProgram(@RequestBody Program program) {
-    coachService.saveOrUpdateProgram(program);
-  }
-  
-  @DeleteMapping("/program/{id}")
-  public void deleteProgram(@PathVariable int id) {
-      Program program = new Program();
-      program.setProgramId(id);
-      coachService.deleteProgram(program);
-  }
-  
-  @PatchMapping("/{coachId}/{athleteId}")
-  public void addAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
-    coachService.addAthlete(coachId, athleteId);
-  }
-  
-  @DeleteMapping("/{coachId}/{athleteId}")
-  public void deleteAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
-      coachService.deleteAthlete(athleteId);
-  }
+	@GetMapping("/{id}/athletes")
+	public List<Athlete> getAthletes(@PathVariable int id) {
+		return coachService.getAthletes(id);
+	}
+
+	@PostMapping(consumes = "application/json")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	public Integer create(@RequestBody Coach coach) {
+		return coachService.save(coach);
+	}
+
+	@GetMapping("/{id}")
+	public Coach get(@PathVariable int id) {
+		return coachService.get(id);
+	}
+
+	@PatchMapping(consumes = "application/json")
+	public void update(@RequestBody Coach coach) {
+		coachService.saveOrUpdate(coach);
+	}
+
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable int id) {
+		Coach coach = new Coach();
+		coach.setId(id);
+		coachService.delete(coach);
+	}
+
+	@PostMapping(consumes = "application/json")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	public void createProgram(@RequestBody Program program) {
+		coachService.saveOrUpdateProgram(program);
+	}
+
+	@GetMapping("/{coachId}/program/{athleteId}")
+	public List<Program> getPrograms(@PathVariable int coachId, @PathVariable int athleteId) {
+		return coachService.getPrograms(coachId, athleteId);
+	}
+
+	@PatchMapping(consumes = "application/json")
+	public void updateProgram(@RequestBody Program program) {
+		coachService.saveOrUpdateProgram(program);
+	}
+
+	@DeleteMapping("/program/{id}")
+	public void deleteProgram(@PathVariable int id) {
+		Program program = new Program();
+		program.setProgramId(id);
+		coachService.deleteProgram(program);
+	}
+
+	@PatchMapping("/{coachId}/{athleteId}")
+	public void addAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
+		coachService.addAthlete(coachId, athleteId);
+	}
+
+	@DeleteMapping("/{coachId}/{athleteId}")
+	public void deleteAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
+		coachService.deleteAthlete(athleteId);
+	}
 }
