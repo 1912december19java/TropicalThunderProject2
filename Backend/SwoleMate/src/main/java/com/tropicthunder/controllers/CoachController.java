@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.tropicthunder.models.Athlete;
@@ -25,11 +27,13 @@ public class CoachController {
   private CoachService coachService;
   
   @GetMapping("/{id}/athletes")
+  @ResponseBody
   public List<Athlete> getAthletes(@PathVariable int id){
     return coachService.getAthletes(id);
   }
   
   @PostMapping(consumes = "application/json")
+  @ResponseBody
   @ResponseStatus(code = HttpStatus.CREATED)
   public Integer create(@RequestBody Coach coach) {
       return coachService.save(coach);
@@ -40,7 +44,7 @@ public class CoachController {
     return coachService.get(id);
   }
   
-  @PatchMapping(consumes = "application/json")
+  @PatchMapping(value = "/{id}",consumes = "application/json")
   public void update(@RequestBody Coach coach) {
     coachService.saveOrUpdate(coach);
   }
@@ -52,18 +56,19 @@ public class CoachController {
       coachService.delete(coach);
   }
   
-  @PostMapping(consumes = "application/json")
+  @PostMapping(value = "/program", consumes = "application/json")
   @ResponseStatus(code = HttpStatus.CREATED)
   public void createProgram(@RequestBody Program program) {
       coachService.saveOrUpdateProgram(program);
   }
 
-  @GetMapping("/{coachId}/program/{athleteId}")
+  @GetMapping("/program/{coachId}/{athleteId}")
+  @ResponseBody
   public List<Program> getPrograms(@PathVariable int coachId, @PathVariable int athleteId) {
     return coachService.getPrograms(coachId, athleteId);
   }
   
-  @PatchMapping(consumes = "application/json")
+  @PatchMapping(value = "/program/update", consumes = "application/json")
   public void updateProgram(@RequestBody Program program) {
     coachService.saveOrUpdateProgram(program);
   }
@@ -75,12 +80,16 @@ public class CoachController {
       coachService.deleteProgram(program);
   }
   
-  @PatchMapping("/{coachId}/{athleteId}")
+  @GetMapping("/{coachId}/{athleteId}")
+  @ResponseBody
+  @ResponseStatus(code = HttpStatus.ACCEPTED)
   public void addAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
     coachService.addAthlete(coachId, athleteId);
   }
   
   @DeleteMapping("/{coachId}/{athleteId}")
+  @ResponseBody
+  @ResponseStatus(code = HttpStatus.ACCEPTED)
   public void deleteAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
       coachService.deleteAthlete(athleteId);
   }

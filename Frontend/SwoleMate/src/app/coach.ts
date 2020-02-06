@@ -1,5 +1,6 @@
 export class Coach{
-    name: String
-    email: String
-    password: String
+    id: number
+    name: string
+    email: string
+    password: string
 }
