@@ -36,15 +36,14 @@ public class ExerciseDaoImpl {
 		Session session = sf.getCurrentSession();
 
 		int exercise_id = id;
-		System.out.println("I made it here");
 		Exercise exercise = (Exercise) session.get(Exercise.class, exercise_id);
-		System.out.println("AHHHHHHHHHHHHHHHHHHH");
 		return exercise;
 	}
 
 	public void saveOrUpdate(Exercise exercise) {
 		Session session = sf.getCurrentSession();
-
+		System.out.println(exercise.toString());
+		System.out.println("^^^This one officer");
 		session.saveOrUpdate(exercise);
 	}
 
