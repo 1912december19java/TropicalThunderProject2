@@ -16,8 +16,6 @@ export class UpdateWorkoutService {
         .toPromise();
   }
 
-
-
   async updateExercise(exercise: Exercise) : Promise<Exercise> {
     return this.http.put<Exercise>(`${this.baseUrl}/exercise/${exercise.ExerciseId}`, exercise)
         .toPromise();
