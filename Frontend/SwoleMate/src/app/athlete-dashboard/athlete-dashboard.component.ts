@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { athlete } from "../athlete";
-import { AthleteService } from "../athlete.service"
-import { Observable } from "rxjs";
-import { Router } from '@angular/router';
-
+import { Component, OnInit } from "@angular/core";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "app-athlete-dashboard",
@@ -12,33 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ["./athlete-dashboard.component.css"]
 })
 export class AthleteDashboardComponent implements OnInit {
+  public isCollapsed = false;
 
-  athlete: Observable<athlete[]>;
+  constructor() {}
 
-  isCollapsed: Boolean = false;
-  
-  
-
-  constructor(private athleteService: AthleteService, private router: Router) { }
-
-  ngOnInit() {
-    this.reloadData();
-  }
-
-  reloadData() {
-    this.athlete = this.athleteService.getAthletesList();
-  }
-
-  denyAthlete(id: number) {
-    this.athleteService.dentAthlete(id).subscribe(
-      data => {
-        console.log(data);
-        this.reloadData();
-      },
-      error => console.log(error));
-    
-  }
-
-  
-
+  ngOnInit() {}
 }
