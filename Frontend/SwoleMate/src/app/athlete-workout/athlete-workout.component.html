@@ -1,177 +1,75 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <div class="android-header mdl-layout__header--waterfall">
-    <div class="android-content mdl-layout__content">
-      <div class="android-more-section">
-        <div
-          class="android-section-title mdl-typography--display-1-color-contrast"
-        >
-          MDL
-        </div>
-        <div class="android-card-container mdl-grid">
-          <div
-            class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp"
+<div class="container">
+  <div class="row">
+    <div class="col-2 bg-sidenav">
+      <nav class="navbar-vertical show">
+        <p>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample"
           >
-            <div class="mdl-card__media">
-              <img
-                class="col-4"
-                src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-              />
-            </div>
-            <div class="mdl-card__title">
-              <h4 class="mdl-card__title-text">Monday's Workout</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead"
-                >Monday workout goes here</span
-              >
-            </div>
-            <div class="mdl-card__actions">
-              <button class="button btn-outline-primary">Edit Workout</button>
-            </div>
-          </div>
-
-          <div
-            class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp"
-          >
-            <div class="mdl-card__media">
-              <img
-                class="col-4"
-                src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80"
-              />
-            </div>
-            <div class="mdl-card__title">
-              <h4 class="mdl-card__title-text">Tuesday's Workout</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead"
-                >Tueday workout goes here</span
-              >
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-card__actions">
-                <button class="button btn-outline-primary">Edit Workout</button>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp"
-          >
+            +
+          </button>
+        </p>
+        <div class="" id="collapseExample" [ngbCollapse]="!isCollapsed">
+          <div class="bg-white card">
             <div class="card-body">
-              <img
-                class="col-4"
-                src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=968&q=80"
-              />
-            </div>
-            <div class="mdl-card__title">
-              <h4 class="mdl-card__title-text">Wednesday's Workout</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead"
-                >workout here
-              </span>
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-card__actions">
-                <button class="button btn-outline-primary">Edit Workout</button>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp"
-          >
-            <div class="mdl-card__media">
-              <img
-                class="col-4"
-                src="https://images.unsplash.com/flagged/photo-1566063698649-9df11f39ba51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-              />
-            </div>
-            <div class="mdl-card__title">
-              <h4 class="mdl-card__title-text">Thursday's Workout</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead"
-                >workout here
-              </span>
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-card__actions">
-                <button class="button btn-outline-primary">Edit Workout</button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp"
-          >
-            <div class="mdl-card__media">
-              <img
-                class="col-4"
-                src="https://images.unsplash.com/flagged/photo-1566062284755-a888f33feba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-              />
-            </div>
-            <div class="mdl-card__title">
-              <h4 class="mdl-card__title-text">Friday's Workoutt</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead"
-                >Workout here</span
-              >
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-card__actions">
-                <button class="button btn-outline-primary">Edit Workout</button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp"
-          >
-            <div class="mdl-card__media">
-              <img
-                class="col-4"
-                src="https://images.unsplash.com/photo-1580051745101-2dca6e53f15c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-              />
-            </div>
-            <div class="mdl-card__title">
-              <h4 class="mdl-card__title-text">Saturday's Workout</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead"
-                >Workout Here</span
-              >
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-card__actions">
-                <button class="button btn-outline-primary">Edit Workout</button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp"
-          >
-            <div class="mdl-card__media">
-              <img
-                class="col-4"
-                src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=968&q=80"
-              />
-            </div>
-            <div class="mdl-card__title">
-              <h4 class="mdl-card__title-text">Sunday's Workout</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead"
-                >workout here</span
-              >
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-card__actions">
-                <button class="button btn-outline-primary">Edit Workout</button>
-              </div>
+              <p><a routerLink="edit-profile"> Edit Profile</a></p>
             </div>
           </div>
         </div>
-      </div>
+      </nav>
+    </div>
+    <div class="col-4 bg-spot border-dark " style="width: 20rem;">
+      <img
+        class="card-img-top"
+        src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        alt="Card image cap"
+      />
+    </div>
+    <div class="col-5 bg-spot border-dark">
+      <h5 class="card-title" id="userName">Ben Jobs</h5>
+      <h3 class="card-text">Athlete Account</h3>
+
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel id="static-1" title="Monday">
+          <ng-template ngbPanelContent>
+            
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-2" title="Tuesday">
+          <ng-template ngbPanelContent>
+            
+           
+
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-3" title="Wednesday">
+          <ng-template ngbPanelContent>
+            
+           
+
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-4" title="Thursday">
+          <ng-template ngbPanelContent>
+            
+           
+
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-5" title="Friday">
+          <ng-template ngbPanelContent>
+            
+           
+
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
     </div>
   </div>
 </div>
+<hr />
+

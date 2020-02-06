@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, Component } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./home/home.component";
@@ -6,6 +6,7 @@ import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.compo
 import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard.component";
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { EditCoachProfileComponent } from "./edit-coach-profile/edit-coach-profile.component";
+import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: "athlete/edit-profile",
     component: EditProfileComponent
+  },
+  {
+    path: "athlete/workout-page",
+    component: AthleteWorkoutComponent
   }
 ];
 
@@ -40,5 +45,6 @@ export const routingComponents = [
   CoachDashboardComponent,
   AthleteDashboardComponent,
   EditProfileComponent,
-  EditCoachProfileComponent
+  EditCoachProfileComponent,
+  AthleteWorkoutComponent
 ];
