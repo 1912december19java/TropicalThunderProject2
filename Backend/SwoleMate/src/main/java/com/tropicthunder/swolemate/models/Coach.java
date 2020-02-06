@@ -1,4 +1,4 @@
-package com.tropicthunder.models;
+package com.tropicthunder.swolemate.models;
 
 import java.util.List;
 import javax.persistence.Column;
@@ -28,12 +28,12 @@ public class Coach {
   @Column(name = "coach_name")
   private String password;
   
-  @OneToMany(mappedBy = "coach_id", fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "coach_table", fetch = FetchType.EAGER)
   private List<Athlete> athletes;
   
-  @OneToMany(mappedBy = "coach_id", fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "coach_table", fetch = FetchType.EAGER)
   private List<Program> programs;
-  
+
   public Coach() {
     super();
   }

@@ -23,11 +23,13 @@
 
 .login-container .login-btn-submit {
   width: 50%;
-  padding: 0.5em 0;
+  padding: .5em 0;
 }
 
 @media screen and (max-width: 600px) {
+
   .login-container > .login-form {
     width: 100%;
   }
+
 }
