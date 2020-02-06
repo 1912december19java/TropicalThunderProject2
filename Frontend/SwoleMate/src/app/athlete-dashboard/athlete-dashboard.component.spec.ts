@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AthleteDashboardComponent } from './athlete-dashboard.component';
+import { AthleteDashboardComponent } from "./athlete-dashboard.component";
 
-describe('AthleteDashboardComponent', () => {
+describe("AthleteDashboardComponent", () => {
   let component: AthleteDashboardComponent;
   let fixture: ComponentFixture<AthleteDashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AthleteDashboardComponent ]
-    })
-    .compileComponents();
+      declarations: [AthleteDashboardComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('AthleteDashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

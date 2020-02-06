@@ -1,4 +1,5 @@
 export class Exercise {
+<<<<<<< HEAD
     programId?:number;
     sets:number;
     reps:number;
@@ -17,4 +18,18 @@ export class Exercise {
         this.load = load;
         this.day = day;
      }
+=======
+  programId?: number;
+  sets?: number;
+  reps?: number;
+  load?: number;
+  name?: string;
+  day?: number;
+  coachNotes?: string;
+  athleteNotes?: string;
+  exerciseUrl?: string;
+  isComplete?: boolean;
+
+  constructor() {}
+>>>>>>> Development
 }
