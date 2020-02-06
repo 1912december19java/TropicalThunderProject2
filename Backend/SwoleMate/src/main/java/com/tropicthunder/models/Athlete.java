@@ -21,7 +21,7 @@ public class Athlete {
 
 	@OneToOne()
 	@JoinColumn(name = "coach_id")
-	private Integer coach;
+	private Coach coach;
 
 	@Column(name = "athlete_name")
 	private String name;
@@ -40,11 +40,11 @@ public class Athlete {
 		Athlete_id = athlete_id;
 	}
 
-	public Integer getCoach() {
+	public Coach getCoach() {
 		return coach;
 	}
 
-	public void setCoach(Integer coach) {
+	public void setCoach(Coach coach) {
 		this.coach = coach;
 	}
 
@@ -72,7 +72,7 @@ public class Athlete {
 		this.password = password;
 	}
 
-	public Athlete(Integer athlete_id, Integer coach, String name, String email, String password) {
+	public Athlete(Integer athlete_id, Coach coach, String name, String email, String password) {
 		super();
 		Athlete_id = athlete_id;
 		this.coach = coach;
@@ -80,15 +80,9 @@ public class Athlete {
 		this.email = email;
 		this.password = password;
 	}
-
+	
 	public Athlete() {
 		super();
-	}
-
-	@Override
-	public String toString() {
-		return "Athlete [Athlete_id=" + Athlete_id + ", coach=" + coach + ", name=" + name + ", email=" + email
-				+ ", password=" + password + "]";
 	}
 
 }

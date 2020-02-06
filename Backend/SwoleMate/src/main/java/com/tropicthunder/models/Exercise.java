@@ -10,13 +10,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "exercise_table")
 public class Exercise {
 
 	@Id
 	@Column(name = "exercise_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int exercise_id;
 
 	@Column(name = "exercise_sets")
@@ -26,7 +29,7 @@ public class Exercise {
 	private int exercise_reps;
 
 	@Column(name = "exercise_load")
-	private int exercise_load;
+	private String exercise_load;
 
 	@Column(name = "exercise_name")
 	private String exercise_name;
@@ -43,34 +46,17 @@ public class Exercise {
 	@Column(name = "exercise_url")
 	private String exercise_url;
 
-	@Column(name = "is_complete")
+	@Column(name = "exercise_is_complete")
 	private boolean is_complete;
 
 	@OneToOne
 	@JoinColumn(name = "program_id")
-	private int program_id;
+	@JsonIgnoreProperties({"exercises","coach","athlete"})
+	private Program program_id;
 
 	public Exercise() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public Exercise(int exercise_id, int program_id, int exercise_sets, int exercise_reps, int exercise_load,
-			String exercise_name, int exercise_day, String coach_notes, String athlete_notes, String exercise_url,
-			boolean is_complete, List<Program> programs) {
-		super();
-		this.exercise_id = exercise_id;
-
-		this.exercise_sets = exercise_sets;
-		this.exercise_reps = exercise_reps;
-		this.exercise_load = exercise_load;
-		this.exercise_name = exercise_name;
-		this.exercise_day = exercise_day;
-		this.coach_notes = coach_notes;
-		this.athlete_notes = athlete_notes;
-		this.exercise_url = exercise_url;
-		this.is_complete = is_complete;
-		this.program_id = program_id;
 	}
 
 	public int getExercise_id() {
@@ -79,14 +65,6 @@ public class Exercise {
 
 	public void setExercise_id(int exercise_id) {
 		this.exercise_id = exercise_id;
-	}
-
-	public int getProgram_id() {
-		return program_id;
-	}
-
-	public void setProgram_id(int program_id) {
-		this.program_id = program_id;
 	}
 
 	public int getExercise_sets() {
@@ -105,11 +83,11 @@ public class Exercise {
 		this.exercise_reps = exercise_reps;
 	}
 
-	public int getExercise_load() {
+	public String getExercise_load() {
 		return exercise_load;
 	}
 
-	public void setExercise_load(int exercise_load) {
+	public void setExercise_load(String exercise_load) {
 		this.exercise_load = exercise_load;
 	}
 
@@ -161,21 +139,29 @@ public class Exercise {
 		this.is_complete = is_complete;
 	}
 
-	public int getProgram_table() {
+	public Program getProgram_id() {
 		return program_id;
 	}
 
-	public void setProgram_table(Integer program_id) {
+	public void setProgram_id(Program program_id) {
 		this.program_id = program_id;
 	}
 
-	@Override
-	public String toString() {
-		return "Exercise [exercise_id=" + exercise_id + ", program_id=" + program_id + ", exercise_sets="
-				+ exercise_sets + ", exercise_reps=" + exercise_reps + ", exercise_load=" + exercise_load
-				+ ", exercise_name=" + exercise_name + ", exercise_day=" + exercise_day + ", coach_notes=" + coach_notes
-				+ ", athlete_notes=" + athlete_notes + ", exercise_url=" + exercise_url + ", is_complete=" + is_complete
-				+ ", program_id=" + program_id + "]";
+	public Exercise(int exercise_id, int exercise_sets, int exercise_reps, String exercise_load, String exercise_name,
+			int exercise_day, String coach_notes, String athlete_notes, String exercise_url, boolean is_complete,
+			Program program_id) {
+		super();
+		this.exercise_id = exercise_id;
+		this.exercise_sets = exercise_sets;
+		this.exercise_reps = exercise_reps;
+		this.exercise_load = exercise_load;
+		this.exercise_name = exercise_name;
+		this.exercise_day = exercise_day;
+		this.coach_notes = coach_notes;
+		this.athlete_notes = athlete_notes;
+		this.exercise_url = exercise_url;
+		this.is_complete = is_complete;
+		this.program_id = program_id;
 	}
 
 }

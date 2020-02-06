@@ -22,16 +22,16 @@ public class Coach {
 	@Column(name = "coach_name")
 	private String name;
 
-	@Column(name = "coach_name")
+	@Column(name = "coach_email")
 	private String email;
 
-	@Column(name = "coach_name")
+	@Column(name = "coach_password")
 	private String password;
 
-	@OneToMany(mappedBy = "coach_id", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "coach", fetch = FetchType.EAGER)
 	private List<Athlete> athletes;
 
-	@OneToMany(mappedBy = "coach_id", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "coach", fetch = FetchType.EAGER)
 	private List<Program> programs;
 
 	public Coach() {

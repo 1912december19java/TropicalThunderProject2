@@ -50,12 +50,12 @@ public class Program {
 	private List<Exercise> exercises;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "coach_id")
+	@JoinColumn(name = "coach_id", insertable = false, updatable = false)
 	@JsonIgnoreProperties()
 	private Coach coach;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "athlete_id")
+	@JoinColumn(name = "athlete_id", insertable = false, updatable = false)
 	@JsonIgnoreProperties()
 	private Athlete athlete;
 

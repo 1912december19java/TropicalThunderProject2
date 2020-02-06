@@ -3,6 +3,7 @@ package com.tropicthunder.repositories;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,10 @@ public class ExerciseDaoImpl {
 		// Query q = (Query) session.createQuery("from Exercise");
 		// List<Exercise> exercises = ((org.hibernate.Query) q).list();
 
-		Criteria c = session.createCriteria(Exercise.class);
-		@SuppressWarnings("unchecked")
+		//Criteria c = session.createCriteria(Exercise.class);
+		SQLQuery c = session.createSQLQuery("Select * from exercise_table;");
+		System.out.print(c.toString());
+		
 		List<Exercise> exercises = c.list();
 		return exercises;
 	}
@@ -38,9 +41,10 @@ public class ExerciseDaoImpl {
 	public Exercise getById(Integer id) {
 		Session session = sf.getCurrentSession();
 
-		Exercise exercise = (Exercise) session.get(Exercise.class, id);
+		int exercise_id = id;
 		System.out.println("I made it here");
-		System.out.println(exercise);
+		Exercise exercise = (Exercise) session.get(Exercise.class, exercise_id);
+		System.out.println("AHHHHHHHHHHHHHHHHHHH");
 		return exercise;
 	}
 
