@@ -11,12 +11,13 @@ export class UpdateWorkoutService {
 
   constructor(private http: HttpClient) { }
 
-  async getAll() : Promise<Exercise[]> {
+  async getAll(): Promise<Exercise[]> {
     return this.http.get<Exercise[]>(`${this.baseUrl}/exercise`)
-        .toPromise();
+      .toPromise();
   }
 
-  async updateExercise(exercise: Exercise) : Promise<Exercise> {
+  async updateExercise(exercise: Exercise): Promise<Exercise> {
     return this.http.put<Exercise>(`${this.baseUrl}/exercise/${exercise.ExerciseId}`, exercise)
-        .toPromise();
+      .toPromise();
+  }
 }
