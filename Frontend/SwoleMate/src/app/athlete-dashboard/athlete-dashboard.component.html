@@ -11,8 +11,8 @@
       <div class="" id="collapseExample" [ngbCollapse]="!isCollapsed">
         <div class="bg-white card">
           <div class="card-body">
-                <p><a routerLink="edit-profile"> Edit Workout</a>
-                  <p><a routerLink="edit-workout"> Edit Profile</a>
+                <p><a routerLink="edit-workout"> Edit Workout</a>
+                  <p><a routerLink="edit-profile"> Edit Profile</a>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
 <hr>
 
 
-  <h1 class="mx-auto px-3 py-4">Coach Dashboard</h1>
+  <h1 class="mx-auto px-3 py-4">Athlete Dashboard</h1>
   <h5 class="card-text">Search For Coach</h5>
   <table class="stats-bar table table-striped">
     <thead>
@@ -56,6 +56,16 @@
       </tr>
     </thead>
     <tbody>
+      <tr *ngFor="let Athlete of Athlete | async">
+      <th scope="col">{{Athlete.Athlete_id}}</th>
+        <th scope="col">{{Athlete.coach}}</th>
+        <th scope="col">{{Athlete.Name}}</th>
+       <td>
+         <button (click)="denyAthlete(Athlete.id)" class="btn btn-danger">Deny Athlete</button>
+         
+       </td>
+
+      </tr>
     </tbody>
   </table>
 
