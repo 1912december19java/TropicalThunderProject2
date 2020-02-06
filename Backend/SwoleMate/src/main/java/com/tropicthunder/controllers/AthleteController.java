@@ -43,7 +43,7 @@ public class AthleteController {
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable int id) {
 		Athlete athlete = new Athlete();
-		athlete.setAthlete_id(id);
+		athlete.setAthleteId(id);
 		AthleteService.delete(athlete);
 	}
 

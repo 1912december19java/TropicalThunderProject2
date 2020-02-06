@@ -55,7 +55,6 @@ public class CoachController {
 	@PostMapping(path = "/program", consumes = "application/json")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public void createProgram(@RequestBody Program program) {
-		System.out.println(program);
 		coachService.saveOrUpdateProgram(program);
 	}
 
