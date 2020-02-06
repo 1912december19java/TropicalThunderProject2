@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./athlete-workout.component.css"]
 })
 export class AthleteWorkoutComponent implements OnInit {
+  isCollapsed: boolean = true;
   constructor() {}
 
   ngOnInit() {}
