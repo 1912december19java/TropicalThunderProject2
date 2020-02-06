@@ -19,6 +19,7 @@ import { LoginComponent } from "./login/login.component";
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
 import { HomeComponent } from "./home/home.component";
+import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HomeComponent } from "./home/home.component";
     LoginComponent,
     EditProfileComponent,
     AthleteWorkoutComponent,
-    HomeComponent
+    HomeComponent,
+    EditCoachProfileComponent
   ],
   imports: [
     BrowserModule,
