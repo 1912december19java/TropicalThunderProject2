@@ -26,14 +26,8 @@ public class ExerciseDaoImpl {
 
 	public List<Exercise> getAllexercises() {
 		Session session = sf.getCurrentSession();
-
-		// Query q = (Query) session.createQuery("from Exercise");
-		// List<Exercise> exercises = ((org.hibernate.Query) q).list();
-
-		//Criteria c = session.createCriteria(Exercise.class);
-		SQLQuery c = session.createSQLQuery("Select * from exercise_table;");
-		System.out.print(c.toString());
-		
+		SQLQuery c = session.createSQLQuery("Select * from exercise_table;");		
+		@SuppressWarnings("unchecked")
 		List<Exercise> exercises = c.list();
 		return exercises;
 	}

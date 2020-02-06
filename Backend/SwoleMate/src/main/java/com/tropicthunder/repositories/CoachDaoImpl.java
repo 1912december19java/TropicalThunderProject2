@@ -3,6 +3,7 @@ package com.tropicthunder.repositories;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,8 @@ public class CoachDaoImpl {
 
 	public List<Athlete> getAthletes(int id) {
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("from athlete_table where coach_id = " + id);
+//		Query q = session.createQuery("from athlete_table where coach_id = " + id)
+		SQLQuery q = session.createSQLQuery("Select * from athlete_table where coach_id = " + id + ";" );	
 		@SuppressWarnings("unchecked")
 		List<Athlete> athletes = q.list();
 		return athletes;
@@ -58,14 +60,12 @@ public class CoachDaoImpl {
 
 	public void delete(Coach coach) {
 		Session session = sf.getCurrentSession();
-
 		session.delete(coach);
 	}
 
 	public List<Program> getPrograms(int coachId, int athleteId) {
 		Session session = sf.getCurrentSession();
-		Query q = session
-				.createQuery("from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId);
+		SQLQuery q = session.createSQLQuery("Select * from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId + ";" );
 		@SuppressWarnings("unchecked")
 		List<Program> programs = q.list();
 		return programs;

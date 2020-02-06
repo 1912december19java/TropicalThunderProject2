@@ -22,14 +22,19 @@ public class CoachService implements ModelService<Coach> {
 
 	@Override
 	public Coach get(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return coachDaoImpl.getById(id);
 	}
 
 	@Override
 	public void saveOrUpdate(Coach coach) {
 		coachDaoImpl.saveOrUpdate(coach);
 	}
+	
+	@Override
+	public void delete(Coach coach) {
+		coachDaoImpl.delete(coach);
+	}
+
 
 	public List<Athlete> getAthletes(int id) {
 		return coachDaoImpl.getAthletes(id);

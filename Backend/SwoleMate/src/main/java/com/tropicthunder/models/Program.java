@@ -26,11 +26,11 @@ public class Program {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int programId;
 
-	@Column(name = "coach_id")
-	private int coachId;
-
-	@Column(name = "athlete_id")
-	private int athleteId;
+//	@Column(name = "coach_id")
+//	private int coachId;
+//
+//	@Column(name = "athlete_id")
+//	private int athleteId;
 
 	@Column(name = "program_duration")
 	private int programDuration;
@@ -50,12 +50,12 @@ public class Program {
 	private List<Exercise> exercises;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "coach_id", insertable = false, updatable = false)
+	@JoinColumn(name = "coach_id")
 	@JsonIgnoreProperties()
 	private Coach coach;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "athlete_id", insertable = false, updatable = false)
+	@JoinColumn(name = "athlete_id")
 	@JsonIgnoreProperties()
 	private Athlete athlete;
 
@@ -67,21 +67,21 @@ public class Program {
 		this.programId = programId;
 	}
 
-	public int getCoachId() {
-		return coachId;
-	}
-
-	public void setCoachId(int coachId) {
-		this.coachId = coachId;
-	}
-
-	public int getAthleteId() {
-		return athleteId;
-	}
-
-	public void setAthleteId(int athleteId) {
-		this.athleteId = athleteId;
-	}
+//	public int getCoachId() {
+//		return coachId;
+//	}
+//
+//	public void setCoachId(int coachId) {
+//		this.coachId = coachId;
+//	}
+//
+//	public int getAthleteId() {
+//		return athleteId;
+//	}
+//
+//	public void setAthleteId(int athleteId) {
+//		this.athleteId = athleteId;
+//	}
 
 	public List<Exercise> getExercises() {
 		return exercises;
@@ -127,8 +127,8 @@ public class Program {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + athleteId;
-		result = prime * result + coachId;
+//		result = prime * result + athleteId;
+//		result = prime * result + coachId;
 		result = prime * result + ((exercises == null) ? 0 : exercises.hashCode());
 		result = prime * result + (isActive ? 1231 : 1237);
 		result = prime * result + (isComplete ? 1231 : 1237);
@@ -147,10 +147,10 @@ public class Program {
 		if (getClass() != obj.getClass())
 			return false;
 		Program other = (Program) obj;
-		if (athleteId != other.athleteId)
-			return false;
-		if (coachId != other.coachId)
-			return false;
+//		if (athleteId != other.athleteId)
+//			return false;
+//		if (coachId != other.coachId)
+//			return false;
 		if (exercises == null) {
 			if (other.exercises != null)
 				return false;
@@ -171,7 +171,7 @@ public class Program {
 
 	@Override
 	public String toString() {
-		return "Program [programId=" + programId + ", coachId=" + coachId + ", athleteId=" + athleteId + ", exercises="
+		return "Program [programId=" + programId + ",  exercises="
 				+ exercises + ", programDuration=" + programDuration + ", programFrequency=" + programFrequency
 				+ ", isActive=" + isActive + ", isComplete=" + isComplete + "]";
 	}

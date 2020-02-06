@@ -31,8 +31,8 @@ public class CoachController {
 
 	@PostMapping(consumes = "application/json")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public Integer create(@RequestBody Coach coach) {
-		return coachService.save(coach);
+	public void create(@RequestBody Coach coach) {
+		coachService.saveOrUpdate(coach);
 	}
 
 	@GetMapping("/{id}")
