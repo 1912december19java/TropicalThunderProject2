@@ -1,4 +1,5 @@
 export class Exercise {
+  ExerciseId?: number;
   programId?: number;
   sets?: number;
   reps?: number;

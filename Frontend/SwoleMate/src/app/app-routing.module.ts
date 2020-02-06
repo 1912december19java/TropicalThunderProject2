@@ -5,6 +5,8 @@ import { HomeComponent } from "./home/home.component";
 import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.component";
 import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard.component";
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
+import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component"
+import { CoachWorkoutProgramComponent } from "./coach-workout-program/coach-workout-program.component"
 
 const routes: Routes = [
   {
@@ -26,6 +28,18 @@ const routes: Routes = [
   {
     path: "athlete/edit-profile",
     component: EditProfileComponent
+  },
+  {
+    path: "athlete/edit-profile",
+    component: EditProfileComponent
+  },
+  {
+    path: "athlete/workout-page",
+    component: AthleteWorkoutComponent
+  },
+  {
+    path: "coach/workout-program",
+    component: CoachWorkoutProgramComponent
   }
 ];
 
@@ -38,5 +52,7 @@ export class AppRoutingModule {}
 export const routingComponents = [
   CoachDashboardComponent,
   AthleteDashboardComponent,
-  EditProfileComponent
+  EditProfileComponent,
+  AthleteWorkoutComponent,
+  CoachWorkoutProgramComponent,
 ];

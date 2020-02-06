@@ -12,8 +12,6 @@
         <div class="" id="collapseExample" [ngbCollapse]="!isCollapsed">
           <div class="bg-white card">
             <div class="card-body">
-              <p><a routerLink=""> Add Workout</a></p>
-              <p><a routerLink="edit-workout"> Edit Workout</a></p>
               <p><a routerLink="edit-profile"> Edit Profile</a></p>
             </div>
           </div>
@@ -37,10 +35,12 @@
         </ngb-panel>
         <ngb-panel id="static-2" title="Workout">
           <ng-template ngbPanelContent>
-            Push up
+            <p>workout placed here</p>
+            <a routerLink="workout-page"> Edit Workout</a>
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
+
     </div>
   </div>
 </div>

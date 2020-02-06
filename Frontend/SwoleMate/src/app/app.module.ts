@@ -19,6 +19,9 @@ import { LoginComponent } from "./login/login.component";
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
 import { HomeComponent } from "./home/home.component";
+import { CoachWorkoutProgramComponent } from './coach-workout-program/coach-workout-program.component';
+import { UpdateWorkoutService } from './update-workout.service'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,16 +39,18 @@ import { HomeComponent } from "./home/home.component";
     LoginComponent,
     EditProfileComponent,
     AthleteWorkoutComponent,
-    HomeComponent
+    HomeComponent,
+    CoachWorkoutProgramComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [UpdateWorkoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
