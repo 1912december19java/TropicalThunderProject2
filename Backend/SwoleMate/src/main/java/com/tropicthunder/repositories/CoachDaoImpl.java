@@ -69,6 +69,7 @@ public class CoachDaoImpl {
 
 	public void saveOrUpdate(Coach coach) {
 		Session session = sf.getCurrentSession();
+		System.out.println(coach);
 		session.saveOrUpdate(coach);
 	}
 
@@ -93,7 +94,6 @@ public class CoachDaoImpl {
 
 	public void deleteProgram(Program program) {
 		Session session = sf.getCurrentSession();
-
 		session.delete(program);
 	}
 

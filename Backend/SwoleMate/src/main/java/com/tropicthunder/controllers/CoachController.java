@@ -52,9 +52,10 @@ public class CoachController {
 		coachService.delete(coach);
 	}
 
-	@PostMapping("/program/")
+	@PostMapping(path = "/program", consumes = "application/json")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public void createProgram(@RequestBody Program program) {
+		System.out.println(program);
 		coachService.saveOrUpdateProgram(program);
 	}
 
@@ -63,7 +64,7 @@ public class CoachController {
 		return coachService.getPrograms(coachId, athleteId);
 	}
 
-	@PatchMapping("/program/")
+	@PatchMapping("/program")
 	public void updateProgram(@RequestBody Program program) {
 		coachService.saveOrUpdateProgram(program);
 	}
