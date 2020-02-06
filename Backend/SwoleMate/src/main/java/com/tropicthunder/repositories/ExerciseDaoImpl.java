@@ -3,6 +3,7 @@ package com.tropicthunder.repositories;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class ExerciseDaoImpl {
         this.sf = sf;
     }
 
+<<<<<<< HEAD
     public List<Exercise> getAllexercises() {
         Session session = sf.getCurrentSession();
 
@@ -34,14 +36,32 @@ public class ExerciseDaoImpl {
         List<Exercise> exercises = c.list();
         return exercises;
     }
+=======
+	public List<Exercise> getAllexercises() {
+		Session session = sf.getCurrentSession();
+		SQLQuery c = session.createSQLQuery("Select * from exercise_table;");		
+		@SuppressWarnings("unchecked")
+		List<Exercise> exercises = c.list();
+		return exercises;
+	}
+>>>>>>> Development
 
     public Exercise getById(Integer id) {
         Session session = sf.getCurrentSession();
 
+<<<<<<< HEAD
         Exercise exercise = (Exercise) session.get(Exercise.class, id);
 
         return exercise;
     }
+=======
+		int exercise_id = id;
+		System.out.println("I made it here");
+		Exercise exercise = (Exercise) session.get(Exercise.class, exercise_id);
+		System.out.println("AHHHHHHHHHHHHHHHHHHH");
+		return exercise;
+	}
+>>>>>>> Development
 
     public void saveOrUpdate(Exercise exercise) {
         Session session = sf.getCurrentSession();

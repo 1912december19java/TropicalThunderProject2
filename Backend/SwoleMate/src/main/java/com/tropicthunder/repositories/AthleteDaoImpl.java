@@ -2,6 +2,7 @@ package com.tropicthunder.repositories;
 
 import java.util.List;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,27 @@ public class AthleteDaoImpl {
         @SuppressWarnings("unchecked")
         List<Athlete> athlete = c.list();
 
+<<<<<<< HEAD
         return athlete;
     }
+=======
+		return athlete;
+	}
+	
+	public Athlete getByEmail(String email) {
+		Session session = sf.getCurrentSession();
+		
+//		Athlete a = new Athlete();
+		
+		String hql = "FROM Athlete A WHERE A.getEmail() = " + email;
+		
+		Query query = session.createQuery(hql);
+		
+		Athlete athlete = (Athlete) query.list();
+		
+		return athlete;
+	}
+>>>>>>> Development
 
     public Athlete getById(Integer id) {
         Session session = sf.getCurrentSession();
