@@ -36,9 +36,9 @@ public class AthleteDaoImpl {
 	public Athlete getById(Integer id) {
 		Session session = sf.getCurrentSession();
 
-		Athlete genre = (Athlete) session.get(Athlete.class, id);
+		Athlete athlete = (Athlete) session.get(Athlete.class, id);
 
-		return genre;
+		return athlete;
 	}
 
 	public void saveOrUpdate(Athlete athlete) {
