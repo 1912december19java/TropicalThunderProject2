@@ -2,11 +2,14 @@ package com.tropicthunder.services;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.tropicthunder.models.Athlete;
 import com.tropicthunder.models.Coach;
 import com.tropicthunder.models.Program;
 import com.tropicthunder.repositories.CoachDaoImpl;
 
+@Service
 public class CoachService implements ModelService<Coach> {
 
 	@Autowired

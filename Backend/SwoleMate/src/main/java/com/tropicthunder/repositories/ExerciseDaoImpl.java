@@ -39,7 +39,8 @@ public class ExerciseDaoImpl {
 		Session session = sf.getCurrentSession();
 
 		Exercise exercise = (Exercise) session.get(Exercise.class, id);
-
+		System.out.println("I made it here");
+		System.out.println(exercise);
 		return exercise;
 	}
 
