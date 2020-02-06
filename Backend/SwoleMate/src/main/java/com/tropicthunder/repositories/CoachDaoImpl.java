@@ -43,6 +43,20 @@ public class CoachDaoImpl {
 		return coaches;
 	}
 
+	public Coach getByEmail(String email) {
+		Session session = sf.getCurrentSession();
+
+//		Coach c = new Coach();
+
+		String hql = "FROM Coach C WHERE C.getEmail() = " + email;
+
+		Query query = session.createQuery(hql);
+
+		Coach coach = (Coach) query.list();
+
+		return coach;
+	}
+
 	public Coach getById(Integer id) {
 		Session session = sf.getCurrentSession();
 

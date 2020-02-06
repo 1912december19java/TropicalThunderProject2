@@ -11,6 +11,10 @@ public class CoachService implements ModelService<Coach> {
 
 	@Autowired
 	private CoachDaoImpl coachDaoImpl;
+	
+	public Coach getByEmail(String email) {
+		return coachDaoImpl.getByEmail(email);
+	}
 
 	@Override
 	public List<Coach> getAll() {
