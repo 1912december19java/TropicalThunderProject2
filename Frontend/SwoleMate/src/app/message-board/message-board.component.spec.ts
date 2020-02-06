@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { MessageBoardComponent } from './message-board.component';
+import { MessageBoardComponent } from "./message-board.component";
 
-describe('MessageBoardComponent', () => {
+describe("MessageBoardComponent", () => {
   let component: MessageBoardComponent;
   let fixture: ComponentFixture<MessageBoardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MessageBoardComponent ]
-    })
-    .compileComponents();
+      declarations: [MessageBoardComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('MessageBoardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

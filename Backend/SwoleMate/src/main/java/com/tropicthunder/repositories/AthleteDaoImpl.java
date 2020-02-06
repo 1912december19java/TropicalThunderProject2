@@ -1,6 +1,5 @@
 package com.tropicthunder.repositories;
 
-
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -18,56 +17,69 @@ import com.tropicthunder.models.Athlete;
 @EnableTransactionManagement
 public class AthleteDaoImpl {
 
-  @Autowired
-  private SessionFactory sf;
+	@Autowired
+	private SessionFactory sf;
 
-  public AthleteDaoImpl(SessionFactory sf) {
-    this.sf = sf;
-  }
+	public AthleteDaoImpl(SessionFactory sf) {
+		this.sf = sf;
+	}
 
-  public List<Athlete> getAllAthlete() {
-    Session session = sf.getCurrentSession();
+	public List<Athlete> getAllAthlete() {
+		Session session = sf.getCurrentSession();
 
-    Criteria c = session.createCriteria(Athlete.class);
-    List<Athlete> athlete = c.list();
+		Criteria c = session.createCriteria(Athlete.class);
+		@SuppressWarnings("unchecked")
+		List<Athlete> athlete = c.list();
 
-    return athlete;
-  }
+		return athlete;
+	}
+	
+	public Athlete getByEmail(String email) {
+		Session session = sf.getCurrentSession();
+		
+//		Athlete a = new Athlete();
+		
+		String hql = "FROM Athlete A WHERE A.getEmail() = " + email;
+		
+		Query query = session.createQuery(hql);
+		
+		Athlete athlete = (Athlete) query.list();
+		
+		return athlete;
+	}
 
-  public Athlete getById(Integer id) {
-    Session session = sf.getCurrentSession();
+	public Athlete getById(Integer id) {
+		Session session = sf.getCurrentSession();
 
-    Athlete genre = (Athlete) session.get(Athlete.class, id);
+		Athlete genre = (Athlete) session.get(Athlete.class, id);
 
-    return genre;
-  }
+		return genre;
+	}
 
-  public void saveOrUpdate(Athlete athlete) {
-    Session session = sf.getCurrentSession();
+	public void saveOrUpdate(Athlete athlete) {
+		Session session = sf.getCurrentSession();
 
-    session.saveOrUpdate(athlete);
-  }
+		session.saveOrUpdate(athlete);
+	}
 
-  public Integer save(Athlete athlete) {
-    Session session = sf.getCurrentSession();
+	public Integer save(Athlete athlete) {
+		Session session = sf.getCurrentSession();
 
-    Integer id = (Integer) session.save(athlete);
+		Integer id = (Integer) session.save(athlete);
 
-    return id;
-  }
+		return id;
+	}
 
-  public void update(Athlete athlete) {
-    Session session = sf.getCurrentSession();
+	public void update(Athlete athlete) {
+		Session session = sf.getCurrentSession();
 
-    session.update(athlete);
-  }
+		session.update(athlete);
+	}
 
-  public void delete(Athlete athlete) {
-    Session session = sf.getCurrentSession();
+	public void delete(Athlete athlete) {
+		Session session = sf.getCurrentSession();
 
-    session.delete(athlete);
-  }
-
-
+		session.delete(athlete);
+	}
 
 }
