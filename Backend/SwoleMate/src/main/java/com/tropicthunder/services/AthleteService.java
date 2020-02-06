@@ -13,6 +13,10 @@ public class AthleteService implements ModelService<Athlete> {
 
 	@Autowired
 	private AthleteDaoImpl athleteDao;
+	
+	public Athlete getByEmail(String email) {
+		return athleteDao.getByEmail(email);
+	}
 
 	@Override
 	public List<Athlete> getAll() {
