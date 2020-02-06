@@ -1,0 +1,52 @@
+.registration-form-container {
+  background-color: var(--color-minty-rgb);
+  background-image: linear-gradient(rgba(0,0,16,.8), rgba(0,0,16,.8)), url(https://picsum.photos/id/770/1200/800);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: ivory;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.registration-form {
+  width: 50%;
+}
+
+.registration-form .form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.registration-form .form-group * {
+  width: 100%;
+}
+
+.registration-form__radio-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(104,104,120,.32);
+  color: ivory;
+  padding: 2em 1em;
+}
+
+.registration-form__radio-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.registration-form__radio-group-item * {
+  flex: 0 0 16%;
+}
+
+.registration-form__btn-submit {
+  width: 100%;
+}
