@@ -21,30 +21,30 @@ import com.tropicthunder.services.ModelService;
 @CrossOrigin
 public class AthleteController {
 
-	@Autowired
-	private ModelService<Athlete> AthleteService;
+    @Autowired
+    private ModelService<Athlete> AthleteService;
 
-	@PostMapping(consumes = "application/json")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	public Integer create(@RequestBody Athlete athlete) {
-		return AthleteService.save(athlete);
-	}
+    @PostMapping(consumes = "application/json")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public Integer create(@RequestBody Athlete athlete) {
+        return AthleteService.save(athlete);
+    }
 
-	@GetMapping("/{id}")
-	public Athlete get(@PathVariable int id) {
-		return AthleteService.get(id);
-	}
+    @GetMapping("/{id}")
+    public Athlete get(@PathVariable int id) {
+        return AthleteService.get(id);
+    }
 
-	@PatchMapping(consumes = "application/json")
-	public void update(@RequestBody Athlete athlete) {
-		AthleteService.update(athlete);
-	}
+    @PatchMapping(consumes = "application/json")
+    public void update(@RequestBody Athlete athlete) {
+        AthleteService.update(athlete);
+    }
 
-	@DeleteMapping("/{id}")
-	public void delete(@PathVariable int id) {
-		Athlete athlete = new Athlete();
-		athlete.setAthlete_id(id);
-		AthleteService.delete(athlete);
-	}
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id) {
+        Athlete athlete = new Athlete();
+        athlete.setAthlete_id(id);
+        AthleteService.delete(athlete);
+    }
 
 }

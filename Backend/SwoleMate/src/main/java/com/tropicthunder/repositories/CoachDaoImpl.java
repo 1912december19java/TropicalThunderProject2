@@ -18,83 +18,83 @@ import com.tropicthunder.models.Program;
 @EnableTransactionManagement
 public class CoachDaoImpl {
 
-	@Autowired
-	private SessionFactory sf;
+    @Autowired
+    private SessionFactory sf;
 
-	public CoachDaoImpl(SessionFactory sf) {
-		this.sf = sf;
-	}
+    public CoachDaoImpl(SessionFactory sf) {
+        this.sf = sf;
+    }
 
-	public List<Athlete> getAthletes(int id) {
-		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("from athlete_table where coach_id = " + id);
-		@SuppressWarnings("unchecked")
-		List<Athlete> athletes = q.list();
-		return athletes;
-	}
+    public List<Athlete> getAthletes(int id) {
+        Session session = sf.getCurrentSession();
+        Query q = session.createQuery("from athlete_table where coach_id = " + id);
+        @SuppressWarnings("unchecked")
+        List<Athlete> athletes = q.list();
+        return athletes;
+    }
 
-	public List<Coach> getAllCoaches() {
-		Session session = sf.getCurrentSession();
+    public List<Coach> getAllCoaches() {
+        Session session = sf.getCurrentSession();
 
-		Criteria c = session.createCriteria(Coach.class);
-		@SuppressWarnings("unchecked")
-		List<Coach> coaches = c.list();
+        Criteria c = session.createCriteria(Coach.class);
+        @SuppressWarnings("unchecked")
+        List<Coach> coaches = c.list();
 
-		return coaches;
-	}
+        return coaches;
+    }
 
-	public Coach getById(Integer id) {
-		Session session = sf.getCurrentSession();
+    public Coach getById(Integer id) {
+        Session session = sf.getCurrentSession();
 
-		Coach coach = (Coach) session.get(Coach.class, id);
+        Coach coach = (Coach) session.get(Coach.class, id);
 
-		return coach;
-	}
+        return coach;
+    }
 
-	public void saveOrUpdate(Coach coach) {
-		Session session = sf.getCurrentSession();
-		session.saveOrUpdate(coach);
-	}
+    public void saveOrUpdate(Coach coach) {
+        Session session = sf.getCurrentSession();
+        session.saveOrUpdate(coach);
+    }
 
-	public void delete(Coach coach) {
-		Session session = sf.getCurrentSession();
+    public void delete(Coach coach) {
+        Session session = sf.getCurrentSession();
 
-		session.delete(coach);
-	}
+        session.delete(coach);
+    }
 
-	public List<Program> getPrograms(int coachId, int athleteId) {
-		Session session = sf.getCurrentSession();
-		Query q = session
-				.createQuery("from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId);
-		@SuppressWarnings("unchecked")
-		List<Program> programs = q.list();
-		return programs;
-	}
+    public List<Program> getPrograms(int coachId, int athleteId) {
+        Session session = sf.getCurrentSession();
+        Query q = session
+                .createQuery("from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId);
+        @SuppressWarnings("unchecked")
+        List<Program> programs = q.list();
+        return programs;
+    }
 
-	public void saveOrUpdateProgram(Program program) {
-		Session session = sf.getCurrentSession();
+    public void saveOrUpdateProgram(Program program) {
+        Session session = sf.getCurrentSession();
 
-		session.save(program);
-	}
+        session.save(program);
+    }
 
-	public void deleteProgram(Program program) {
-		Session session = sf.getCurrentSession();
+    public void deleteProgram(Program program) {
+        Session session = sf.getCurrentSession();
 
-		session.delete(program);
-	}
+        session.delete(program);
+    }
 
-	public void addAthlete(int coachId, int athleteId) {
-		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("update athlete_table set coach_id = :coachId where athlete_id = :athleteId");
-		q.setParameter("coachId", coachId);
-		q.setParameter("athleteId", athleteId);
-		q.executeUpdate();
-	}
+    public void addAthlete(int coachId, int athleteId) {
+        Session session = sf.getCurrentSession();
+        Query q = session.createQuery("update athlete_table set coach_id = :coachId where athlete_id = :athleteId");
+        q.setParameter("coachId", coachId);
+        q.setParameter("athleteId", athleteId);
+        q.executeUpdate();
+    }
 
-	public void deleteAthlete(int athleteId) {
-		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("update athlete_table set coach_id = null where athlete_id :athleteId");
-		q.setParameter("athleteId", athleteId);
-		q.executeUpdate();
-	}
+    public void deleteAthlete(int athleteId) {
+        Session session = sf.getCurrentSession();
+        Query q = session.createQuery("update athlete_table set coach_id = null where athlete_id :athleteId");
+        q.setParameter("athleteId", athleteId);
+        q.executeUpdate();
+    }
 }

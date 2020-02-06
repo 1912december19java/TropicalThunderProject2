@@ -9,19 +9,19 @@ import com.tropicthunder.repositories.ExerciseDaoImpl;
 @Service
 public class ExerciseService {
 
-	@Autowired
-	private ExerciseDaoImpl exerciseDao;
+    @Autowired
+    private ExerciseDaoImpl exerciseDao;
 
-	public List<Exercise> getAll() {
-		return exerciseDao.getAllexercises();
-	}
+    public List<Exercise> getAll() {
+        return exerciseDao.getAllexercises();
+    }
 
-	public Exercise get(int id) {
-		return exerciseDao.getById(id);
-	}
+    public Exercise get(int id) {
+        return exerciseDao.getById(id);
+    }
 
-	public void saveOrUpdate(Exercise exercise) {
-		exerciseDao.saveOrUpdate(exercise);
-	}
+    public void saveOrUpdate(Exercise exercise) {
+        exerciseDao.saveOrUpdate(exercise);
+    }
 
 }

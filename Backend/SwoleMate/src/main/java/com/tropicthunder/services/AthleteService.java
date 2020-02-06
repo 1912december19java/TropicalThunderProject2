@@ -11,37 +11,37 @@ import com.tropicthunder.repositories.AthleteDaoImpl;
 @Service
 public class AthleteService implements ModelService<Athlete> {
 
-	@Autowired
-	private AthleteDaoImpl athleteDao;
+    @Autowired
+    private AthleteDaoImpl athleteDao;
 
-	@Override
-	public List<Athlete> getAll() {
-		return athleteDao.getAllAthlete();
-	}
+    @Override
+    public List<Athlete> getAll() {
+        return athleteDao.getAllAthlete();
+    }
 
-	@Override
-	public Athlete get(int id) {
-		return athleteDao.getById(id);
-	}
+    @Override
+    public Athlete get(int id) {
+        return athleteDao.getById(id);
+    }
 
-	@Override
-	public void saveOrUpdate(Athlete t) {
-		athleteDao.saveOrUpdate(t);
-	}
+    @Override
+    public void saveOrUpdate(Athlete t) {
+        athleteDao.saveOrUpdate(t);
+    }
 
-	@Override
-	public Integer save(Athlete t) {
-		return athleteDao.save(t);
-	}
+    @Override
+    public Integer save(Athlete t) {
+        return athleteDao.save(t);
+    }
 
-	@Override
-	public void update(Athlete t) {
-		athleteDao.update(t);
-	}
+    @Override
+    public void update(Athlete t) {
+        athleteDao.update(t);
+    }
 
-	@Override
-	public void delete(Athlete t) {
-		athleteDao.delete(t);
-	}
+    @Override
+    public void delete(Athlete t) {
+        athleteDao.delete(t);
+    }
 
 }
