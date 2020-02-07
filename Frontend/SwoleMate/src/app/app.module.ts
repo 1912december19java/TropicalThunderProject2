@@ -35,7 +35,8 @@ import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profi
     EditProfileComponent,
     AthleteWorkoutComponent,
     HomeComponent,
-    EditCoachProfileComponent
+    EditCoachProfileComponent,
+    ExerciseFormComponent
   ],
   imports: [
     BrowserModule,

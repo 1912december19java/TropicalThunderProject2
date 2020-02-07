@@ -54,7 +54,7 @@
 
 <h1 class="mx-auto px-3 py-4">Coach Dashboard</h1>
 <h5 class="card-text">Search For Coach</h5>
-<table class="stats-bar table table-striped">
+<table class="stats-bar table table-striped"(load)="myClickFunction($event)"  >
   <thead>
     <tr>
       <th scope="col">Coach</th>
@@ -62,5 +62,10 @@
       <th scope="col">Duration</th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    <td>
+      
+    </td>
+
+  </tbody>
 </table>
