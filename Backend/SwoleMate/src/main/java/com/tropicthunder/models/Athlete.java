@@ -1,6 +1,5 @@
 package com.tropicthunder.models;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -64,8 +63,6 @@ public class Athlete {
 		this.password = password;
 	}
 
-	
-	
 	public Integer getAthleteId() {
 		return athleteId;
 	}
@@ -85,6 +82,12 @@ public class Athlete {
 
 	public Athlete() {
 		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Athlete [athleteId=" + athleteId + ", coach=" + coach + ", name=" + name + ", email=" + email
+				+ ", password=" + password + "]";
 	}
 
 }

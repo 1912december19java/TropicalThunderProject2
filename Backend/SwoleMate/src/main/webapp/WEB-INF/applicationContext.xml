@@ -12,25 +12,32 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 
-	<!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy>  -->
-	
-	<!-- Scan for Spring beans -->
-	<context:component-scan base-package="com.tropicthunder">
+	<!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
 
-		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	<!-- Scan for Spring beans -->
+	<context:component-scan
+		base-package="com.tropicthunder">
+
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
 	<!-- Hibernate Config Goes Here -->
-	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://swolemate.cqqq5ascbctb.us-east-1.rds.amazonaws.com/swolemate" />
+	<bean name="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="org.postgresql.Driver" />
+		<property name="url"
+			value="jdbc:postgresql://swolemate.cqqq5ascbctb.us-east-1.rds.amazonaws.com/swolemate" />
 		<property name="username" value="postgres" />
 		<property name="password" value="wasspord" />
 	</bean>
 
-	<bean name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	<bean name="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.tropicthunder.models" />
+		<property name="packagesToScan"
+			value="com.tropicthunder.models" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
@@ -38,10 +45,12 @@
 			</props>
 		</property>
 	</bean>
-	
-	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<bean name="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+	<bean name="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 

@@ -23,7 +23,6 @@ public class ExerciseController {
 
 	@GetMapping
 	public List<Exercise> getAll() {
-		System.out.println("here");
 		return exerciseService.getAll();
 	}
 
