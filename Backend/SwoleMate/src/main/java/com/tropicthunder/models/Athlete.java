@@ -17,7 +17,7 @@ public class Athlete {
 	@Id
 	@Column(name = "athlete_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Athlete_id;
+	private Integer athleteId;
 
 	@OneToOne()
 	@JoinColumn(name = "coach_id")
@@ -31,14 +31,6 @@ public class Athlete {
 
 	@Column(name = "athlete_password")
 	private String password;
-
-	public Integer getAthlete_id() {
-		return Athlete_id;
-	}
-
-	public void setAthlete_id(Integer athlete_id) {
-		Athlete_id = athlete_id;
-	}
 
 	public Coach getCoach() {
 		return coach;
@@ -72,15 +64,25 @@ public class Athlete {
 		this.password = password;
 	}
 
-	public Athlete(Integer athlete_id, Coach coach, String name, String email, String password) {
+	
+	
+	public Integer getAthleteId() {
+		return athleteId;
+	}
+
+	public void setAthleteId(Integer athleteId) {
+		this.athleteId = athleteId;
+	}
+
+	public Athlete(Integer athleteId, Coach coach, String name, String email, String password) {
 		super();
-		Athlete_id = athlete_id;
+		this.athleteId = athleteId;
 		this.coach = coach;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 	}
-	
+
 	public Athlete() {
 		super();
 	}

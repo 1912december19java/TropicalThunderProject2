@@ -21,6 +21,7 @@ import com.tropicthunder.services.CoachService;
 @CrossOrigin
 public class LoginController {
 
+
 	@Autowired
 	private AthleteService aService;
 	
@@ -47,6 +48,7 @@ public class LoginController {
 			return matchPassword(emailStrVal, pwStrVal) ? authCoach(emailStrVal).toString() : null;
 		default:
 			return "{ \"message\": \"Email or password invalid\" }";
+
 		}
 
 	}

@@ -62,8 +62,12 @@ public class ExerciseService {
 		return exerciseDao.getById(id);
 	}
 
-	public void saveOrUpdate(Exercise exercise) {
-		exerciseDao.saveOrUpdate(exercise);
+	public void save(Exercise exercise) {
+		exerciseDao.save(exercise);
+	}
+	
+	public void update(Exercise exercise) {
+		exerciseDao.update(exercise);
 	}
 
 }

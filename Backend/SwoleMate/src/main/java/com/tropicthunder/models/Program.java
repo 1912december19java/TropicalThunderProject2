@@ -1,6 +1,8 @@
 package com.tropicthunder.models;
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -44,17 +46,17 @@ public class Program {
 	@Column(name = "program_is_complete")
 	private boolean isComplete;
 
-	@OneToMany(mappedBy = "program_id", fetch = FetchType.EAGER)
-	@JsonIgnoreProperties()
-	@Column(name = "program_exercises")
-	private List<Exercise> exercises;
+//	@OneToMany(mappedBy = "program_id", fetch = FetchType.EAGER)
+//	@JsonIgnoreProperties()
+//	@Column(name = "program_exercises")
+//	private List<Exercise> exercises;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinColumn(name = "coach_id")
 	@JsonIgnoreProperties()
 	private Coach coach;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinColumn(name = "athlete_id")
 	@JsonIgnoreProperties()
 	private Athlete athlete;
@@ -65,30 +67,6 @@ public class Program {
 
 	public void setProgramId(int programId) {
 		this.programId = programId;
-	}
-
-//	public int getCoachId() {
-//		return coachId;
-//	}
-//
-//	public void setCoachId(int coachId) {
-//		this.coachId = coachId;
-//	}
-//
-//	public int getAthleteId() {
-//		return athleteId;
-//	}
-//
-//	public void setAthleteId(int athleteId) {
-//		this.athleteId = athleteId;
-//	}
-
-	public List<Exercise> getExercises() {
-		return exercises;
-	}
-
-	public void setExercises(List<Exercise> exercises) {
-		this.exercises = exercises;
 	}
 
 	public int getProgramDuration() {
@@ -107,73 +85,57 @@ public class Program {
 		this.programFrequency = programFrequency;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 
-	public boolean isComplete() {
+	public boolean getIsComplete() {
 		return isComplete;
 	}
 
-	public void setComplete(boolean isComplete) {
+	public void setIsComplete(boolean isComplete) {
 		this.isComplete = isComplete;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-//		result = prime * result + athleteId;
-//		result = prime * result + coachId;
-		result = prime * result + ((exercises == null) ? 0 : exercises.hashCode());
-		result = prime * result + (isActive ? 1231 : 1237);
-		result = prime * result + (isComplete ? 1231 : 1237);
-		result = prime * result + programDuration;
-		result = prime * result + programFrequency;
-		result = prime * result + programId;
-		return result;
+//	public List<Exercise> getExercises() {
+//		return exercises;
+//	}
+//
+//	public void setExercises(List<Exercise> exercises) {
+//		this.exercises = exercises;
+//	}
+
+	public Coach getCoach() {
+		return coach;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Program other = (Program) obj;
-//		if (athleteId != other.athleteId)
-//			return false;
-//		if (coachId != other.coachId)
-//			return false;
-		if (exercises == null) {
-			if (other.exercises != null)
-				return false;
-		} else if (!exercises.equals(other.exercises))
-			return false;
-		if (isActive != other.isActive)
-			return false;
-		if (isComplete != other.isComplete)
-			return false;
-		if (programDuration != other.programDuration)
-			return false;
-		if (programFrequency != other.programFrequency)
-			return false;
-		if (programId != other.programId)
-			return false;
-		return true;
+	public void setCoach(Coach coach) {
+		this.coach = coach;
 	}
 
-	@Override
-	public String toString() {
-		return "Program [programId=" + programId + ",  exercises="
-				+ exercises + ", programDuration=" + programDuration + ", programFrequency=" + programFrequency
-				+ ", isActive=" + isActive + ", isComplete=" + isComplete + "]";
+	public Athlete getAthlete() {
+		return athlete;
 	}
 
+	public void setAthlete(Athlete athlete) {
+		this.athlete = athlete;
+	}
+
+	public Program(int programId, int programDuration, int programFrequency, boolean isActive, boolean isComplete,
+			List<Exercise> exercises, Coach coach, Athlete athlete) {
+		super();
+		this.programId = programId;
+		this.programDuration = programDuration;
+		this.programFrequency = programFrequency;
+		this.isActive = isActive;
+		this.isComplete = isComplete;
+//		this.exercises = exercises;
+		this.coach = coach;
+		this.athlete = athlete;
+	}
+	
 }
