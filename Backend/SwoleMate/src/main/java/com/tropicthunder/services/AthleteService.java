@@ -15,6 +15,7 @@ public class AthleteService implements ModelService<Athlete> {
 	private AthleteDaoImpl athleteDao;
 	
 	public Athlete getByEmail(String email) {
+		System.out.println("from AthleteService email: " + email);
 		return athleteDao.getByEmail(email);
 	}
 
