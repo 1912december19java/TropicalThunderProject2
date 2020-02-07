@@ -46,7 +46,11 @@ public class AthleteDaoImpl {
 
 		SQLQuery sql = session.createSQLQuery(query);
 		
-		Athlete athlete = (Athlete) sql.list();
+		
+		@SuppressWarnings("unchecked")
+		List<Athlete> athleteList = sql.list();
+		System.out.println(athleteList.toString());
+		Athlete athlete = athleteList.get(0);
 		
 		return athlete;
 	}
