@@ -7,7 +7,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
-
 import { CoachWorkoutComponent } from "./coach-workout/coach-workout.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ExerciseFormComponent } from "./exercise-form/exercise-form.component";
@@ -19,6 +18,7 @@ import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
+import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profile.component';
 
 @NgModule({
   declarations: [
@@ -33,15 +33,17 @@ import { HttpClientModule } from "@angular/common/http";
     LoginComponent,
     EditProfileComponent,
     AthleteWorkoutComponent,
-    HomeComponent
+    HomeComponent,
+    EditCoachProfileComponent,
+    ExerciseFormComponent
   ],
+
   imports: [BrowserModule, 
     FormsModule, 
     AppRoutingModule, 
     ReactiveFormsModule, 
     NgbModule, 
     HttpClientModule],
-
   providers: [],
   bootstrap: [AppComponent]
 })

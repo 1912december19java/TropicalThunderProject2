@@ -1,11 +1,13 @@
-import { NgModule } from "@angular/core";
+import { NgModule, Component } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./home/home.component";
 import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.component";
 import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard.component";
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
-
+import { EditCoachProfileComponent } from "./edit-coach-profile/edit-coach-profile.component";
+import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
+import { ExerciseFormComponent} from "./exercise-form/exercise-form.component"
 const routes: Routes = [
   {
     path: "",
@@ -21,11 +23,19 @@ const routes: Routes = [
   },
   {
     path: "coach/edit-profile",
-    component: EditProfileComponent
+    component: EditCoachProfileComponent
   },
   {
     path: "athlete/edit-profile",
     component: EditProfileComponent
+  },
+  {
+    path: "athlete/workout-page",
+    component: AthleteWorkoutComponent
+  },
+  {
+    path: "coach/workout-page",
+    component: ExerciseFormComponent
   }
 ];
 
@@ -38,5 +48,8 @@ export class AppRoutingModule {}
 export const routingComponents = [
   CoachDashboardComponent,
   AthleteDashboardComponent,
-  EditProfileComponent
+  EditProfileComponent,
+  EditCoachProfileComponent,
+  AthleteWorkoutComponent,
+  ExerciseFormComponent
 ];

@@ -99,16 +99,14 @@ public class CoachDaoImpl {
 
 	public void addAthlete(int coachId, int athleteId) {
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("update athlete_table set coach_id = :coachId where athlete_id = :athleteId");
-		q.setParameter("coachId", coachId);
-		q.setParameter("athleteId", athleteId);
+		Query q = session.createSQLQuery("update athlete_table set coach_id = "+ coachId +" WHERE athlete_id = "+ athleteId + ";");
 		q.executeUpdate();
+	
 	}
 
 	public void deleteAthlete(int athleteId) {
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("update athlete_table set coach_id = null where athlete_id :athleteId");
-		q.setParameter("athleteId", athleteId);
+		Query q = session.createSQLQuery("update athlete_table set coach_id = null where athlete_id =" + athleteId + ";");
 		q.executeUpdate();
 	}
 }

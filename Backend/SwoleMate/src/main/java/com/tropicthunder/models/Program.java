@@ -46,10 +46,10 @@ public class Program {
 	@Column(name = "program_is_complete")
 	private boolean isComplete;
 
-	@OneToMany(mappedBy = "program_id", fetch = FetchType.EAGER)
-	@JsonIgnoreProperties()
-	@Column(name = "program_exercises")
-	private List<Exercise> exercises;
+//	@OneToMany(mappedBy = "program_id", fetch = FetchType.EAGER)
+//	@JsonIgnoreProperties()
+//	@Column(name = "program_exercises")
+//	private List<Exercise> exercises;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinColumn(name = "coach_id")
@@ -85,29 +85,29 @@ public class Program {
 		this.programFrequency = programFrequency;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 
-	public boolean isComplete() {
+	public boolean getIsComplete() {
 		return isComplete;
 	}
 
-	public void setComplete(boolean isComplete) {
+	public void setIsComplete(boolean isComplete) {
 		this.isComplete = isComplete;
 	}
 
-	public List<Exercise> getExercises() {
-		return exercises;
-	}
-
-	public void setExercises(List<Exercise> exercises) {
-		this.exercises = exercises;
-	}
+//	public List<Exercise> getExercises() {
+//		return exercises;
+//	}
+//
+//	public void setExercises(List<Exercise> exercises) {
+//		this.exercises = exercises;
+//	}
 
 	public Coach getCoach() {
 		return coach;
@@ -133,7 +133,7 @@ public class Program {
 		this.programFrequency = programFrequency;
 		this.isActive = isActive;
 		this.isComplete = isComplete;
-		this.exercises = exercises;
+//		this.exercises = exercises;
 		this.coach = coach;
 		this.athlete = athlete;
 	}
