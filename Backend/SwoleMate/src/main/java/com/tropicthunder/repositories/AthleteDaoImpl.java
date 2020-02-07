@@ -3,6 +3,7 @@ package com.tropicthunder.repositories;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,11 +40,13 @@ public class AthleteDaoImpl {
 		
 //		Athlete a = new Athlete();
 		
-		String hql = "FROM Athlete A WHERE A.getEmail() = " + email;
+		//String hql = "FROM Athlete A WHERE A.getEmail() = " + email;
 		
-		Query query = session.createQuery(hql);
+		String query = "SELECT * FROM athlete_table WHERE athlete_email = '" + email + "';";
+
+		SQLQuery sql = session.createSQLQuery(query);
 		
-		Athlete athlete = (Athlete) query.list();
+		Athlete athlete = (Athlete) sql.list();
 		
 		return athlete;
 	}
