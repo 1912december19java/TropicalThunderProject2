@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tropicthunder.models.Athlete;
+import com.tropicthunder.models.Exercise;
 
 @Repository
 @Transactional
@@ -36,23 +37,19 @@ public class AthleteDaoImpl {
 	}
 	
 	public Athlete getByEmail(String email) {
+		
 		Session session = sf.getCurrentSession();
 		
-//		Athlete a = new Athlete();
+		String hql = "FROM Athlete A WHERE A.email = :email";
 		
-		//String hql = "FROM Athlete A WHERE A.getEmail() = " + email;
+		Query query = session.createQuery(hql);
+		query.setString("email", email);
+		System.out.println(query.list().get(0));
 		
-		String query = "SELECT * FROM athlete_table WHERE athlete_email = '" + email + "';";
-
-		SQLQuery sql = session.createSQLQuery(query);
-		
-		
-		@SuppressWarnings("unchecked")
-		List<Athlete> athleteList = sql.list();
-		System.out.println(athleteList.toString());
-		Athlete athlete = athleteList.get(0);
-		
+		Athlete athlete = (Athlete) query.list().get(0);
+		System.out.println(athlete.getName());
 		return athlete;
+		
 	}
 
 	public Athlete getById(Integer id) {
