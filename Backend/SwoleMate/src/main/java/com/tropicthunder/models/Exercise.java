@@ -16,148 +16,157 @@ public class Exercise {
 
 	@Id
 	@Column(name = "exercise_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int exercise_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer exerciseId;
 
 	@Column(name = "exercise_sets")
-	private int exercise_sets;
+	private Integer exerciseSets;
 
 	@Column(name = "exercise_reps")
-	private int exercise_reps;
+	private Integer exerciseReps;
 
 	@Column(name = "exercise_load")
-	private String exercise_load;
+	private String exerciseLoad;
 
 	@Column(name = "exercise_name")
-	private String exercise_name;
+	private String exerciseName;
 
 	@Column(name = "exercise_day")
-	private int exercise_day;
+	private Integer exerciseDay;
 
 	@Column(name = "coach_notes")
-	private String coach_notes;
+	private String coachNotes;
 
 	@Column(name = "athlete_notes")
-	private String athlete_notes;
+	private String athleteNotes;
 
 	@Column(name = "exercise_url")
-	private String exercise_url;
+	private String exerciseUrl;
 
 	@Column(name = "exercise_is_complete")
-	private boolean is_complete;
+	private boolean isComplete;
 
 	@OneToOne
 	@JoinColumn(name = "program_id")
 	@JsonIgnoreProperties({"exercises","coach","athlete"})
-	private Program program_id;
+	private Program program;
+
+	public Integer getExerciseId() {
+		return exerciseId;
+	}
+
+	public void setExerciseId(Integer exerciseId) {
+		this.exerciseId = exerciseId;
+	}
+
+	public Integer getExerciseSets() {
+		return exerciseSets;
+	}
+
+	public void setExerciseSets(Integer exerciseSets) {
+		this.exerciseSets = exerciseSets;
+	}
+
+	public Integer getExerciseReps() {
+		return exerciseReps;
+	}
+
+	public void setExerciseReps(Integer exerciseReps) {
+		this.exerciseReps = exerciseReps;
+	}
+
+	public String getExerciseLoad() {
+		return exerciseLoad;
+	}
+
+	public void setExerciseLoad(String exerciseLoad) {
+		this.exerciseLoad = exerciseLoad;
+	}
+
+	public String getExerciseName() {
+		return exerciseName;
+	}
+
+	public void setExerciseName(String exerciseName) {
+		this.exerciseName = exerciseName;
+	}
+
+	public Integer getExerciseDay() {
+		return exerciseDay;
+	}
+
+	public void setExerciseDay(Integer exerciseDay) {
+		this.exerciseDay = exerciseDay;
+	}
+
+	public String getCoachNotes() {
+		return coachNotes;
+	}
+
+	public void setCoachNotes(String coachNotes) {
+		this.coachNotes = coachNotes;
+	}
+
+	public String getAthleteNotes() {
+		return athleteNotes;
+	}
+
+	public void setAthleteNotes(String athleteNotes) {
+		this.athleteNotes = athleteNotes;
+	}
+
+	public String getExerciseUrl() {
+		return exerciseUrl;
+	}
+
+	public void setExerciseUrl(String exerciseUrl) {
+		this.exerciseUrl = exerciseUrl;
+	}
+
+	public boolean getIsComplete(boolean isComplete) {
+		return isComplete;
+	}
+
+	public void setIsComplete(boolean isComplete) {
+		this.isComplete = isComplete;
+	}
+
+	public Program getProgram() {
+		return program;
+	}
+
+	public void setProgram(Program program) {
+		this.program = program;
+	}
+
+	public Exercise(Integer exerciseId, Integer exerciseSets, Integer exerciseReps, String exerciseLoad,
+			String exerciseName, Integer exerciseDay, String coachNotes, String athleteNotes, String exerciseUrl,
+			boolean isComplete, Program program) {
+		super();
+		this.exerciseId = exerciseId;
+		this.exerciseSets = exerciseSets;
+		this.exerciseReps = exerciseReps;
+		this.exerciseLoad = exerciseLoad;
+		this.exerciseName = exerciseName;
+		this.exerciseDay = exerciseDay;
+		this.coachNotes = coachNotes;
+		this.athleteNotes = athleteNotes;
+		this.exerciseUrl = exerciseUrl;
+		this.isComplete = isComplete;
+		this.program = program;
+	}
 
 	public Exercise() {
 		super();
 	}
 
-	public int getExercise_id() {
-		return exercise_id;
+	@Override
+	public String toString() {
+		return "Exercise [exerciseId=" + exerciseId + ", exerciseSets=" + exerciseSets + ", exerciseReps="
+				+ exerciseReps + ", exerciseLoad=" + exerciseLoad + ", exerciseName=" + exerciseName + ", exerciseDay="
+				+ exerciseDay + ", coachNotes=" + coachNotes + ", athleteNotes=" + athleteNotes + ", exerciseUrl="
+				+ exerciseUrl + ", isComplete=" + isComplete + ", program=" + program + "]";
 	}
-
-	public void setExercise_id(int exercise_id) {
-		this.exercise_id = exercise_id;
-	}
-
-	public int getExercise_sets() {
-		return exercise_sets;
-	}
-
-	public void setExercise_sets(int exercise_sets) {
-		this.exercise_sets = exercise_sets;
-	}
-
-	public int getExercise_reps() {
-		return exercise_reps;
-	}
-
-	public void setExercise_reps(int exercise_reps) {
-		this.exercise_reps = exercise_reps;
-	}
-
-	public String getExercise_load() {
-		return exercise_load;
-	}
-
-	public void setExercise_load(String exercise_load) {
-		this.exercise_load = exercise_load;
-	}
-
-	public String getExercise_name() {
-		return exercise_name;
-	}
-
-	public void setExercise_name(String exercise_name) {
-		this.exercise_name = exercise_name;
-	}
-
-	public int getExercise_day() {
-		return exercise_day;
-	}
-
-	public void setExercise_day(int exercise_day) {
-		this.exercise_day = exercise_day;
-	}
-
-	public String getCoach_notes() {
-		return coach_notes;
-	}
-
-	public void setCoach_notes(String coach_notes) {
-		this.coach_notes = coach_notes;
-	}
-
-	public String getAthlete_notes() {
-		return athlete_notes;
-	}
-
-	public void setAthlete_notes(String athlete_notes) {
-		this.athlete_notes = athlete_notes;
-	}
-
-	public String getExercise_url() {
-		return exercise_url;
-	}
-
-	public void setExercise_url(String exercise_url) {
-		this.exercise_url = exercise_url;
-	}
-
-	public boolean isIs_complete() {
-		return is_complete;
-	}
-
-	public void setIs_complete(boolean is_complete) {
-		this.is_complete = is_complete;
-	}
-
-	public Program getProgram_id() {
-		return program_id;
-	}
-
-	public void setProgram_id(Program program_id) {
-		this.program_id = program_id;
-	}
-
-	public Exercise(int exercise_id, int exercise_sets, int exercise_reps, String exercise_load, String exercise_name,
-			int exercise_day, String coach_notes, String athlete_notes, String exercise_url, boolean is_complete,
-			Program program_id) {
-		super();
-		this.exercise_id = exercise_id;
-		this.exercise_sets = exercise_sets;
-		this.exercise_reps = exercise_reps;
-		this.exercise_load = exercise_load;
-		this.exercise_name = exercise_name;
-		this.exercise_day = exercise_day;
-		this.coach_notes = coach_notes;
-		this.athlete_notes = athlete_notes;
-		this.exercise_url = exercise_url;
-		this.is_complete = is_complete;
-		this.program_id = program_id;
-	}
-
+	
+	
 }

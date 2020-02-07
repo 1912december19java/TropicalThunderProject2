@@ -39,12 +39,4 @@ public class AthleteController {
 	public void update(@RequestBody Athlete athlete) {
 		AthleteService.update(athlete);
 	}
-
-	@DeleteMapping("/{id}")
-	public void delete(@PathVariable int id) {
-		Athlete athlete = new Athlete();
-		athlete.setAthlete_id(id);
-		AthleteService.delete(athlete);
-	}
-
 }

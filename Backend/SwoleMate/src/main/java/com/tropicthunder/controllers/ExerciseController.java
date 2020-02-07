@@ -32,17 +32,16 @@ public class ExerciseController {
 		return exerciseService.get(id);
 	}
 
-	// This endpoint accepts POST only if they're also sending JSON
+
 	@PostMapping(consumes = "application/json")
-	public Exercise create(Exercise exercise) {
-		exerciseService.saveOrUpdate(exercise);
+	public Exercise create(@RequestBody Exercise exercise) {
+		exerciseService.save(exercise);
 		return exercise;
 	}
 
-	@PutMapping(value = "/{id}", consumes = "application/json")
-	public Exercise replace(@RequestBody Exercise exercise, @PathVariable int id) {
-		exercise.setExercise_id(id);
-		exerciseService.saveOrUpdate(exercise);
+	@PutMapping(consumes = "application/json")
+	public Exercise update(@RequestBody Exercise exercise) {
+		exerciseService.update(exercise);
 		return exercise;
 	}
 }

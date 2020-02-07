@@ -80,7 +80,7 @@ public class AthleteDaoImpl {
 	public void update(Athlete athlete) {
 		Session session = sf.getCurrentSession();
 
-		session.update(athlete);
+		session.saveOrUpdate(athlete);
 	}
 
 	public void delete(Athlete athlete) {
