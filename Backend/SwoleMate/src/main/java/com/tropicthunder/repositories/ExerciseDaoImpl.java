@@ -39,10 +39,15 @@ public class ExerciseDaoImpl {
 		return exercise;
 	}
 
-	public void saveOrUpdate(Exercise exercise) {
+	public void save(Exercise exercise) {
 		Session session = sf.getCurrentSession();
-		System.out.println(exercise.toString());
-		System.out.println("^^^This one officer");
+		exercise.setIsComplete(false);
+		session.saveOrUpdate(exercise);
+	}
+	
+	public void update(Exercise exercise) {
+		Session session = sf.getCurrentSession();
+		exercise.setIsComplete(true);
 		session.saveOrUpdate(exercise);
 	}
 

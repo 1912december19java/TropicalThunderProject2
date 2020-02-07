@@ -18,6 +18,7 @@ public class LoginController {
 
 	@PostMapping(consumes = "application/json", produces = "application/json")
 	public String authenticateAthlete(@RequestBody Athlete athlete) {
+		System.out.println(athlete.getEmail());
 		String userInfo[] = userFactory.getUserInfo("Athlete", athlete.getEmail());
 		System.out.println(userInfo + " USERINFO from [LoginController.java]");
 		Boolean hasUserInfo = userInfo.length > 0;
