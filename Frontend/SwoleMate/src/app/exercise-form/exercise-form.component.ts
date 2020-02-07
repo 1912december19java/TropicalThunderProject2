@@ -1,16 +1,10 @@
-<<<<<<< HEAD
+
 import { Component, OnInit } from '@angular/core';
 import { Exercise } from '../exercise';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
-=======
-import { Component, OnInit } from "@angular/core";
-import { Exercise } from "../exercise";
-import { FormBuilder } from "@angular/forms";
-import { Validators } from "@angular/forms";
-import { FormArray } from "@angular/forms";
->>>>>>> Development
+
 import { FormControl } from "@angular/forms";
 import { Program } from '../program';
 import { CoachServiceService } from '../coach.service';
@@ -23,9 +17,6 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./exercise-form.component.css"]
 })
 export class ExerciseFormComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
-
-<<<<<<< HEAD
   constructor(private fb: FormBuilder, private coachService: CoachServiceService) { }
 
   ngOnInit() {
@@ -55,7 +46,6 @@ export class ExerciseFormComponent implements OnInit {
     })
   });
 
-
   workoutForm2 = this.fb.group({
     exercise1: this.fb.group({
       name: [''],
@@ -79,7 +69,6 @@ export class ExerciseFormComponent implements OnInit {
       coachNotes: ['']
     })
   });
-
 
   workoutForm3 = this.fb.group({
     exercise1: this.fb.group({
@@ -105,7 +94,6 @@ export class ExerciseFormComponent implements OnInit {
     })
   });
 
-
   workoutForm4 = this.fb.group({
     exercise1: this.fb.group({
       name: [''],
@@ -129,7 +117,6 @@ export class ExerciseFormComponent implements OnInit {
       coachNotes: ['']
     })
   });
-
 
   workoutForm5 = this.fb.group({
     exercise1: this.fb.group({
@@ -165,40 +152,23 @@ export class ExerciseFormComponent implements OnInit {
          workouts[i].value.exercise1.sets,
          workouts[i].value.exercise1.reps,
          workouts[i].value.exercise1.load,
-         workouts[i].value.exercise1.coachNotes));
+         workouts[i].value.exercise1.coachNotes,
+         i+1));
 
          program.programExercises.push(new Exercise (workouts[i].value.exercise2.name,
           workouts[i].value.exercise2.sets,
           workouts[i].value.exercise2.reps,
           workouts[i].value.exercise2.load,
-          workouts[i].value.exercise2.coachNotes));
+          workouts[i].value.exercise2.coachNotes,
+          i+1));
 
           program.programExercises.push(new Exercise (workouts[i].value.exercise3.name,
             workouts[i].value.exercise3.sets,
             workouts[i].value.exercise3.reps,
             workouts[i].value.exercise3.load,
-            workouts[i].value.exercise3.coachNotes));
+            workouts[i].value.exercise3.coachNotes,
+            i+1));
     }
     this.coachService.createProgram(program);
-
-
-=======
-  ngOnInit() {}
-
-  i: number = 0;
-  workoutForm = this.fb.group({ exercises: this.fb.array([]) });
-
-  get exercises() {
-    return this.workoutForm.get("exercises") as FormArray;
   }
-
-  addExercise() {
-    this.exercises.push(this.fb.control(""));
-  }
-
-  removeExercise() {
-    this.exercises.removeAt(this.exercises.length - 1);
->>>>>>> Development
-  }
-
 }

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 <h1>Program</h1>
-<p>
-    {{workoutForm1.value.exercise1 | json}}
-</p>
 <form [formGroup]="workoutForm1" class="jumbotron">
     <h6>DAY 1</h6>
     <div>
@@ -384,34 +381,3 @@
 </form>
 
 <button (click)="uploadProgram()">Upload Program!</button>
-=======
-<form [formGroup]="workoutForm" class="jumbotron-fluid">
-  <h6>DAY</h6>
-  <div formArrayName="exercises">
-    <button type="button" (click)="addExercise()">Add Exercise</button>
-    <button type="button" (click)="removeExercise()">Remove Exercise</button>
-    <div *ngFor="let exercise of exercises.controls; let i = index">
-      <label>
-        exercise name:
-        <input type="text" [formControlName]="i" />
-      </label>
-      <label>
-        sets:
-        <input type="text" [formControlName]="i" />
-      </label>
-      <label>
-        reps:
-        <input type="text" [formControlName]="i" />
-      </label>
-      <label>
-        load:
-        <input type="text" [formControlName]="i" />
-      </label>
-      <label>
-        notes:
-        <textarea type="text" [formControlName]="i"></textarea>
-      </label>
-    </div>
-  </div>
-</form>
->>>>>>> Development
