@@ -21,6 +21,4 @@ export class Exercise {
     this.day = day;
   }
 
-  constructor() {}
-
 }
