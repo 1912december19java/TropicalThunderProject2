@@ -25,33 +25,31 @@ public class LoginController {
 
 	@GetMapping
 	public String getItem(@RequestParam String user, @RequestParam String email, @RequestParam String password) {
+		String returnString = "{}";
 		switch (user) {
 		case "Athlete":
-			System.out.println("[LoginController] : this.matchPassword(email, password) : " + this.matchPassword(email, password));
-			return this.matchPassword(email, password) 
-					? this.getAthlete(email).toString()
+			returnString = "{ \"isLoggedIn\": true, \"path\": \"/athlete\", \"message\": \"Login successful\" }";
+			return this.authAthlete(email, password) 
+					? returnString
 					: "{ \"message\": \"Email or password invalid\" }";
 		case "Coach":
-			return this.matchPassword(email, password) 
-					? this.getCoach(email).toString()
+			returnString = "{ \"isLoggedIn\": true, \"path\": \"/coach\", \"message\": \"Login successful\" }";
+			return this.authCoach(email, password) 
+					? returnString
 					: "{ \"message\": \"Email or password invalid\" }";
 		default:
 			return "{ \"message\": \"Something went wrong while fetching data\" }";
 		}
 	}
 
-	private Athlete getAthlete(String email) {
-		return athleteService.getByEmail(email);
-	}
-
-	private Coach getCoach(String email) {
-		return coachService.getByEmail(email);
-	}
-
-	private Boolean matchPassword(String email, String paramPassword) {
+	private Boolean authAthlete(String email, String paramPassword) {
 		Athlete athlete = athleteService.getByEmail(email);
-		System.out.println("[LoginController] : athlete.getPassword() : " + athlete.getPassword() + " : paramPassword : " + paramPassword);
 		return athlete.getPassword().equalsIgnoreCase(paramPassword);
+	}
+
+	private Boolean authCoach(String email, String paramPassword) {
+		Coach coach= coachService.getByEmail(email);
+		return coach.getPassword().equalsIgnoreCase(paramPassword);
 	}
 
 }

@@ -28,7 +28,6 @@ public class CoachDaoImpl {
 
 	public List<Athlete> getAthletes(int id) {
 		Session session = sf.getCurrentSession();
-//		Query q = session.createQuery("from athlete_table where coach_id = " + id)
 		SQLQuery q = session.createSQLQuery("Select * from athlete_table where coach_id = " + id + ";" );	
 		@SuppressWarnings("unchecked")
 		List<Athlete> athletes = q.list();
@@ -48,14 +47,13 @@ public class CoachDaoImpl {
 	public Coach getByEmail(String email) {
 		Session session = sf.getCurrentSession();
 
-//		Coach c = new Coach();
-
-		String hql = "FROM Coach C WHERE C.getEmail() = " + email;
+		String hql = "FROM Coach C WHERE C.email = :email";
 
 		Query query = session.createQuery(hql);
-
-		Coach coach = (Coach) query.list();
-
+		query.setString("email", email);
+		
+		Coach coach = (Coach) query.list().get(0);
+		
 		return coach;
 	}
 
