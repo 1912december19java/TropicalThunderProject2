@@ -22,10 +22,10 @@ import com.tropicthunder.services.CoachService;
 public class LoginController {
 
 	@Autowired
-	private static AthleteService athleteService;
+	private AthleteService aService;
 	
 	@Autowired
-	private static CoachService coachService;
+	private  CoachService cService;
 
 	@GetMapping("{user}&{email}&{password}")
 	public String getItem(@PathVariable String user, @PathVariable String email, @PathVariable String password) {
@@ -36,8 +36,9 @@ public class LoginController {
 		String[] emailStrPair = email.split("=");
 		String emailStrVal = emailStrPair[1];
 		
+	
 		System.out.println("[pwStrVal : emailStrVal] :: " + pwStrVal + " : " + emailStrVal);
-
+//		return athleteService.get(1).getName();
 		switch (user.split("=")[1]) {
 		case "Athlete":
 //			System.out.println(authAthlete(emailStrVal).getName());
@@ -50,22 +51,23 @@ public class LoginController {
 
 	}
 
-	private static Athlete authAthlete(String email) {
+	private Athlete authAthlete(String email) {
 		System.out.println("[authAthlete()]" + " :email: " + email);
-		return athleteService.getByEmail(email);
+		
+		return aService.getByEmail(email);
 
 	}
 
-	private static Coach authCoach(String email) {
+	private Coach authCoach(String email) {
 
-		return coachService.getByEmail(email);
+		return cService.getByEmail(email);
 
 	}
 
-	private static Boolean matchPassword(String email, String paramPassword) {
+	private Boolean matchPassword(String email, String paramPassword) {
 		System.out.println(email + " " + paramPassword);
-//		Athlete at = athleteService.getByEmail(email);
-		Athlete at = athleteService.get(1);
+		Athlete at = aService.getByEmail(email);
+//		Athlete at = aService.get(1);
 		System.out.println(at);
 		return at.getPassword() == paramPassword;
 	}
