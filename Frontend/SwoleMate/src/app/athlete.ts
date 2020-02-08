@@ -1,11 +1,10 @@
+import { Coach } from './coach';
+
 export class Athlete {
-    athleteId?:number;
-    coachId?:number;
-    name?:string;
-    email?:string;
-    password?:string;
-
-    constructor(){
-
-    }
+   
+        athleteId?:number;
+        coach?: Coach;
+        name?:string;
+        email?:string;
+        password?:string;
 }

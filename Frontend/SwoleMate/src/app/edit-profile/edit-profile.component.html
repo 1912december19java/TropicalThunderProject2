@@ -1,52 +1,48 @@
 <div class="container">
   <h1>Edit Profile</h1>
-  <hr />
-  <div class="row">
-    <div class="col-md-3">
-      <div class="text-center">
-        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar" />
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="form-control" name="editPhoto" />
+  <div [hidden]="submitted">
+<div class="container">
+    <h1>Edit Profile</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.name" name="name"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
       </div>
-    </div>
-    <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-      <h3>Personal info</h3>
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <label class="col-lg-3 control-label">First name:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text" name="editFirstName" />
-          </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email"
+               required
+               [(ngModel)]="model.Email" name="email"
+               #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"
+             class="alert alert-danger">
+          Email is required
         </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Last name:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text" name="editLastName" />
-          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password"
+               required
+               [(ngModel)]="model.Password" name="password"
+               #password="ngModel">
+        <div [hidden]="password.valid || password.pristine"
+             class="alert alert-danger">
+          Password is required
         </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Email:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text" name="editEmail" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Password:</label>
-          <div class="col-md-8">
-            <input class="form-control" type="password" name="editPassword" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label"></label>
-          <div class="col-md-8">
-            <input type="button" class="btn btn-primary" value="Save Changes" />
-            <span></span>
-            <input type="reset" class="btn btn-default" value="Cancel" />
-          </div>
-        </div>
-      </form>
-    </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+    </form>
   </div>
 </div>
-<hr />
+<div [hidden]="!submitted">
+  <h2>Profile Updated Successfully</h2>
+  <button type="nav" class="btn btn-success" routerLink="/athlete">Go Back</button>

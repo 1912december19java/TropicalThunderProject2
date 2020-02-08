@@ -1,13 +1,15 @@
 .bg-spot {
   margin-top: 6%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
+  margin-left: 34%;
 }
 
-.bg-sidenav {
-  margin-top: 5%;
-}
+.image--cover {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+ 
 
-.stats-bar {
-  margin-top: 0%;
-  margin-bottom: 20%;
+  object-fit: cover;
+  object-position: center right;
 }

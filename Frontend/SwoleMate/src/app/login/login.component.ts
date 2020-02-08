@@ -1,6 +1,9 @@
+
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { LoginService } from '../login.service';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { User } from '../user';
+import { UserService } from '../user.service';
 
 interface Data {
   isLoggedIn: Boolean;
@@ -56,4 +59,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onSubmit() {
+    console.log(this.user);
+    this.userService.attemptLogIn(this.user.email, this.user.password, this.isCoach);
+    this.user = new User('','');
+    }
 }
