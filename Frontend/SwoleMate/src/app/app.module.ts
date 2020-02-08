@@ -38,11 +38,11 @@ import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profi
     ExerciseFormComponent
   ],
 
-  imports: [BrowserModule, 
-    FormsModule, 
-    AppRoutingModule, 
-    ReactiveFormsModule, 
-    NgbModule, 
+  imports: [BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgbModule,
     HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
