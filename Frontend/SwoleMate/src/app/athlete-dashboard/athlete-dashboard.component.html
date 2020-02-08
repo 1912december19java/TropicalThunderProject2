@@ -1,71 +1,36 @@
 <div class="container">
-  <div class="row">
-    <div class="col-2 bg-sidenav">
-      <nav class="navbar-vertical show">
-        <p>
-          <button
-            type="button"
-            class="btn btn-outline-primary"
-            (click)="isCollapsed = !isCollapsed"
-            [attr.aria-expanded]="!isCollapsed"
-            aria-controls="collapseExample"
-          >
-            +
-          </button>
-        </p>
-        <div class="" id="collapseExample" [ngbCollapse]="!isCollapsed">
-          <div class="bg-white card">
-            <div class="card-body">
-              <p><a routerLink="edit-profile"> Edit Profile</a></p>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <div class="col-4 bg-spot border-dark " style="width: 20rem;">
-      <img
-        class="card-img-top"
-        src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        alt="Card image cap"
-      />
-    </div>
-    <div class="col-5 bg-spot border-dark">
-      <h5 class="card-title" id="userName">Ben Jobs</h5>
-      <h3 class="card-text">Athlete Account</h3>
 
-      <ngb-accordion [closeOthers]="true" activeIds="static-1">
-        <ngb-panel id="static-1" title="Current Coach">
-          <ng-template ngbPanelContent>
-            Steve Gains
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel id="static-2" title="Workout">
-          <ng-template ngbPanelContent>
-            Push up
-            <p><a routerLink="workout-page"> Workout</a></p>
+  <div class="col-5 bg-spot border-dark " style="width: 20rem;">
+    <img class="image--cover card-img-top align-content-center"
+      src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+      alt="Card image cap" />
+    <h2 class="card-title" id="userName">{{athlete.name}}</h2>
+    <h5 class="card-text">Athlete Account</h5>
+  </div>
 
-          </ng-template>
-        </ngb-panel>
-      </ngb-accordion>
-    </div>
+  <div class="col-12">
+    <ngb-accordion [closeOthers]="true" activeIds="static-1">
+      <ngb-panel id="static-1" title="Current Coach">
+        <ng-template ngbPanelContent>
+          Name: {{athlete.coach.name}}
+          <hr>
+          Email: {{athlete.coach.email}}
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="static-2" title="Workout">
+        <ng-template ngbPanelContent>
+          <p><a routerLink="workout-page"> Workout</a></p>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="static-3" title="Profile">
+        <ng-template ngbPanelContent>
+          Name: {{athlete.name}}
+          <hr>
+          Email: {{athlete.email}}
+          <hr>
+          <p><a routerLink="edit-profile"> Edit Profile</a></p>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
   </div>
 </div>
-<hr />
-
-<h1 class="mx-auto px-3 py-4">Coach Dashboard</h1>
-<h5 class="card-text">Search For Coach</h5>
-<table class="stats-bar table table-striped"(load)="myClickFunction($event)"  >
-  <thead>
-    <tr>
-      <th scope="col">Coach</th>
-      <th scope="col">Workout Program</th>
-      <th scope="col">Duration</th>
-    </tr>
-  </thead>
-  <tbody>
-    <td>
-      
-    </td>
-
-  </tbody>
-</table>

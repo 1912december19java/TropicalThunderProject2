@@ -1,11 +1,10 @@
-export class Athlete {
-    athleteId?:number;
-    coachId?:number;
-    name?:string;
-    email?:string;
-    password?:string;
+import { Coach } from './coach';
 
-    constructor(){
-
-    }
+export interface Athlete {
+   
+        athleteId?:number;
+        coach?: Coach;
+        name?:string;
+        email?:string;
+        password?:string;
 }
