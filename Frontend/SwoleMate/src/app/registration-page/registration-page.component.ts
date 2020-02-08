@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { User } from "../user";
+import { UserService } from '../user.service';
 
 @Component({
   selector: "app-registration-page",
@@ -7,11 +8,15 @@ import { User } from "../user";
   styleUrls: ["./registration-page.component.css"]
 })
 export class RegistrationPageComponent implements OnInit {
-  constructor() {}
+  constructor(public userService:UserService) {}
 
-  user = new User();
+
+  user = new User('','',);
+
 
   ngOnInit() {}
 
-  onSubmit() {}
+  onSubmit() {
+    this.userService.register(this.user);
+  }
 }

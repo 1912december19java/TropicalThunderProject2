@@ -3,6 +3,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AthleteService } from "../athlete.service";
 import { Coach } from '../coach';
 import { Exercise} from '../exercise'
+
 @Component({
   selector: "app-athlete-dashboard",
   templateUrl: "./athlete-dashboard.component.html",

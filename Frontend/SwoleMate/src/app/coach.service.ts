@@ -14,8 +14,8 @@ import { Program } from './program';
 export class CoachServiceService {
 
   constructor(private http: HttpClient) { }
-  //baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/coach';
-  baseUrl = 'http://localhost:4200/SwoleMate/coach';
+  baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/coach';
+  //baseUrl = 'http://localhost:4200/SwoleMate/coach';
 
   async getAthletes(coach: Coach):Promise<Athlete[]>{
     return this.http.get<Athlete[]>(`${this.baseUrl}/${coach.id}/athletes`)

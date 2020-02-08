@@ -3,20 +3,18 @@
   <form id="loginForm" class="login-form">
     <div class="form-group">
       <label for="loginInputEmail">Email address</label>
-      <input type="email" class="form-control" id="loginInputEmail" />
+      <input type="email" class="form-control" [(ngModel)]="user.email" name="userEmail" />
     </div>
     <div class="form-group">
       <label for="loginInputPassword">Password</label>
-      <input type="password" class="form-control" id="loginInputPassword" />
+      <input type="password" class="form-control" [(ngModel)]="user.password" name="userPassword"/>
     </div>
-    <div class="form-group">
-      <input type="checkbox" id="chkInputIsCoach" />
+      <input type="checkbox" [(ngModel)]="isCoach" name="isCoach"/>
       <label for="chkInputIsCoach"><small>Login as coach</small></label>
-    </div>
     <button
       type="submit"
       class="btn btn-primary login-btn-submit"
-      id="loginBtnSubmit"
+      id="loginBtnSubmit" (click)="onSubmit()"
     >
       Login
     </button>
