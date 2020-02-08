@@ -18,16 +18,15 @@
       <div class="registration-form__radio-group">
         <label>Account Type:</label>
         <div class="registration-form__radio-group-item">
-          <input type="radio" name="accountType" [(ngModel)]="user.type" value="athlete" />
+          <input type="radio" name="accountType" [(ngModel)]="user.type" value="Athlete" />
           <div>Athlete</div>
         </div>
         <div class="registration-form__radio-group-item">
-          <input type="radio" name="accountType" [(ngModel)]="user.type" value="coach" />
+          <input type="radio" name="accountType" [(ngModel)]="user.type" value="Coach" />
           <div>Coach</div>
         </div>
       </div>
     </div>
-    <input type="submit" value="Submit" class="btn btn-primary registration-form__btn-submit" />
+    <input type="submit" value="Submit" class="btn btn-primary registration-form__btn-submit" (click)="onSubmit()"/>
   </form>
-
 </div>
