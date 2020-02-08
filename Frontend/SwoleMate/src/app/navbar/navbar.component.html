@@ -17,16 +17,10 @@
         <a class="nav-link" data-value="about" href="#">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-value="portfolio" routerLink="coach">Coach</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-value="blog" routerLink="athlete">Athlete</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" data-value="contact" href="#">Contact</a>
       </li>
-      <li class="nav-item" *ngIf="isLoggedIn">
-        <a class="nav-link nav-item-logout" data-value="contact" routerLink="" (click)="onClick($event)" (loginStatus)="onChangeLoginStatus($event)">Logout</a>
+      <li class="nav-item" *ngIf="userIsLoggedIn()">
+        <a class="nav-link nav-item-logout" data-value="contact" routerLink="" (click)="onClick($event)">Logout</a>
       </li>
     </ul>
   </div>

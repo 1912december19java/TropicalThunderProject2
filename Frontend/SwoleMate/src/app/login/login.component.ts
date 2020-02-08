@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { LoginService } from '../login.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 interface Data {
   isLoggedIn: Boolean;
@@ -22,7 +23,12 @@ export class LoginComponent implements OnInit {
     message: ""
   };
 
-  constructor(private loginService : LoginService) { }
+  @Output() showLogout = new EventEmitter();
+
+  constructor(
+    private loginService : LoginService,
+    private navbarComponent : NavbarComponent,
+  ) { }
 
   chkInputCoachClicked() {
     this.isChecked = !this.loginAsCoach;
@@ -30,12 +36,13 @@ export class LoginComponent implements OnInit {
 
   async loginAthlete(): Promise<any> {
     let data = await this.loginService.authenticateAthlete();
-    console.log("[login.component] loginAthlete() isChecked : ", this.isChecked);
-    console.log("[login.component] loginAthlete() data.routerLink : ", data.routerLink);
-    console.log("[login.component] loginAthlete() data.isLoggedIn : ", data.isLoggedIn);
+    this.loginService.setIsLoggedIn(data.isLoggedIn);
+
     localStorage.setItem("isLoggedIn", data.isLoggedIn.toString());
     localStorage.setItem("routerLink", data.routerLink.toString());
     localStorage.setItem("message", data.message.toString());
+
+    this.showLogout.emit(true);
   }
 
   async loginCoach() {
