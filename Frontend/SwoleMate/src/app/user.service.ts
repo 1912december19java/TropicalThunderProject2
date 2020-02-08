@@ -27,7 +27,7 @@ export class UserService {
       newUser.password = user.password;
 
 
-      this.http.post(`${baseUrl}`, newUser)
+      this.http.post(`${baseUrl}`, JSON.stringify(newUser))
         .subscribe((response: number) => {
           console.log(`registered as user ${response}`);
         });
@@ -38,7 +38,7 @@ export class UserService {
       newUser.email = user.email;
       newUser.password = user.password;
 
-      this.http.post(`${baseUrl}`, newUser)
+      this.http.post(`${baseUrl}`, JSON.stringify(newUser))
         .subscribe((response: number) => {
           console.log(`registered as user ${response}`);
         });
