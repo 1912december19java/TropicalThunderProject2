@@ -9,7 +9,7 @@ import { User } from "../user";
 export class RegistrationPageComponent implements OnInit {
   constructor() {}
 
-  user = new User();
+  // user = new User();
 
   ngOnInit() {}
 
