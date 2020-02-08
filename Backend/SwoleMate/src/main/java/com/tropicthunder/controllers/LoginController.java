@@ -28,12 +28,12 @@ public class LoginController {
 		String returnString = "{}";
 		switch (user) {
 		case "Athlete":
-			returnString = "{ \"isLoggedIn\": true, \"path\": \"/athlete\", \"message\": \"Login successful\" }";
+			returnString = "{ \"isLoggedIn\": true, \"routerLink\": \"athlete\", \"message\": \"Login successful\" }";
 			return this.authAthlete(email, password) 
 					? returnString
 					: "{ \"message\": \"Email or password invalid\" }";
 		case "Coach":
-			returnString = "{ \"isLoggedIn\": true, \"path\": \"/coach\", \"message\": \"Login successful\" }";
+			returnString = "{ \"isLoggedIn\": true, \"routerLink\": \"coach\", \"message\": \"Login successful\" }";
 			return this.authCoach(email, password) 
 					? returnString
 					: "{ \"message\": \"Email or password invalid\" }";
