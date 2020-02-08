@@ -8,10 +8,16 @@ import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { EditCoachProfileComponent } from "./edit-coach-profile/edit-coach-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
 import { ExerciseFormComponent} from "./exercise-form/exercise-form.component"
+import { LoginComponent } from "./login/login.component";
+
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
   },
   {
     path: "coach",
@@ -51,5 +57,6 @@ export const routingComponents = [
   EditProfileComponent,
   EditCoachProfileComponent,
   AthleteWorkoutComponent,
-  ExerciseFormComponent
+  ExerciseFormComponent,
+  LoginComponent,
 ];
