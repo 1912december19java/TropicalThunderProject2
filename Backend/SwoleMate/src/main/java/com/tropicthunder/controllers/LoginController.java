@@ -43,13 +43,31 @@ public class LoginController {
 	}
 
 	private Boolean authAthlete(String email, String paramPassword) {
-		Athlete athlete = athleteService.getByEmail(email);
-		return athlete.getPassword().equalsIgnoreCase(paramPassword);
+		try {
+			Athlete athlete = athleteService.getByEmail(email);
+			if (athlete.getPassword().equalsIgnoreCase(paramPassword)) {
+				return true;
+			}
+		} catch (IndexOutOfBoundsException e) {
+			return false;
+		} catch (NullPointerException e) {
+			return false;
+		}
+		return false;
 	}
 
 	private Boolean authCoach(String email, String paramPassword) {
-		Coach coach= coachService.getByEmail(email);
-		return coach.getPassword().equalsIgnoreCase(paramPassword);
+		try {
+			Coach coach = coachService.getByEmail(email);
+			if (coach.getPassword().equalsIgnoreCase(paramPassword)) {
+				return true;
+			}
+		} catch (IndexOutOfBoundsException e) {
+			return false;
+		} catch (NullPointerException e) {
+			return false;
+		}
+		return false;
 	}
 
 }
