@@ -41,11 +41,11 @@ import { SearchComponent } from './search/search.component';
     SearchComponent
   ],
 
-  imports: [BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    NgbModule,
+  imports: [BrowserModule, 
+    FormsModule, 
+    AppRoutingModule, 
+    ReactiveFormsModule, 
+    NgbModule, 
     HttpClientModule],
   providers: [AthleteService],
   bootstrap: [AppComponent]

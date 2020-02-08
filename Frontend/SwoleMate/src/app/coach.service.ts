@@ -9,6 +9,8 @@ import { Program } from './program';
   providedIn: 'root'
 })
 
+
+
 export class CoachServiceService {
 
   constructor(private http: HttpClient) { }
@@ -51,7 +53,7 @@ export class CoachServiceService {
   }
 
   deleteProgram(id:number):void{
-    this.http.delete(`${this.baseUrl}/program/${id}`);
+    this.http.delete(`${this.baseUrl}/program/${id}`);    
   }
 
   addAthlete(coachId:number, athleteId:number){
