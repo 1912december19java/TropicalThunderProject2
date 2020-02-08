@@ -11,7 +11,7 @@ export class RegistrationPageComponent implements OnInit {
   constructor(public userService:UserService) {}
 
 
-  user = new User('','','','');
+  user = new User('','',);
 
 
   ngOnInit() {}
