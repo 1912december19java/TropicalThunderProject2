@@ -20,6 +20,7 @@ import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profile.component';
 import { AthleteService } from './athlete.service';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AthleteService } from './athlete.service';
     AthleteWorkoutComponent,
     HomeComponent,
     EditCoachProfileComponent,
-    ExerciseFormComponent
+    ExerciseFormComponent,
+    SearchComponent
   ],
 
   imports: [BrowserModule, 
