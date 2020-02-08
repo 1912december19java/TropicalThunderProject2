@@ -1,6 +1,6 @@
 import { Coach } from './coach';
 
-export interface Athlete {
+export class Athlete {
    
         athleteId?:number;
         coach?: Coach;
