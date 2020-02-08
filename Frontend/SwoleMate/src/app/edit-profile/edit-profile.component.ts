@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {User} from "../user";
+import { EditUser } from '../editUser';
 
 @Component({
   selector: "app-edit-profile",
@@ -8,7 +9,7 @@ import {User} from "../user";
 })
 export class EditProfileComponent implements OnInit {
 
-  model = new User('Jordan','mail@email.com','wasspord','Athlete');
+  model = new EditUser('Jordan','mail@email.com','wasspord','Athlete');
 
   submitted = false;
 
