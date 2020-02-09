@@ -16,4 +16,3 @@ export class Athlete {
                 this.email = email;
                 this.password = password;
               }
-        }

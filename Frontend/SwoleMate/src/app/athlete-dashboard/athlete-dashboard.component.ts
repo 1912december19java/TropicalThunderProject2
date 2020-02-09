@@ -30,10 +30,12 @@ export class AthleteDashboardComponent implements OnInit {
   //y = this.athlete.athleteId;
   ngOnInit() {
 
+    this.athlete = new Athlete("", "", "", "", "")
+
     this.athleteService.getAthlete()
       .subscribe(data => this.athlete = data);
 
-    this.exercise = this.exerciseService.getExercises()
+    this.exerciseService.getExercises()
       .subscribe(data => this.exercise = data);
 
     this.reloadAthleteData();
@@ -44,6 +46,7 @@ export class AthleteDashboardComponent implements OnInit {
   }
   reloadExercisesData() {
     this.exerciseInfo = this.exerciseService.getExercises();
+    console.log("[athlete-dashboard.component] reloadExerciseData() : this.exerciseInfo :: ", this.exerciseInfo)
   }
   deleteCoach(id: number, id2: number) {
     console.log(this.athlete.coach.id + "/" + this.athlete.athleteId);
