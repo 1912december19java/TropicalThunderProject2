@@ -31,14 +31,14 @@
         <ngb-panel *ngFor="let athlete of athletes; let i= index" title="Athlete {{i+1}}" id="panel-{{i}}">
           <ng-template ngbPanelContent>
             {{athlete.name}}
-            <button (click)="getProgram(coach.id, athlete.id)">program</button>
+            <button (click)="getProgram(coach.id)">program</button>
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
     </div>
   </div>
 </div>
-<hr />
+<hr/>
 <h1 class="mx-auto px-3 py-4">Athlete Dashboard</h1>
 <div *ngFor="let program of programs">
   <table class="stats-bar table table-striped" *ngIf="program.isActive">

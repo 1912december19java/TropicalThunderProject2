@@ -3,6 +3,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AthleteService } from "../athlete.service";
 import { Coach } from '../coach';
 import { Exercise} from '../exercise'
+import { UserService } from '../user.service';
 
 @Component({
   selector: "app-athlete-dashboard",
@@ -14,10 +15,10 @@ export class AthleteDashboardComponent implements OnInit {
   public athlete;
   public exercises;
 
-  constructor(private athleteService : AthleteService) {}
+  constructor(private athleteService : AthleteService, private userService: UserService) {}
 
   ngOnInit() {
-    this.athlete = this.athleteService.getAthlete()
+    this.athlete = this.athleteService.getAthlete(this.userService.loggedInUser.id)
       .subscribe(data => this.athlete = data);
     
     this.exercises = this.athleteService.getExercise()

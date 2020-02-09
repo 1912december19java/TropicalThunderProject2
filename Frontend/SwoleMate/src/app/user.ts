@@ -1,8 +1,9 @@
 export class User {
-  type: string
-  name: string
-  email: string
-  password: string
+  id: number;
+  type: string;
+  name: string;
+  email: string;
+  password: string;
   constructor(
   email: string,
   password: string
