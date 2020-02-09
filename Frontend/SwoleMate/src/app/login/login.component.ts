@@ -32,11 +32,6 @@ export class LoginComponent implements OnInit {
   };
 
   @Output() showLogout = new EventEmitter();
-ngOnInit(){}
-  // constructor(
-  //   private loginService : LoginService,
-  //   private navbarComponent : NavbarComponent,
-  // ) { }
   constructor(
 
     private loginService : LoginService,
