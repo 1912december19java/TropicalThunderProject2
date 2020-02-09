@@ -27,7 +27,8 @@ public class AthleteController {
   @Autowired
   private ModelService<Athlete> AthleteService;
 
-  @PostMapping(consumes = "application/json")
+  //@PostMapping(consumes = "application/json")
+  @PostMapping()
   @ResponseStatus(code = HttpStatus.CREATED)
   public Integer create(@RequestBody Athlete athlete) {
     return AthleteService.save(athlete);
