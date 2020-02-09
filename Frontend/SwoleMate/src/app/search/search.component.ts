@@ -36,11 +36,11 @@ export class SearchComponent implements OnInit {
   constructor(private athleteService : AthleteService) { }
 
   ngOnInit() {
-    this.athlete =  this.athleteService.getAthlete().subscribe(data => this.athlete = data);
+    // this.athlete =  this.athleteService.getAthlete().subscribe(data => this.athlete = data);
   }
 
   typingStart() {
     console.log(this.athlete.name)
   this.searchResults.push(this.athlete.name)
   }
-} 
+}

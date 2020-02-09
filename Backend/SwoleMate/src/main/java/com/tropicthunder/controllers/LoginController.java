@@ -28,12 +28,13 @@ public class LoginController {
 		String returnString = "{}";
 		switch (user) {
 		case "Athlete":
-			returnString = "{ \"isLoggedIn\": true, \"routerLink\": \"athlete\", \"message\": \"Login successful\" \"id\": \"" + athleteService.getByEmail(email).getAthleteId() +"\"}";
+			returnString = "{ \"isLoggedIn\": true, \"routerLink\": \"athlete\", \"message\": \"Login successful\", \"id\": \"" + athleteService.getByEmail(email).getAthleteId() +"\"}";
+			System.out.println("[LoginController] getItem() returnString : " + returnString);
 			return this.authAthlete(email, password) 
 					? returnString
 					: "{ \"message\": \"Email or password invalid\" }";
 		case "Coach":
-			returnString = "{ \"isLoggedIn\": true, \"routerLink\": \"coach\", \"message\": \"Login successful\" \"id\":\""+ coachService.getByEmail(email).getId() + "\"}";
+			returnString = "{ \"isLoggedIn\": true, \"routerLink\": \"coach\", \"message\": \"Login successful\", \"id\": \"" + coachService.getByEmail(email).getId() + "\"}";
 			return this.authCoach(email, password) 
 					? returnString
 					: "{ \"message\": \"Email or password invalid\" }";

@@ -7,7 +7,10 @@ import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { EditCoachProfileComponent } from "./edit-coach-profile/edit-coach-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
-import { ExerciseFormComponent} from "./exercise-form/exercise-form.component"
+import { ExerciseFormComponent} from "./exercise-form/exercise-form.component";
+import { LoginComponent } from './login/login.component';
+import { RegistrationPageComponent } from './registration-page/registration-page.component';
+
 const routes: Routes = [
   {
     path: "",
@@ -36,6 +39,14 @@ const routes: Routes = [
   {
     path: "coach/workout-page",
     component: ExerciseFormComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: "registrationpage",
+    component: RegistrationPageComponent,
   }
 ];
 
@@ -51,5 +62,7 @@ export const routingComponents = [
   EditProfileComponent,
   EditCoachProfileComponent,
   AthleteWorkoutComponent,
-  ExerciseFormComponent
+  ExerciseFormComponent,
+  LoginComponent,
+  RegistrationPageComponent,
 ];
