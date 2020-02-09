@@ -1,15 +1,14 @@
-import { Exercise } from './exercise';
+import { Exercise } from "./exercise";
 
 export class Program {
-    programId?:number;
-    coachId?:number;
-    athleteId?:number;
-    programExercises?: Array<Exercise> = [];
-    programDuration?:number;
-    programFrequency?:number;
-    isComplete?:boolean;
-    isActive?:boolean;
+  programId?: number;
+  coachId?: number;
+  athleteId?: number;
+  programExercises?: Array<Exercise> = [];
+  programDuration?: number;
+  programFrequency?: number;
+  isComplete?: boolean;
+  isActive?: boolean;
 
-    constructor(){}
-
+  constructor() {}
 }

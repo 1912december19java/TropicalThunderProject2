@@ -1,4 +1,4 @@
-import { Coach } from './coach';
+import { Coach } from "./coach";
 
 export class Athlete {
 
@@ -16,4 +16,3 @@ export class Athlete {
                 this.email = email;
                 this.password = password;
               }
-}
