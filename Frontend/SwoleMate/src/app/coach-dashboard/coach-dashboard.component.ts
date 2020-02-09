@@ -1,11 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { Athlete } from '../athlete';
-import { CoachServiceService } from '../coach.service';
-import { Coach } from '../coach';
-import { Program } from '../program';
-import { Exercise } from '../exercise';
-import { UserService } from '../user.service';
+import { Athlete } from "../athlete";
+import { CoachServiceService } from "../coach.service";
+import { Coach } from "../coach";
+import { Program } from "../program";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-coach-dashboard",
@@ -19,16 +17,22 @@ export class CoachDashboardComponent implements OnInit {
 
   coach: Coach;
 
-  programs: Program[] = []
+  programs: Program[] = [];
 
-  constructor(private coachService: CoachServiceService, private userService: UserService) {}
+  constructor(
+    private coachService: CoachServiceService,
+    private userService: UserService
+  ) {}
 
-  async getAthletes(){
-    this.athletes =  await this.coachService.getAthletes(this.coach);
+  async getAthletes() {
+    this.athletes = await this.coachService.getAthletes(this.coach);
   }
 
-  async getProgram(athleteId:number){
-    this.programs = await this.coachService.getPrograms(athleteId, this.coach.id);
+  async getProgram(athleteId: number) {
+    this.programs = await this.coachService.getPrograms(
+      athleteId,
+      this.coach.id
+    );
   }
 
   ngOnInit() {

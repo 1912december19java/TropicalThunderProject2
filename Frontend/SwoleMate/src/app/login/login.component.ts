@@ -1,7 +1,10 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+
 import { Router } from "@angular/router";
 import { LoginService } from '../login.service';
 import { NavbarComponent } from '../navbar/navbar.component';
+
+
 
 interface Data {
   isLoggedIn: Boolean;
@@ -15,11 +18,13 @@ interface Data {
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
+
   loginInputEmailValue: String;
   loginInputPasswordValue: String;
 
   isChecked : Boolean = false;
   loginAsCoach : Boolean = false;
+
 
   data: Data = {
     isLoggedIn: false,
@@ -30,6 +35,7 @@ export class LoginComponent implements OnInit {
   @Output() showLogout = new EventEmitter();
 
   constructor(
+
     private loginService : LoginService,
     private navbarComponent : NavbarComponent,
     private router: Router,
@@ -38,6 +44,7 @@ export class LoginComponent implements OnInit {
   chkInputCoachClicked() {
     this.isChecked = !this.loginAsCoach;
   }
+
 
   loginHandler() : void {
     if (Boolean(this.data.isLoggedIn)) {

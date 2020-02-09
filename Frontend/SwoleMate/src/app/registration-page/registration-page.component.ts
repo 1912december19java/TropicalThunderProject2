@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { User } from "../user";
-import { UserService } from '../user.service';
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-registration-page",
@@ -8,9 +8,9 @@ import { UserService } from '../user.service';
   styleUrls: ["./registration-page.component.css"]
 })
 export class RegistrationPageComponent implements OnInit {
-  constructor(public userService:UserService) {}
+  constructor(public userService: UserService) {}
 
-  user = new User('','');
+  user = new User("", "");
 
   ngOnInit() {}
 

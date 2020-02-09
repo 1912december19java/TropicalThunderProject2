@@ -1,6 +1,7 @@
 .login-container {
   padding: 2.5em;
-  background-image: linear-gradient(rgba(0,0,16,.64), rgba(0,0,16,.64)), url(https://picsum.photos/id/770/1200/800);
+  background-image: linear-gradient(rgba(0, 0, 16, 0.64), rgba(0, 0, 16, 0.64)),
+    url(https://picsum.photos/id/770/1200/800);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -6,20 +6,20 @@ import { Component, OnInit, Injectable, Input } from "@angular/core";
   styleUrls: ["./navbar.component.css"]
 })
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class NavbarComponent implements OnInit {
-
   constructor() {}
+
 
   @Input() public userIsLoggedIn() : Boolean {
     return Boolean(localStorage.getItem('isLoggedIn')) ? true : false;
   }
 
   onClick(evt) {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('routerLink');
-    localStorage.removeItem('message');
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("routerLink");
+    localStorage.removeItem("message");
   }
 
   ngOnInit() {}
