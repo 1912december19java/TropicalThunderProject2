@@ -11,12 +11,9 @@ import { Component, OnInit, Injectable, Input } from "@angular/core";
 export class NavbarComponent implements OnInit {
   constructor() {}
 
-  @Input() public userIsLoggedIn(): Boolean {
-    console.log(
-      "[navbar.component] : Boolean(localStorage.getItem('isLoggedIn')) :: ",
-      Boolean(localStorage.getItem("isLoggedIn"))
-    );
-    return Boolean(localStorage.getItem("isLoggedIn")) ? true : false;
+
+  @Input() public userIsLoggedIn() : Boolean {
+    return Boolean(localStorage.getItem('isLoggedIn')) ? true : false;
   }
 
   onClick(evt) {

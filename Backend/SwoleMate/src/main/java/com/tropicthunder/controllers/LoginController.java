@@ -29,7 +29,6 @@ public class LoginController {
 		switch (user) {
 		case "Athlete":
 			returnString = "{ \"isLoggedIn\": true, \"routerLink\": \"athlete\", \"message\": \"Login successful\", \"id\": \"" + athleteService.getByEmail(email).getAthleteId() +"\"}";
-			System.out.println("[LoginController] getItem() returnString : " + returnString);
 			return this.authAthlete(email, password) 
 					? returnString
 					: "{ \"message\": \"Email or password invalid\" }";
