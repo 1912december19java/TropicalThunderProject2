@@ -27,7 +27,7 @@ export class UserService {
       newUser.password = user.password;
 
 
-      this.http.post(`${baseUrl}`, newUser)
+      this.http.post(`${baseUrl}`, JSON.stringify(newUser))
         .subscribe((response: number) => {
           console.log(`registered as user ${response}`);
         });
@@ -38,7 +38,7 @@ export class UserService {
       newUser.email = user.email;
       newUser.password = user.password;
 
-      this.http.post(`${baseUrl}`, newUser)
+      this.http.post(`${baseUrl}`, JSON.stringify(newUser))
         .subscribe((response: number) => {
           console.log(`registered as user ${response}`);
         });
@@ -53,10 +53,12 @@ export class UserService {
       loggingInAsUser.type = "Athlete";
 
     this.http.get(`${this.baseUrl}?user=${loggingInAsUser.type}&email=${loggingInAsUser}&password=${loggingInAsUser.password}`)
-      .subscribe((response: boolean) => {
-        if (response) {
+      .subscribe((response: string) => {
+        let resp = JSON.parse(response);
+        if (resp.isLoggedIn) {
           this.isLoggedIn = true;
           this.loggedInUser = loggingInAsUser;
+          this.loggedInUser.id = resp.id;
         } else {
           this.isLoggedIn = false;
           this.loggedInUser = new User('', '');

@@ -9,35 +9,85 @@
   </div>
 
   <div class="col-12">
-    <h2>{{athlete.coach.name}} Workout Plan</h2>
+    <h2>{{athlete.coach.name}}'s Workout Plan</h2>
     <ngb-accordion [closeOthers]="true" activeIds="static-1">
       <ngb-panel id="static-1" title="Monday">
         <ng-template ngbPanelContent>
-          Name: {{athlete.coach.name}}
-          <hr>
-          Email: {{athlete.coach.email}}
+          <div *ngFor="let exercise of programs[0].programExercises; let i = index">
+            <p *ngIf="i<3">
+              {{exercise.name}} 
+              <label>sets:</label> {{exercise.sets}}
+              <label>reps:</label> {{exercise.reps}}
+              <label>load:</label> {{exercise.load}}
+              <label>coach notes:</label> {{exercise.coachNotes}}
+              <label for="i">notes:</label> <input type="text" name="i">
+              <label>complete: <input type="checkbox"></label>
+            </p>
+          </div>
         </ng-template>
       </ngb-panel>
       <ngb-panel id="static-2" title="Tuesday">
         <ng-template ngbPanelContent>
-
+          <div *ngFor="let exercise of programs[0].programExercises; let i = index">
+            <p *ngIf="i>2 && i<6">
+              {{exercise.name}} 
+              <label>sets:</label> {{exercise.sets}}
+              <label>reps:</label> {{exercise.reps}}
+              <label>load:</label> {{exercise.load}}
+              <label>coach notes:</label> {{exercise.coachNotes}}
+              <label for="i">notes:</label> <input type="text" name="i">
+              <label>complete: <input type="checkbox"></label>
+            </p>
+          </div>
         </ng-template>
       </ngb-panel>
       <ngb-panel id="static-3" title="Wednesday">
         <ng-template ngbPanelContent>
-
+          <div *ngFor="let exercise of programs[0].programExercises; let i = index">
+            <p *ngIf="i>5 && i<9">
+              {{exercise.name}} 
+              <label>sets:</label> {{exercise.sets}}
+              <label>reps:</label> {{exercise.reps}}
+              <label>load:</label> {{exercise.load}}
+              <label>coach notes:</label> {{exercise.coachNotes}}
+              <label for="i">notes:</label> <input type="text" name="i">
+              <label>complete: <input type="checkbox"></label>
+            </p>
+          </div>
         </ng-template>
       </ngb-panel>
       <ngb-panel id="static-4" title="Thursday">
         <ng-template ngbPanelContent>
-
+          <div *ngFor="let exercise of programs[0].programExercises; let i = index">
+            <p *ngIf="i>8 && i<12">
+              {{exercise.name}} 
+              <label>sets:</label> {{exercise.sets}}
+              <label>reps:</label> {{exercise.reps}}
+              <label>load:</label> {{exercise.load}}
+              <label>coach notes:</label> {{exercise.coachNotes}}
+              <label for="i">notes:</label> <input type="text" name="i">
+              <label>complete: <input type="checkbox"></label>
+            </p>
+          </div>
         </ng-template>
       </ngb-panel>
       <ngb-panel id="static-5" title="Friday">
         <ng-template ngbPanelContent>
-
+          <div *ngFor="let exercise of programs[0].programExercises; let i = index">
+              <p *ngIf="i>11 && i<15">
+              {{exercise.name}} 
+              <label>sets:</label> {{exercise.sets}}
+              <label>reps:</label> {{exercise.reps}}
+              <label>load:</label> {{exercise.load}}
+              <label>coach notes:</label> {{exercise.coachNotes}}
+              <label for="i">notes:</label> <input type="text" name="i">
+              <label>complete: <input type="checkbox"></label>
+            </p>
+          </div>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>
   </div>
 </div>
+<button (click)="programComplete()">mark program completed</button>
+<br><br><br><br><br><br><br><br>

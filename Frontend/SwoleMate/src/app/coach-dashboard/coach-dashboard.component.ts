@@ -5,6 +5,7 @@ import { CoachServiceService } from '../coach.service';
 import { Coach } from '../coach';
 import { Program } from '../program';
 import { Exercise } from '../exercise';
+import { UserService } from '../user.service';
 
 @Component({
   selector: "app-coach-dashboard",
@@ -16,22 +17,25 @@ export class CoachDashboardComponent implements OnInit {
 
   athletes: Athlete[] = [];
 
-  coach: Coach = new Coach();
+  coach: Coach;
 
   programs: Program[] = []
 
-  constructor(private coachService: CoachServiceService) {}
+  constructor(private coachService: CoachServiceService, private userService: UserService) {}
 
   async getAthletes(){
     this.athletes =  await this.coachService.getAthletes(this.coach);
   }
 
-  async getProgram(athleteId:number, coachId:number){
-    this.programs = await this.coachService.getPrograms(athleteId, coachId);
+  async getProgram(athleteId:number){
+    this.programs = await this.coachService.getPrograms(athleteId, this.coach.id);
   }
 
   ngOnInit() {
-    this.coach
+    this.coach = new Coach();
+    this.coach.name = this.userService.loggedInUser.name;
+    this.coach.email = this.userService.loggedInUser.email;
+    this.coach.id = this.userService.loggedInUser.id;
     this.getAthletes();
   }
 }
