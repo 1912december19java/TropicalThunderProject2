@@ -46,7 +46,6 @@ const routes: Routes = [
   },
   {
     path: "registrationpage",
-    component: RegistrationPageComponent,
     component: RegistrationPageComponent
   }
 ];
