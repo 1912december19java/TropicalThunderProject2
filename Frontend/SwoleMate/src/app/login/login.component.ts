@@ -44,10 +44,6 @@ ngOnInit(){}
     private router: Router,
   ) { }
 
-  // async loginAthlete(): Promise<any> {
-  //   let data = await this.loginService.authenticateAthlete();
-  //   this.loginService.setIsLoggedIn(data.isLoggedIn);
-
 
   loginHandler() : void {
     if (Boolean(this.data.isLoggedIn)) {
