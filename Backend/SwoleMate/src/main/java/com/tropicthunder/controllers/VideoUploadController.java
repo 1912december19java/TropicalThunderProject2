@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.tropicthunder.models.Exercise;
 import com.tropicthunder.services.VideoUploadService;
 
 @RestController

@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "./user";
 import { Coach } from "./coach";
 import { Athlete } from "./athlete";
+import { RegiserUser } from './registeruser';
 
 @Injectable({
   providedIn: "root"
@@ -17,11 +18,14 @@ export class UserService {
 
   register(user: User) {
     if (user.type === "Coach") {
-      let newUser = new Coach();
+      let newUser = new RegiserUser
+      // let newUser = new Coach();
       let baseUrl = this.baseUrl + "/coach";
       newUser.name = user.name;
       newUser.email = user.email;
       newUser.password = user.password;
+
+      console.log(JSON.stringify(newUser));
 
       this.http
         .post(`${baseUrl}`, JSON.stringify(newUser))
@@ -29,11 +33,14 @@ export class UserService {
           console.log(`registered as user ${response}`);
         });
     } else {
-      let newUser = new Athlete();
+      //let newUser = new Athlete();
+      let newUser = new RegiserUser
       let baseUrl = this.baseUrl + "/athlete";
       newUser.name = user.name;
       newUser.email = user.email;
       newUser.password = user.password;
+
+      console.log(JSON.stringify(newUser));
 
       this.http
         .post(`${baseUrl}`, JSON.stringify(newUser))

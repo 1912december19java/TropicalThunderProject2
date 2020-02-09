@@ -15,6 +15,7 @@ export class RegistrationPageComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
+    console.log(this.user)
     this.userService.register(this.user);
   }
 }
