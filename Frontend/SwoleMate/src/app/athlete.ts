@@ -17,3 +17,4 @@ export class Athlete {
                 this.password = password;
               }
 }
+ 

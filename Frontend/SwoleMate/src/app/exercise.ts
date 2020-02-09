@@ -21,9 +21,4 @@ export class Exercise {
     this.coachNotes=cn;
     this.day = day;
   }
-
-  
-
-
-
 }
