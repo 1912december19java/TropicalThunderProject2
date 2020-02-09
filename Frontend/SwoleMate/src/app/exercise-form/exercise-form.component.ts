@@ -7,6 +7,9 @@ import { FormControl } from "@angular/forms";
 import { Program } from '../program';
 import { CoachServiceService } from '../coach.service';
 import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
+import { AthleteService } from '../athlete.service';
+import { Athlete } from '../athlete';
 
 
 @Component({
@@ -15,10 +18,15 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./exercise-form.component.css"]
 })
 export class ExerciseFormComponent implements OnInit {
-
-  constructor(private fb: FormBuilder, private coachService: CoachServiceService) { }
-
+  athleteName:string;
+  
+  constructor(private fb: FormBuilder, private coachService: CoachServiceService, private router: Router, private athleteService:AthleteService) { }
+  
   ngOnInit() {
+    this.athleteService.getAthlete(+localStorage.getItem('athleteId'))
+    .subscribe(
+      data=> this.athleteName = data.name
+    );
   }
 
   workoutForm1 = this.fb.group({
@@ -168,7 +176,14 @@ export class ExerciseFormComponent implements OnInit {
             workouts[i].value.exercise3.coachNotes,
             i+1));
     }
+    program.coachId = +localStorage.getItem('id');
+    program.athleteId = +localStorage.getItem('athleteId');
     this.coachService.createProgram(program);
   }
+  closePopup(){
+    this.router.navigate([{ outlets: { popup: null }}]);
+  }
+
+  
 }
 
