@@ -6,7 +6,9 @@ import { Coach } from '../coach';
 import { Exercises } from '../exercises';
 import { Athlete } from '../athlete';
 import { Observable } from 'rxjs';
-
+import { Coach } from "../coach";
+import { Exercise } from "../exercise";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-athlete-dashboard",
@@ -22,7 +24,6 @@ export class AthleteDashboardComponent implements OnInit {
   private Headers = new Headers({ 'content-type': 'application/json' })
   athleteInfo: Observable<Athlete>
   exerciseInfo: Observable<Exercises[]>
-
 
   constructor(private athleteService: AthleteService, private exerciseService: ExercisesService) { }
   //x = this.athlete.coach.id;

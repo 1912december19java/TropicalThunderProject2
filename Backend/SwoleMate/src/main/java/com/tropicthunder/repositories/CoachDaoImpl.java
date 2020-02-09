@@ -107,4 +107,13 @@ public class CoachDaoImpl {
 		Query q = session.createSQLQuery("update athlete_table set coach_id = null where athlete_id =" + athleteId + ";");
 		q.executeUpdate();
 	}
+	
+    public Program getProgram(int athleteId) {
+      Session session = sf.getCurrentSession();
+      SQLQuery q = session.createSQLQuery("Select * from program_table where is_active = true AND athlete_id = " + athleteId + ";" );
+      @SuppressWarnings("unchecked")
+      List<Program> programs = q.list();
+      return programs.get(0);
+  }
+
 }

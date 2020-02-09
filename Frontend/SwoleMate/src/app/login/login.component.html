@@ -1,24 +1,42 @@
 <!-- loginContainer -->
 <div id="loginContainer" class="login-container">
   <form id="loginForm" class="login-form">
+    <h2>Sign in to your account</h2>
     <div class="form-group">
       <label for="loginInputEmail">Email address</label>
-      <input type="email" class="form-control" id="loginInputEmail" />
+
+      <input type="email" class="form-control" id="loginInputEmail" placeholder="your_email@address.com" [(ngModel)]="loginInputEmailValue" [ngModelOptions]="{standalone: true}" />
     </div>
     <div class="form-group">
       <label for="loginInputPassword">Password</label>
-      <input type="password" class="form-control" id="loginInputPassword" />
+      <input type="password" class="form-control" id="loginInputPassword" placeholder="Type your password" [(ngModel)]="loginInputPasswordValue" [ngModelOptions]="{standalone: true}" />
     </div>
     <div class="form-group">
-      <input type="checkbox" id="chkInputIsCoach" />
+      <input
+        type="checkbox"
+        [(ngModel)]="loginAsCoach"
+        [ngModelOptions]="{ standalone: true }"
+        id="chkInputIsCoach"
+      />
       <label for="chkInputIsCoach"><small>Login as coach</small></label>
     </div>
     <button
       type="submit"
-      class="btn btn-primary login-btn-submit"
+      class="btn btn-danger login-btn-submit"
       id="loginBtnSubmit"
+      (click)="loginAthlete()"
+      *ngIf="!isChecked"
     >
-      Login
+      Athlete Login
+    </button>
+    <button
+      type="submit"
+      class="btn btn-success login-btn-submit"
+      id="loginBtnSubmit"
+      (click)="loginCoach()"
+      *ngIf="isChecked"
+    >
+      Coach Login
     </button>
   </form>
 </div>

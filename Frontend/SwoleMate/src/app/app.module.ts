@@ -7,7 +7,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
-import { CoachWorkoutComponent } from "./coach-workout/coach-workout.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ExerciseFormComponent } from "./exercise-form/exercise-form.component";
 import { CoachDashboardComponent } from "./coach-dashboard/coach-dashboard.component";
@@ -20,9 +19,8 @@ import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profile.component';
 import { AthleteService } from './athlete.service';
-import {ExercisesService } from './exercises.service'
-
-
+import {ExercisesService } from './exercises.service';
+import { SearchComponent } from "./search/search.component";
 
 @NgModule({
   declarations: [
@@ -39,8 +37,10 @@ import {ExercisesService } from './exercises.service'
     AthleteWorkoutComponent,
     HomeComponent,
     EditCoachProfileComponent,
-    ExerciseFormComponent
+    ExerciseFormComponent,
+    SearchComponent
   ],
+
 
   imports: [BrowserModule, 
     FormsModule, 
