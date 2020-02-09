@@ -17,6 +17,7 @@
   --color-licorice-hex: #18020c;
 }
 
-/* body {
-  background-color: var(--color-licorice-rgb);
-} */
+body {
+  background-color: ivory;
+  color: var(--color-licorice-rgb);
+}

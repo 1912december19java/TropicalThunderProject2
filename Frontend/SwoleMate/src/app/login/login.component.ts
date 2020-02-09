@@ -1,9 +1,6 @@
-
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { LoginService } from '../login.service';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { User } from '../user';
-import { UserService } from '../user.service';
 
 interface Data {
   isLoggedIn: Boolean;
@@ -37,32 +34,33 @@ export class LoginComponent implements OnInit {
     this.isChecked = !this.loginAsCoach;
   }
 
-  async loginAthlete(): Promise<any> {
-    let data = await this.loginService.authenticateAthlete();
-    this.loginService.setIsLoggedIn(data.isLoggedIn);
-
-    localStorage.setItem("isLoggedIn", data.isLoggedIn.toString());
-    localStorage.setItem("routerLink", data.routerLink.toString());
-    localStorage.setItem("message", data.message.toString());
-
-    this.showLogout.emit(true);
+  setData({ isLoggedIn, routerLink, message }) : void {
+    this.data['isLoggedIn'] = isLoggedIn;
+    this.data['routerLink'] = routerLink;
+    this.data['message'] = message;
   }
 
-  async loginCoach() {
-    const data = await this.loginService.authenticateCoach();
-    console.log("[login.component] loginAthlete() isChecked : ", this.isChecked);
-    console.log("[login.component] loginCoach() data.routerLink : ", data.routerLink);
-    console.log("[login.component] loginCoach() data.isLoggedIn : ", data.isLoggedIn);
-    localStorage.setItem("isLoggedIn", data.isLoggedIn.toString());
-    localStorage.setItem("routerLink", data.routerLink.toString());
-    localStorage.setItem("message", data.message.toString());
+  loginAthlete() {
+    try {
+
+      this.loginService.authenticateAthlete().subscribe(data => this.data = data);
+      this.loginService.setIsLoggedIn(this.data.isLoggedIn);
+
+      localStorage.setItem("isLoggedIn", this.data.isLoggedIn.toString());
+      localStorage.setItem("routerLink", this.data.routerLink.toString());
+      localStorage.setItem("message", this.data.message.toString());
+
+      this.showLogout.emit(true);
+
+    } catch (Exception) {
+      console.log("[login.component] err : ", Exception.error.error.stack);
+      console.log("[login.component] err : ", Exception.error.error.message);
+    }
+  }
+
+  loginCoach() {
+
   }
 
   ngOnInit() {}
-
-  onSubmit() {
-    console.log(this.user);
-    this.userService.attemptLogIn(this.user.email, this.user.password, this.isCoach);
-    this.user = new User('','');
-    }
 }
