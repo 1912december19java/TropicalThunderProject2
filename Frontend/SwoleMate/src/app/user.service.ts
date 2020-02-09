@@ -12,8 +12,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085';
-  //baseUrl = 'http://localhost:4200/SwoleMate';
+  baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/SwoleMate';
+  
 
   public isLoggedIn: boolean = true;
   public loggedInUser: User = new User('', '');
