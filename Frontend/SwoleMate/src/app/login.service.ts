@@ -23,21 +23,13 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  authenticateAthlete(): Observable<Data> {
-    return this.http.get<Data>(`${this.baseUrl}?user=Athlete&email=yuu@me.com&password=password`);
+  authenticateAthlete(email: String, password: String): Observable<Data> {
+    return this.http.get<Data>(`${this.baseUrl}?user=Athlete&email=${email}&password=${password}`);
   }
 
-  authenticateCoach(): Observable<Data> {
-    return this.http.get<Data>(`${this.baseUrl}?user=Coach&email=brevature@revature.net&password=password`);
+  authenticateCoach(email: String, password: String): Observable<Data> {
+    return this.http.get<Data>(`${this.baseUrl}?user=Coach&email=${email}&password=${password}`);
   }
-
-  // authenticateAthlete(): Promise<Data> {
-  //   return this.http.get<Data>(`${this.baseUrl}?user=Athlete&email=yuu@me.com&password=password`).toPromise();
-  // }
-  //
-  // authenticateCoach(): Promise<Data> {
-  //   return this.http.get<Data>(`${this.baseUrl}?user=Coach&email=brevature@revature.net&password=password`).toPromise();
-  // }
 
   // setters
   setIsLoggedIn(isLoggedIn : Boolean) : void {

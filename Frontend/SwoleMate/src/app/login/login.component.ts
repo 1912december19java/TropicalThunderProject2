@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Router } from "@angular/router";
 import { LoginService } from '../login.service';
 import { NavbarComponent } from '../navbar/navbar.component';
 
@@ -14,6 +15,9 @@ interface Data {
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
+  loginInputEmailValue: String;
+  loginInputPasswordValue: String;
+
   isChecked : Boolean = false;
   loginAsCoach : Boolean = false;
 
@@ -28,38 +32,56 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService : LoginService,
     private navbarComponent : NavbarComponent,
+    private router: Router,
   ) { }
 
   chkInputCoachClicked() {
     this.isChecked = !this.loginAsCoach;
   }
 
-  setData({ isLoggedIn, routerLink, message }) : void {
-    this.data['isLoggedIn'] = isLoggedIn;
-    this.data['routerLink'] = routerLink;
-    this.data['message'] = message;
-  }
-
-  loginAthlete() {
-    try {
-
-      this.loginService.authenticateAthlete().subscribe(data => this.data = data);
+  loginHandler() : void {
+    if (Boolean(this.data.isLoggedIn)) {
       this.loginService.setIsLoggedIn(this.data.isLoggedIn);
 
       localStorage.setItem("isLoggedIn", this.data.isLoggedIn.toString());
       localStorage.setItem("routerLink", this.data.routerLink.toString());
       localStorage.setItem("message", this.data.message.toString());
 
-      this.showLogout.emit(true);
+      this.router.navigateByUrl(`/${localStorage.getItem("routerLink")}`);
 
-    } catch (Exception) {
-      console.log("[login.component] err : ", Exception.error.error.stack);
-      console.log("[login.component] err : ", Exception.error.error.message);
+      this.showLogout.emit(true);
     }
   }
 
-  loginCoach() {
+  loginAthlete() : void {
+    try {
+      this.loginService.authenticateAthlete(this.loginInputEmailValue, this.loginInputPasswordValue).subscribe(
+        data => {
+          this.loginHandler();
+          return this.data = data;
+        }
+      );
+    } catch (err) {
+      console.log("[login.component] ERROR : ", err);
+    }
+  }
 
+  loginCoach() : void {
+    try {
+      this.loginService.authenticateCoach(this.loginInputEmailValue, this.loginInputPasswordValue).subscribe(
+        data => {
+          this.loginHandler();
+          return this.data = data;
+        }
+      );
+    } catch (err) {
+      console.log("[login.component] ERROR : ", err);
+    }
+  }
+
+  getRouterLinkPath() : String {
+    console.log(localStorage.getItem('routerLink'));
+    return localStorage.getItem('routerLink');
   }
 
   ngOnInit() {}
