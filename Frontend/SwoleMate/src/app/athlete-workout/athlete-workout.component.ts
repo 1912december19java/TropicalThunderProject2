@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { AthleteService } from "../athlete.service";
+import { ExercisesService } from '../exercises.service';
+import { Exercises} from '../exercises'
 import { UserService } from "../user.service";
+
 
 @Component({
   selector: "app-athlete-workout",
@@ -12,6 +15,7 @@ export class AthleteWorkoutComponent implements OnInit {
   public athlete;
   public programs;
   public program;
+
 
   constructor(
     private athleteService: AthleteService,
@@ -36,5 +40,6 @@ export class AthleteWorkoutComponent implements OnInit {
     this.program.isComplete = true;
     this.program.isActive = false;
     this.athleteService.updateProgram(this.program);
+
   }
 }

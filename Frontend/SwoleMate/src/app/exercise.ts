@@ -10,6 +10,7 @@ export class Exercise {
   exerciseUrl?: string;
   isComplete?: boolean;
 
+
   constructor(
     name: string,
     sets: number,
