@@ -11,6 +11,7 @@ export class Exercise {
   exerciseUrl?: string;
   isComplete?: boolean;
 
+  
 
   constructor(name: string, sets: number, reps: number, load: string,cn:string, day: number) {
     this.name = name;
@@ -20,5 +21,9 @@ export class Exercise {
     this.coachNotes=cn;
     this.day = day;
   }
+
+  
+
+
 
 }

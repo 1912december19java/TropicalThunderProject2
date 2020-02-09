@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AthleteService } from "../athlete.service";
-import { Coach } from '../coach';
-import { Exercise} from '../exercise;'
+import { ExercisesService } from '../exercises.service';
+import { Exercises} from '../exercises'
 @Component({
   selector: "app-athlete-workout",
   templateUrl: "./athlete-workout.component.html",
@@ -13,13 +13,13 @@ export class AthleteWorkoutComponent implements OnInit {
   public athlete;
   public exercises;
 
-  constructor(private athleteService : AthleteService) {}
+  constructor(private athleteService : AthleteService, private exercisesService : ExercisesService ) {}
 
   ngOnInit() {
     this.athlete = this.athleteService.getAthlete()
       .subscribe(data => this.athlete = data);
     
-    this.exercises = this.athleteService.getExercise()
+    this.exercises = this.exercisesService.getExercises()
       .subscribe(data => this.exercises = data);
   }
 }

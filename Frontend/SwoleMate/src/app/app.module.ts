@@ -20,6 +20,9 @@ import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profile.component';
 import { AthleteService } from './athlete.service';
+import {ExercisesService } from './exercises.service'
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +48,7 @@ import { AthleteService } from './athlete.service';
     ReactiveFormsModule, 
     NgbModule, 
     HttpClientModule],
-  providers: [AthleteService],
+  providers: [AthleteService,ExercisesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
