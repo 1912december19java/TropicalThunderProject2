@@ -26,9 +26,11 @@ public class ExerciseDaoImpl {
 
 	public List<Exercise> getAllexercises() {
 		Session session = sf.getCurrentSession();
-		SQLQuery c = session.createSQLQuery("Select * from exercise_table;");		
 		@SuppressWarnings("unchecked")
-		List<Exercise> exercises = c.list();
+		List<Exercise> exercises  = (List<Exercise>) session.createQuery("from Exercise").list();
+//		SQLQuery c = session.createSQLQuery("Select * from exercise_table;");		
+//		@SuppressWarnings("unchecked")
+//		List<Exercise> exercises = c.list();
 		return exercises;
 	}
 
