@@ -1,9 +1,9 @@
-
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-//import { LoginService } from '../login.service';
+import { Router } from "@angular/router";
+import { LoginService } from '../login.service';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { User } from '../user';
-import { UserService } from '../user.service';
+
+
 
 interface Data {
   isLoggedIn: Boolean;
@@ -17,8 +17,13 @@ interface Data {
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
+
+  loginInputEmailValue: String;
+  loginInputPasswordValue: String;
+
   isChecked : Boolean = false;
   loginAsCoach : Boolean = false;
+
 
   data: Data = {
     isLoggedIn: false,
@@ -32,37 +37,62 @@ ngOnInit(){}
   //   private loginService : LoginService,
   //   private navbarComponent : NavbarComponent,
   // ) { }
+  constructor(
 
-  // chkInputCoachClicked() {
-  //   this.isChecked = !this.loginAsCoach;
-  // }
+    private loginService : LoginService,
+    private navbarComponent : NavbarComponent,
+    private router: Router,
+  ) { }
 
   // async loginAthlete(): Promise<any> {
   //   let data = await this.loginService.authenticateAthlete();
   //   this.loginService.setIsLoggedIn(data.isLoggedIn);
 
-  //   localStorage.setItem("isLoggedIn", data.isLoggedIn.toString());
-  //   localStorage.setItem("routerLink", data.routerLink.toString());
-  //   localStorage.setItem("message", data.message.toString());
 
-  //   this.showLogout.emit(true);
-  // }
+  loginHandler() : void {
+    if (Boolean(this.data.isLoggedIn)) {
+      this.loginService.setIsLoggedIn(this.data.isLoggedIn);
 
-  // async loginCoach() {
-  //   const data = await this.loginService.authenticateCoach();
-  //   console.log("[login.component] loginAthlete() isChecked : ", this.isChecked);
-  //   console.log("[login.component] loginCoach() data.routerLink : ", data.routerLink);
-  //   console.log("[login.component] loginCoach() data.isLoggedIn : ", data.isLoggedIn);
-  //   localStorage.setItem("isLoggedIn", data.isLoggedIn.toString());
-  //   localStorage.setItem("routerLink", data.routerLink.toString());
-  //   localStorage.setItem("message", data.message.toString());
-  // }
+      localStorage.setItem("isLoggedIn", this.data.isLoggedIn.toString());
+      localStorage.setItem("routerLink", this.data.routerLink.toString());
+      localStorage.setItem("message", this.data.message.toString());
 
-  // ngOnInit() {}
+      this.router.navigateByUrl(`/${localStorage.getItem("routerLink")}`);
 
-  // onSubmit() {
-  //   console.log(this.user);
-  //   this.userService.attemptLogIn(this.user.email, this.user.password, this.isCoach);
-  //   this.user = new User('','');
-  //   }
+      this.showLogout.emit(true);
+    }
+  }
+
+  loginAthlete() : void {
+    try {
+      this.loginService.authenticateAthlete(this.loginInputEmailValue, this.loginInputPasswordValue).subscribe(
+        data => {
+          this.loginHandler();
+          return this.data = data;
+        }
+      );
+    } catch (err) {
+      console.log("[login.component] ERROR : ", err);
+    }
+  }
+
+  loginCoach() : void {
+    try {
+      this.loginService.authenticateCoach(this.loginInputEmailValue, this.loginInputPasswordValue).subscribe(
+        data => {
+          this.loginHandler();
+          return this.data = data;
+        }
+      );
+    } catch (err) {
+      console.log("[login.component] ERROR : ", err);
+    }
+  }
+
+  getRouterLinkPath() : String {
+    console.log(localStorage.getItem('routerLink'));
+    return localStorage.getItem('routerLink');
+  }
+
+  ngOnInit() {}
 }

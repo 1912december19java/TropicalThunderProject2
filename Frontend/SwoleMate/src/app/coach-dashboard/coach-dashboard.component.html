@@ -18,9 +18,12 @@
       </nav>
     </div>
     <div class="col-4 bg-spot border-dark " style="width: 20rem;">
-      <img class="card-img-top"
+      <img
+        class="card-img-top"
         src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+
         alt="Card image cap"/>
+
     </div>
     <div class="col-5 bg-spot border-dark">
       <h3 class="card-title" id="userName">Welcome {{currentUser.name}}</h3>
@@ -32,6 +35,7 @@
             <button (click)="getProgram(athlete.id)">current program</button>
             <button (click)="createProgram(athlete.id)" [routerLink]="[{ outlets: { popup: 'coach/program' }}]">add new program</button>
             <button class="alert-danger" (click)="deleteAthlete(athlete.id)">drop athlete</button>
+
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
@@ -54,8 +58,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let exercise of program.programExercises; let i=index">
+      <tr *ngFor="let exercise of program.programExercises; let i = index">
         <td>
+
           <input type="text" value="{{program.programExercises[i].name}}" [(ngModel)]="program.Exercises[i].name">
         </td>
         <td>
@@ -78,10 +83,12 @@
         </td>
         <td>
           <a href="{{program.programExercises[i].exerciseUrl}}">video link</a>
+
         </td>
       </tr>
     </tbody>
   </table>
+
   <button class="alert-heading" (click)="updateProgram(program)">update program</button>
 </div>
 <router-outlet name="popup"></router-outlet>

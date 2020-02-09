@@ -20,7 +20,13 @@
         <a class="nav-link" data-value="contact" href="#">Contact</a>
       </li>
       <li class="nav-item" *ngIf="userIsLoggedIn()">
-        <a class="nav-link nav-item-logout" data-value="contact" routerLink="" (click)="onClick($event)">Logout</a>
+        <a
+          class="nav-link nav-item-logout"
+          data-value="contact"
+          routerLink=""
+          (click)="onClick($event)"
+          >Logout</a
+        >
       </li>
     </ul>
   </div>

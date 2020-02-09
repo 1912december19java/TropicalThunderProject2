@@ -1,6 +1,7 @@
 .registration-form-container {
   background-color: var(--color-minty-rgb);
-  background-image: linear-gradient(rgba(0,0,16,.8), rgba(0,0,16,.8)), url(https://picsum.photos/id/770/1200/800);
+  background-image: linear-gradient(rgba(0, 0, 16, 0.8), rgba(0, 0, 16, 0.8)),
+    url(https://picsum.photos/id/770/1200/800);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,7 +34,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgba(104,104,120,.32);
+  background-color: rgba(104, 104, 120, 0.32);
   color: ivory;
   padding: 2em 1em;
 }

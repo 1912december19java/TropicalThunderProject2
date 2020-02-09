@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { Athlete } from '../athlete';
 import { CoachServiceService } from '../coach.service';
@@ -7,6 +8,7 @@ import { Program } from '../program';
 import { Exercise } from '../exercise';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: "app-coach-dashboard",
@@ -20,7 +22,8 @@ export class CoachDashboardComponent implements OnInit {
 
   coachId:number;
 
-  programs: Program[] = []
+  programs: Program[] = [];
+
 
   currentUser: Coach;
 

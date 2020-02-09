@@ -17,9 +17,9 @@ import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
-import { EditCoachProfileComponent } from './edit-coach-profile/edit-coach-profile.component';
-import { AthleteService } from './athlete.service';
-import { SearchComponent } from './search/search.component';
+import { EditCoachProfileComponent } from "./edit-coach-profile/edit-coach-profile.component";
+import { AthleteService } from "./athlete.service";
+import { SearchComponent } from "./search/search.component";
 
 @NgModule({
   declarations: [
@@ -40,12 +40,14 @@ import { SearchComponent } from './search/search.component';
     SearchComponent
   ],
 
-  imports: [BrowserModule, 
-    FormsModule, 
-    AppRoutingModule, 
-    ReactiveFormsModule, 
-    NgbModule, 
-    HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgbModule,
+    HttpClientModule
+  ],
   providers: [AthleteService],
   bootstrap: [AppComponent]
 })

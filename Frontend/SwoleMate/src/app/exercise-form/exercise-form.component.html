@@ -3,385 +3,388 @@
 <h3>{{athleteName}}</h3>
 <button (click)="uploadProgram()">Upload Program!</button>
 <button (click)="closePopup()">Cancel</button>
+
 <form [formGroup]="workoutForm1" class="jumbotron">
-    <h6>DAY 1</h6>
-    <div>
-        <div formGroupName="exercise1">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="number" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="number" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise2">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise3">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
+  <h6>DAY 1</h6>
+  <div>
+    <div formGroupName="exercise1">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="number" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="number" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
     </div>
+    <br />
+    <br />
+    <div formGroupName="exercise2">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+    <br />
+    <br />
+    <div formGroupName="exercise3">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+  </div>
 </form>
 
 <form [formGroup]="workoutForm2" class="jumbotron">
-    <h6>DAY 2</h6>
-    <div>
-        <div formGroupName="exercise1">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise2">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise3">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
+  <h6>DAY 2</h6>
+  <div>
+    <div formGroupName="exercise1">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
     </div>
+    <br />
+    <br />
+    <div formGroupName="exercise2">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+    <br />
+    <br />
+    <div formGroupName="exercise3">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+  </div>
 </form>
 
 <form [formGroup]="workoutForm3" class="jumbotron">
-    <h6>DAY 3</h6>
-    <div>
-        <div formGroupName="exercise1">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise2">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise3">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
+  <h6>DAY 3</h6>
+  <div>
+    <div formGroupName="exercise1">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
     </div>
+    <br />
+    <br />
+    <div formGroupName="exercise2">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+    <br />
+    <br />
+    <div formGroupName="exercise3">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+  </div>
 </form>
 
 <form [formGroup]="workoutForm4" class="jumbotron">
-    <h6>DAY 4</h6>
-    <div>
-        <div formGroupName="exercise1">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise2">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise3">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
+  <h6>DAY 4</h6>
+  <div>
+    <div formGroupName="exercise1">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
     </div>
+    <br />
+    <br />
+    <div formGroupName="exercise2">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+    <br />
+    <br />
+    <div formGroupName="exercise3">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+  </div>
 </form>
 
 <form [formGroup]="workoutForm5" class="jumbotron">
-    <h6>DAY 5</h6>
-    <div>
-        <div formGroupName="exercise1">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise2">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
-        <br>
-        <br>
-        <div formGroupName="exercise3">
-            <label>
-                exercise name:
-                <input type="text" formControlName="name">
-            </label>
-            <label>
-                sets:
-                <input type="text" formControlName="sets">
-            </label>
-            <label>
-                reps:
-                <input type="text" formControlName="reps">
-            </label>
-            <label>
-                load:
-                <input type="text" formControlName="load">
-            </label>
-            <label>
-                notes:
-                <textarea type="text" formControlName="coachNotes"></textarea>
-            </label>
-        </div>
+  <h6>DAY 5</h6>
+  <div>
+    <div formGroupName="exercise1">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
     </div>
+    <br />
+    <br />
+    <div formGroupName="exercise2">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+    <br />
+    <br />
+    <div formGroupName="exercise3">
+      <label>
+        exercise name:
+        <input type="text" formControlName="name" />
+      </label>
+      <label>
+        sets:
+        <input type="text" formControlName="sets" />
+      </label>
+      <label>
+        reps:
+        <input type="text" formControlName="reps" />
+      </label>
+      <label>
+        load:
+        <input type="text" formControlName="load" />
+      </label>
+      <label>
+        notes:
+        <textarea type="text" formControlName="coachNotes"></textarea>
+      </label>
+    </div>
+  </div>
 </form>
 
 <button (click)="uploadProgram()">Upload Program!</button>
+
 <button (click)="closePopup()">Cancel</button>
+
