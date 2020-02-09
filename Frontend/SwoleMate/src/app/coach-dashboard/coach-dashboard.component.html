@@ -3,8 +3,13 @@
     <div class="col-2 bg-sidenav">
       <nav class="navbar-vertical show">
         <p>
-          <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample"
+          >
             +
           </button>
         </p>
@@ -20,17 +25,23 @@
       </nav>
     </div>
     <div class="col-4 bg-spot border-dark " style="width: 20rem;">
-      <img class="card-img-top"
+      <img
+        class="card-img-top"
         src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        alt="Card image cap" />
+        alt="Card image cap"
+      />
     </div>
     <div class="col-5 bg-spot border-dark">
       <h5 class="card-title" id="userName">Ben Jobs</h5>
       <h3 class="card-text">Coach Account</h3>
       <ngb-accordion [closeOthers]="true">
-        <ngb-panel *ngFor="let athlete of athletes; let i= index" title="Athlete {{i+1}}" id="panel-{{i}}">
+        <ngb-panel
+          *ngFor="let athlete of athletes; let i = index"
+          title="Athlete {{ i + 1 }}"
+          id="panel-{{ i }}"
+        >
           <ng-template ngbPanelContent>
-            {{athlete.name}}
+            {{ athlete.name }}
             <button (click)="getProgram(coach.id)">program</button>
           </ng-template>
         </ngb-panel>
@@ -38,7 +49,7 @@
     </div>
   </div>
 </div>
-<hr/>
+<hr />
 <h1 class="mx-auto px-3 py-4">Athlete Dashboard</h1>
 <div *ngFor="let program of programs">
   <table class="stats-bar table table-striped" *ngIf="program.isActive">
@@ -55,30 +66,30 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let exercise of program.programExercises; let i=index">
+      <tr *ngFor="let exercise of program.programExercises; let i = index">
         <td>
-          {{program.programExercises[i].name}}
+          {{ program.programExercises[i].name }}
         </td>
         <td>
-          {{program.programExercises[i].sets}}
+          {{ program.programExercises[i].sets }}
         </td>
         <td>
-          {{program.programExercises[i].reps}}
+          {{ program.programExercises[i].reps }}
         </td>
         <td>
-          {{program.programExercises[i].load}}
+          {{ program.programExercises[i].load }}
         </td>
         <td>
-          {{program.programExercises[i].coachNotes}}
+          {{ program.programExercises[i].coachNotes }}
         </td>
         <td>
-          {{program.programExercises[i].athleteNotes}}
+          {{ program.programExercises[i].athleteNotes }}
         </td>
         <td>
-          {{program.programExercises[i].day}}
+          {{ program.programExercises[i].day }}
         </td>
         <td>
-          {{program.programExercises[i].exerciseUrl}}
+          {{ program.programExercises[i].exerciseUrl }}
         </td>
       </tr>
     </tbody>

@@ -1,4 +1,4 @@
-import { NgModule, Component } from "@angular/core";
+import { NgModule} from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./home/home.component";
@@ -7,9 +7,9 @@ import { AthleteDashboardComponent } from "./athlete-dashboard/athlete-dashboard
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { EditCoachProfileComponent } from "./edit-coach-profile/edit-coach-profile.component";
 import { AthleteWorkoutComponent } from "./athlete-workout/athlete-workout.component";
-import { ExerciseFormComponent} from "./exercise-form/exercise-form.component";
-import { LoginComponent } from './login/login.component';
-import { RegistrationPageComponent } from './registration-page/registration-page.component';
+import { ExerciseFormComponent } from "./exercise-form/exercise-form.component";
+import { LoginComponent } from "./login/login.component";
+import { RegistrationPageComponent } from "./registration-page/registration-page.component";
 
 const routes: Routes = [
   {
@@ -47,6 +47,7 @@ const routes: Routes = [
   {
     path: "registrationpage",
     component: RegistrationPageComponent,
+    component: RegistrationPageComponent
   }
 ];
 
@@ -64,5 +65,5 @@ export const routingComponents = [
   AthleteWorkoutComponent,
   ExerciseFormComponent,
   LoginComponent,
-  RegistrationPageComponent,
+  RegistrationPageComponent
 ];

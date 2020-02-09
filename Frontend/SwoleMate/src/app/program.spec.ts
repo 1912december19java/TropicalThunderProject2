@@ -1,7 +1,7 @@
-import { Program } from './program';
+import { Program } from "./program";
 
-describe('Program', () => {
-  it('should create an instance', () => {
+describe("Program", () => {
+  it("should create an instance", () => {
     expect(new Program()).toBeTruthy();
   });
 });

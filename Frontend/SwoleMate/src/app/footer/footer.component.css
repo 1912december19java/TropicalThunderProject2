@@ -18,7 +18,7 @@ footer ul {
 
 .footer-copyright {
   background: var(--color-licorice-rgb);
-  border-top: 1px solid rgba(80,80,96,.56);
+  border-top: 1px solid rgba(80, 80, 96, 0.56);
   padding: 2em 0 4em;
 }
 
