@@ -1,9 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import { Athlete } from "../athlete";
-import { CoachServiceService } from "../coach.service";
-import { Coach } from "../coach";
-import { Program } from "../program";
-import { UserService } from "../user.service";
+
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { Athlete } from '../athlete';
+import { CoachServiceService } from '../coach.service';
+import { Coach } from '../coach';
+import { Program } from '../program';
+import { Exercise } from '../exercise';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: "app-coach-dashboard",
@@ -15,31 +20,57 @@ export class CoachDashboardComponent implements OnInit {
 
   athletes: Athlete[] = [];
 
-  coach: Coach;
+  coachId:number;
 
   programs: Program[] = [];
 
-  constructor(
-    private coachService: CoachServiceService,
-    private userService: UserService
-  ) {}
 
-  async getAthletes() {
-    this.athletes = await this.coachService.getAthletes(this.coach);
+  currentUser: Coach;
+
+  constructor(private coachService: CoachServiceService, private router: Router) {}
+
+  async getAthletes(){
+    this.athletes =  await this.coachService.getAthletes(this.coachId);
   }
 
-  async getProgram(athleteId: number) {
-    this.programs = await this.coachService.getPrograms(
-      athleteId,
-      this.coach.id
-    );
+  async getProgram(athleteId:number){
+    this.programs = await this.coachService.getPrograms(athleteId, this.coachId);
+  }
+
+  async get(){
+    this.currentUser = await this.coachService.get(this.coachId);
+    this.currentUser.password = '';
+  }
+
+  deleteAthlete(id:number){
+    this.coachService.deleteAthlete(this.coachId, id);
+  }
+
+  updateProgram(program:Program){
+    this.coachService.updateProgram(program);
+  }
+
+  createProgram(athleteId:number){
+    localStorage.setItem('athleteId', athleteId.toString());
   }
 
   ngOnInit() {
-    this.coach = new Coach();
-    this.coach.name = this.userService.loggedInUser.name;
-    this.coach.email = this.userService.loggedInUser.email;
-    this.coach.id = this.userService.loggedInUser.id;
-    this.getAthletes();
+   // this.coachId = +localStorage.getItem('id');
+    //this.getAthletes();
+   // this.get();
+   this.router.navigate([{ outlets: { popup: null }}]);
+this.currentUser = new Coach();
+this.athletes = new Array ();
+this.currentUser.name = 'joey flexx';
+this.currentUser.email = 'theschoolof@flexx.com';
+this.athletes.push(new Athlete());
+this.athletes.push(new Athlete());
+this.athletes.push(new Athlete());
+this.athletes.push(new Athlete());
+this.athletes[0].name = 'russ';
+this.athletes[1].name = 'amanda';
+this.athletes[2].name = 'sean';
+this.athletes[3].name = 'daniella';
+
   }
 }

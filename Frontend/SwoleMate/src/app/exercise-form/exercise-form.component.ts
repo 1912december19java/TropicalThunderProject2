@@ -1,8 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 import { Exercise } from "../exercise";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { Program } from "../program";
-import { CoachServiceService } from "../coach.service";
+import { Validators } from "@angular/forms";
+import { FormArray } from "@angular/forms";
+import { FormControl } from "@angular/forms";
+import { Program } from '../program';
+import { CoachServiceService } from '../coach.service';
+import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
+import { AthleteService } from '../athlete.service';
+import { Athlete } from '../athlete';
 
 @Component({
   selector: "app-exercise-form",
@@ -10,12 +17,18 @@ import { CoachServiceService } from "../coach.service";
   styleUrls: ["./exercise-form.component.css"]
 })
 export class ExerciseFormComponent implements OnInit {
-  constructor(
-    private fb: FormBuilder,
-    private coachService: CoachServiceService
-  ) {}
 
-  ngOnInit() {}
+  athleteName:string;
+  
+  constructor(private fb: FormBuilder, private coachService: CoachServiceService, private router: Router, private athleteService:AthleteService) { }
+  
+  ngOnInit() {
+    this.athleteService.getAthlete(+localStorage.getItem('athleteId'))
+    .subscribe(
+      data=> this.athleteName = data.name
+    );
+  }
+
 
   workoutForm1 = this.fb.group({
     exercise1: this.fb.group({
@@ -182,6 +195,13 @@ export class ExerciseFormComponent implements OnInit {
         )
       );
     }
+    program.coachId = +localStorage.getItem('id');
+    program.athleteId = +localStorage.getItem('athleteId');
     this.coachService.createProgram(program);
   }
+  closePopup(){
+    this.router.navigate([{ outlets: { popup: null }}]);
+  }
+
+  
 }

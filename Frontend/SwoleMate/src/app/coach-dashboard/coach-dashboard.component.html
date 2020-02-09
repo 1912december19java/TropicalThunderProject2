@@ -3,21 +3,14 @@
     <div class="col-2 bg-sidenav">
       <nav class="navbar-vertical show">
         <p>
-          <button
-            type="button"
-            class="btn btn-outline-primary"
-            (click)="isCollapsed = !isCollapsed"
-            [attr.aria-expanded]="!isCollapsed"
-            aria-controls="collapseExample"
-          >
-            +
+          <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+            options
           </button>
         </p>
         <div class="" id="collapseExample" [ngbCollapse]="!isCollapsed">
           <div class="bg-white card">
             <div class="card-body">
-              <p><a routerLink=""> Add Workout Program</a></p>
-              <p><a routerLink="edit-workout"> Edit Workout Program</a></p>
               <p><a routerLink="edit-profile"> Edit Profile</a></p>
             </div>
           </div>
@@ -28,29 +21,28 @@
       <img
         class="card-img-top"
         src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        alt="Card image cap"
-      />
+
+        alt="Card image cap"/>
+
     </div>
     <div class="col-5 bg-spot border-dark">
-      <h5 class="card-title" id="userName">Ben Jobs</h5>
-      <h3 class="card-text">Coach Account</h3>
+      <h3 class="card-title" id="userName">Welcome {{currentUser.name}}</h3>
+      <h5 class="card-text">{{currentUser.email}}</h5>
+      <h2>Athletes</h2>
       <ngb-accordion [closeOthers]="true">
-        <ngb-panel
-          *ngFor="let athlete of athletes; let i = index"
-          title="Athlete {{ i + 1 }}"
-          id="panel-{{ i }}"
-        >
+        <ngb-panel *ngFor="let athlete of athletes; let i= index" title="{{athlete.name}}" id="panel-{{i}}">
           <ng-template ngbPanelContent>
-            {{ athlete.name }}
-            <button (click)="getProgram(coach.id)">program</button>
+            <button (click)="getProgram(athlete.id)">current program</button>
+            <button (click)="createProgram(athlete.id)" [routerLink]="[{ outlets: { popup: 'coach/program' }}]">add new program</button>
+            <button class="alert-danger" (click)="deleteAthlete(athlete.id)">drop athlete</button>
+
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
     </div>
   </div>
 </div>
-<hr />
-<h1 class="mx-auto px-3 py-4">Athlete Dashboard</h1>
+<hr/>
 <div *ngFor="let program of programs">
   <table class="stats-bar table table-striped" *ngIf="program.isActive">
     <thead>
@@ -68,30 +60,36 @@
     <tbody>
       <tr *ngFor="let exercise of program.programExercises; let i = index">
         <td>
-          {{ program.programExercises[i].name }}
+
+          <input type="text" value="{{program.programExercises[i].name}}" [(ngModel)]="program.Exercises[i].name">
         </td>
         <td>
-          {{ program.programExercises[i].sets }}
+          <input type="number" value="{{program.programExercises[i].sets}}" [(ngModel)]="program.Exercises[i].sets">
         </td>
         <td>
-          {{ program.programExercises[i].reps }}
+          <input type="number" value="{{program.programExercises[i].reps}}" [(ngModel)]="program.Exercises[i].reps">
         </td>
         <td>
-          {{ program.programExercises[i].load }}
+          <input type="text" value="{{program.programExercises[i].load}}" [(ngModel)]="program.Exercises[i].load">
         </td>
         <td>
-          {{ program.programExercises[i].coachNotes }}
+          <input type="text" value="{{program.programExercises[i].coachNotes}}" [(ngModel)]="program.Exercises[i].coachNotes">
         </td>
         <td>
-          {{ program.programExercises[i].athleteNotes }}
+          <input type="number" value="{{program.programExercises[i].day}}" [(ngModel)]="program.Exercises[i].day">
         </td>
         <td>
-          {{ program.programExercises[i].day }}
+          {{program.programExercises[i].athleteNotes}}
         </td>
         <td>
-          {{ program.programExercises[i].exerciseUrl }}
+          <a href="{{program.programExercises[i].exerciseUrl}}">video link</a>
+
         </td>
       </tr>
     </tbody>
   </table>
+
+  <button class="alert-heading" (click)="updateProgram(program)">update program</button>
 </div>
+<router-outlet name="popup"></router-outlet>
+<br><br><br><br><br><br><br><br><br><br><br><br>

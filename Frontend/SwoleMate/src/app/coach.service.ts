@@ -8,14 +8,15 @@ import { Program } from "./program";
   providedIn: "root"
 })
 export class CoachServiceService {
-  constructor(private http: HttpClient) {}
-  baseUrl = "http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/coach";
-  //baseUrl = 'http://localhost:4200/SwoleMate/coach';
 
-  async getAthletes(coach: Coach): Promise<Athlete[]> {
-    return this.http
-      .get<Athlete[]>(`${this.baseUrl}/${coach.id}/athletes`)
-      .toPromise();
+
+  constructor(private http: HttpClient) { }
+  //baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/coach';
+  baseUrl = 'http://localhost:4200/SwoleMate/coach';
+
+  async getAthletes(id:number):Promise<Athlete[]>{
+    return this.http.get<Athlete[]>(`${this.baseUrl}/${id}/athletes`)
+    .toPromise();
   }
 
   async create(coach: Coach): Promise<number> {
@@ -52,11 +53,15 @@ export class CoachServiceService {
     this.http.delete(`${this.baseUrl}/program/${id}`);
   }
 
-  addAthlete(coachId: number, athleteId: number) {
+
+  addAthlete(coachId:number, athleteId:number):void{
     this.http.get(`${this.baseUrl}/${coachId}/${athleteId}`);
   }
 
-  deleteAthlete(id: number) {
-    this.http.delete<Coach>(`${this.baseUrl}/${id}`);
+  deleteAthlete(coachId:number, athleteId:number):void{
+    this.http.delete(`${this.baseUrl}/${coachId}/${athleteId}`);
+
   }
+
+
 }

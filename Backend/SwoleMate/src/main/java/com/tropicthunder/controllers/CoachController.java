@@ -65,7 +65,7 @@ public class CoachController {
 		return coachService.getPrograms(coachId, athleteId);
 	}
 
-	@PatchMapping("/program")
+	@PatchMapping("/program/update")
 	public void updateProgram(@RequestBody Program program) {
 		coachService.saveOrUpdateProgram(program);
 	}

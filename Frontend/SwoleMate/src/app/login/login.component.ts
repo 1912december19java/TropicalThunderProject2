@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-
 import { Router } from "@angular/router";
 import { LoginService } from '../login.service';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -33,17 +32,17 @@ export class LoginComponent implements OnInit {
   };
 
   @Output() showLogout = new EventEmitter();
-
+ngOnInit(){}
+  // constructor(
+  //   private loginService : LoginService,
+  //   private navbarComponent : NavbarComponent,
+  // ) { }
   constructor(
 
     private loginService : LoginService,
     private navbarComponent : NavbarComponent,
     private router: Router,
   ) { }
-
-  chkInputCoachClicked() {
-    this.isChecked = !this.loginAsCoach;
-  }
 
 
   loginHandler() : void {
