@@ -1,14 +1,14 @@
-// import { Component, OnInit } from "@angular/core";
-// import { Observable } from "rxjs";
-// import { debounceTime, map } from "rxjs/operators";
-// import { AthleteService } from "../athlete.service";
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { debounceTime, map } from "rxjs/operators";
+import { AthleteService } from "../athlete.service";
 
-// @Component({
-//   selector: "app-search",
-//   templateUrl: "./search.component.html",
-//   styleUrls: ["./search.component.css"]
-// })
-// export class SearchComponent implements OnInit {
+@Component({
+  selector: "app-search",
+  templateUrl: "./search.component.html",
+  styleUrls: ["./search.component.css"]
+})
+export class SearchComponent implements OnInit {
 //   public model: any;
 
 //   athlete: any;
@@ -32,7 +32,7 @@
 
 //   constructor(private athleteService: AthleteService) {}
 
-//   ngOnInit() {
+ngOnInit() {}
 //     // this.athlete =  this.athleteService.getAthlete().subscribe(data => this.athlete = data);
 //   }
 
@@ -40,4 +40,4 @@
 //     console.log(this.athlete.name);
 //     this.searchResults.push(this.athlete.name);
 //   }
-// }
+}
