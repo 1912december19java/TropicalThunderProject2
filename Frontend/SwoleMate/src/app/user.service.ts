@@ -27,8 +27,7 @@ export class UserService {
 
       console.log(JSON.stringify(newUser));
 
-      this.http
-        .post(`${baseUrl}`, JSON.stringify(newUser))
+      this.http.post(`${baseUrl}`, newUser)
         .subscribe((response: number) => {
           console.log(`registered as user ${response}`);
         });
