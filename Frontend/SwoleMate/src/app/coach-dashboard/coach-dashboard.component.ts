@@ -1,12 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
 import { Athlete } from '../athlete';
 import { CoachServiceService } from '../coach.service';
 import { Coach } from '../coach';
 import { Program } from '../program';
-import { Exercise } from '../exercise';
-import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
 
