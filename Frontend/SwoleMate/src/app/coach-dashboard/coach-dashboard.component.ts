@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class CoachDashboardComponent implements OnInit {
   public isCollapsed = false;
 
-  athletes: Athlete[] = [];
+  athletes: Array<Athlete> = [];
 
   coachId: number;
 
@@ -30,7 +30,15 @@ export class CoachDashboardComponent implements OnInit {
   constructor(private coachService: CoachServiceService, private router: Router) { }
 
   async getAthletes() {
-    this.athletes = await this.coachService.getAthletes(this.coachId);
+    let athletes = await this.coachService.getAthletes(this.coachId);
+    let i:number = 0;
+    for (let athlete of athletes) {
+      let a = new Athlete();
+      a.athleteId = athlete[0];
+      a.name = athlete[2];
+      a.email = athlete[3];
+      this.athletes.push(a);
+    }
     console.log(this.athletes);
   }
 
@@ -41,7 +49,6 @@ export class CoachDashboardComponent implements OnInit {
   async get() {
     this.currentUser = await this.coachService.get(this.coachId);
     this.currentUser.password = '';
-    console.log(this.currentUser);
   }
 
   deleteAthlete(id: number) {

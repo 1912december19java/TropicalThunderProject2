@@ -23,7 +23,7 @@ export class ExerciseFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private coachService: CoachServiceService, private router: Router, private athleteService:AthleteService) { }
   
   ngOnInit() {
-    this.athleteService.getAthlete(+localStorage.getItem('athleteId'))
+    this.athleteService.get(+localStorage.getItem('athleteId'))
     .subscribe(
       data=> this.athleteName = data.name
     );

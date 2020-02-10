@@ -6,7 +6,6 @@ import { Coach } from '../coach';
 import { Exercises } from '../exercises';
 import { Athlete } from '../athlete';
 import { Observable } from 'rxjs';
-import { Coach } from "../coach";
 import { Exercise } from "../exercise";
 import { UserService } from "../user.service";
 
@@ -30,7 +29,7 @@ export class AthleteDashboardComponent implements OnInit {
   //y = this.athlete.athleteId;
   ngOnInit() {
 
-    this.athlete = new Athlete("", "", "", "", "")
+    this.athlete = new Athlete();
 
     this.athleteService.getAthlete()
       .subscribe(data => this.athlete = data);

@@ -23,23 +23,22 @@ export class AthleteWorkoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.athlete = this.athleteService
-      .getAthlete(this.userService.loggedInUser.id)
-      .subscribe(data => (this.athlete = data));
+    // this.athlete = this.athleteService
+    //   .get(this.userService.loggedInUser.id)
+    //   .subscribe(data => (this.athlete = data));
 
-    this.programs = this.athleteService
-      .getProgram()
-      .subscribe(data => (this.programs = data));
+    // this.programs = this.athleteService
+    //   .getProgram()
+    //   .subscribe(data => (this.programs = data));
 
-    this.program = this.athleteService
-      .getCurrentProgram(this.athlete.id)
-      .subscribe(data => (this.program = data));
+    // this.program = this.athleteService
+    //   .getCurrentProgram(this.athlete.id)
+    //   .subscribe(data => (this.program = data));
   }
 
-  programComplete() {
-    this.program.isComplete = true;
-    this.program.isActive = false;
-    this.athleteService.updateProgram(this.program);
+  // programComplete() {
+  //   this.program.isComplete = true;
+  //   this.program.isActive = false;
+  //   this.athleteService.updateProgram(this.program);}
 
-  }
 }

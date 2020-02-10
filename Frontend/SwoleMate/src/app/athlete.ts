@@ -5,10 +5,11 @@ import { Program } from './program';
 export class Athlete {
 
         athleteId?: number;
-        coach?: Coach;
+        coach?: Coach = new Coach();
         name?: string;
         email?: string;
         password?: string;
+
       
      
 
@@ -19,3 +20,4 @@ export class Athlete {
                 this.email = email;
                 this.password = password;
         }}
+
