@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Exercise } from "./exercise"
 import { Observable } from 'rxjs';
 import { Exercises } from './exercises';
@@ -16,6 +16,11 @@ export class ExercisesService {
   getExercises(): Observable<Exercises[]> {
     
     return this.http.get<Exercises[]>(this.exerciseUrl);
+  }
+
+  updateExercise(id:number, value: any): Observable<void>{
+    return this.http.put<void>(`${this.exerciseUrl}/${id}`, value);
+    
   }
 
 }

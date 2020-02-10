@@ -56,4 +56,4 @@ export class AthleteDashboardComponent implements OnInit {
       }
     )
   }
-}
+
