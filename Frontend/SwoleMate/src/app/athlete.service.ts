@@ -24,7 +24,10 @@ export class AthleteService {
 
   public getAthlete(): Observable<Athlete> {
     return this.http.get<Athlete>(this.baseUrl + "/" + this.id);
-   
+  }
+
+  public get(id:number): Observable<Athlete> {
+    return this.http.get<Athlete>(this.baseUrl + "/" + id);
   }
 
   public deleteCoach(id1:number, id2: number):Observable<any>  {

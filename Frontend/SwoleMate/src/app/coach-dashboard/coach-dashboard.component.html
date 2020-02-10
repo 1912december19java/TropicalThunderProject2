@@ -32,9 +32,9 @@
       <ngb-accordion [closeOthers]="true">
         <ngb-panel *ngFor="let athlete of athletes; let i= index" title="{{athlete.name}}" id="panel-{{i}}">
           <ng-template ngbPanelContent>
-            <button (click)="getProgram(athlete.id)">current program</button>
-            <button (click)="createProgram(athlete.id)" [routerLink]="[{ outlets: { popup: 'coach/program' }}]">add new program</button>
-            <button class="alert-danger" (click)="deleteAthlete(athlete.id)">drop athlete</button>
+            <button (click)="getProgram(athlete.athleteId)">current program</button>
+            <button (click)="createProgram(athlete.athleteId)" [routerLink]="[{ outlets: { popup: '/program' }}]">add new program</button>
+            <button class="alert-danger" (click)="deleteAthlete(athlete.athleteId)">drop athlete</button>
 
           </ng-template>
         </ngb-panel>
