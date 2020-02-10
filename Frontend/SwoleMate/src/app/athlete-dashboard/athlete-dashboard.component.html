@@ -7,7 +7,7 @@
       <hr>
       <a routerLink="edit-profile"> Program History</a>
       <hr>
-      <p><a routerLink="workout-page"> Current Program</a></p>
+      <a routerLink="workout-page"> Current Program</a>
     </div>
     <div class="col-3 bg-spot border-dark ">
       <img class="image--cover card-img-top align-content-center"
@@ -23,7 +23,8 @@
       <p>Name: {{athlete.coach.name}} </p>
       <p>Name: {{athlete.coach.email}} </p>
       <hr>
-      <button class="btn btn-outline-dark" (click)="deleteCoach(this.athlete.coach.id,this.athlete.athleteId)">Drop Coach</button>
+      <button class="btn btn-outline-dark" (click)="deleteCoach(this.athlete.coach.id,this.athlete.athleteId)">Drop
+        Coach</button>
     </div>
   </div>
   <div class="table-responsive-lg bg-secondary">

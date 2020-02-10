@@ -1,19 +1,19 @@
 // import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-// import { EditCoachProfileComponent } from "./edit-coach-profile.component";
+// import { SearchComponent } from "./search.component";
 
-// describe("EditCoachProfileComponent", () => {
-//   let component: EditCoachProfileComponent;
-//   let fixture: ComponentFixture<EditCoachProfileComponent>;
+// describe("SearchComponent", () => {
+//   let component: SearchComponent;
+//   let fixture: ComponentFixture<SearchComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [EditCoachProfileComponent]
+//       declarations: [SearchComponent]
 //     }).compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(EditCoachProfileComponent);
+//     fixture = TestBed.createComponent(SearchComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

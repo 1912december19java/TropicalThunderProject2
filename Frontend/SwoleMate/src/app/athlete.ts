@@ -1,3 +1,4 @@
+
 import { Coach } from './coach';
 import { Program } from './program';
 
@@ -17,6 +18,4 @@ export class Athlete {
                 this.name = name;
                 this.email = email;
                 this.password = password;
-               
-              }
-}
+        }}
