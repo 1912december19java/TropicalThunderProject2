@@ -43,7 +43,6 @@
         </tr>
       </thead>
       <tbody *ngFor="let item of exercise">
-        <tr *ngif = "item.programId = >
           <td>{{ item.exerciseName }}</td>
           <td>{{ item.exerciseSets }}</td>
           <td>{{ item.exerciseReps }}</td>
@@ -65,7 +64,7 @@
             <hr>
             <button type="button">Submit</button>
           </td>
-        </tr>
+        
       </tbody>
     </table>
   </div>

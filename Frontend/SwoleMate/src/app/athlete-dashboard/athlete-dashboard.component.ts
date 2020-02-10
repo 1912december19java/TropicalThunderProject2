@@ -29,7 +29,7 @@ export class AthleteDashboardComponent implements OnInit {
   //y = this.athlete.athleteId;
   ngOnInit() {
 
-    this.athlete = new Athlete();
+    this.athlete = new Athlete("","","","","");
 
     this.athleteService.getAthlete()
       .subscribe(data => this.athlete = data);
@@ -55,4 +55,4 @@ export class AthleteDashboardComponent implements OnInit {
       }
     )
   }
-
+}

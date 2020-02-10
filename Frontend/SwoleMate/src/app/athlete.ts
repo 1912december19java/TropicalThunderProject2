@@ -13,7 +13,7 @@ export class Athlete {
       
      
 
-        constructor(Id, coachInfo, name, email, password, program) {
+        constructor(Id, coachInfo, name, email, password) {
                 this.athleteId = Id;
                 this.coach = coachInfo;
                 this.name = name;
