@@ -9,6 +9,7 @@ interface Data {
   isLoggedIn: Boolean;
   routerLink: String;
   message: String;
+  id: number
 }
 
 @Component({
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
   data: Data = {
     isLoggedIn: false,
     routerLink: "",
-    message: ""
+    message: "",
+    id: NaN
   };
 
   @Output() showLogout = new EventEmitter();
@@ -43,13 +45,13 @@ export class LoginComponent implements OnInit {
   loginHandler() : void {
     if (Boolean(this.data.isLoggedIn)) {
       this.loginService.setIsLoggedIn(this.data.isLoggedIn);
-
+      console.log(this.data);
       localStorage.setItem("isLoggedIn", this.data.isLoggedIn.toString());
       localStorage.setItem("routerLink", this.data.routerLink.toString());
       localStorage.setItem("message", this.data.message.toString());
+      localStorage.setItem("id", this.data.id.toString());
 
       this.router.navigateByUrl(`/${localStorage.getItem("routerLink")}`);
-
       this.showLogout.emit(true);
     }
   }
@@ -58,8 +60,8 @@ export class LoginComponent implements OnInit {
     try {
       this.loginService.authenticateAthlete(this.loginInputEmailValue, this.loginInputPasswordValue).subscribe(
         data => {
+          this.data = data;
           this.loginHandler();
-          return this.data = data;
         }
       );
     } catch (err) {
@@ -71,8 +73,8 @@ export class LoginComponent implements OnInit {
     try {
       this.loginService.authenticateCoach(this.loginInputEmailValue, this.loginInputPasswordValue).subscribe(
         data => {
+          this.data = data;
           this.loginHandler();
-          return this.data = data;
         }
       );
     } catch (err) {
@@ -81,7 +83,6 @@ export class LoginComponent implements OnInit {
   }
 
   getRouterLinkPath() : String {
-    console.log(localStorage.getItem('routerLink'));
     return localStorage.getItem('routerLink');
   }
 

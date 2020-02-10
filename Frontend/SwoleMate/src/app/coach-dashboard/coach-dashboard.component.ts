@@ -20,57 +20,48 @@ export class CoachDashboardComponent implements OnInit {
 
   athletes: Athlete[] = [];
 
-  coachId:number;
+  coachId: number;
 
   programs: Program[] = [];
 
 
-  currentUser: Coach;
+  currentUser: Coach = new Coach();
 
-  constructor(private coachService: CoachServiceService, private router: Router) {}
+  constructor(private coachService: CoachServiceService, private router: Router) { }
 
-  async getAthletes(){
-    this.athletes =  await this.coachService.getAthletes(this.coachId);
+  async getAthletes() {
+    this.athletes = await this.coachService.getAthletes(this.coachId);
+    console.log(this.athletes);
   }
 
-  async getProgram(athleteId:number){
+  async getProgram(athleteId: number) {
     this.programs = await this.coachService.getPrograms(athleteId, this.coachId);
   }
 
-  async get(){
+  async get() {
     this.currentUser = await this.coachService.get(this.coachId);
     this.currentUser.password = '';
+    console.log(this.currentUser);
   }
 
-  deleteAthlete(id:number){
+  deleteAthlete(id: number) {
     this.coachService.deleteAthlete(this.coachId, id);
   }
 
-  updateProgram(program:Program){
+  updateProgram(program: Program) {
     this.coachService.updateProgram(program);
   }
 
-  createProgram(athleteId:number){
+  createProgram(athleteId: number) {
     localStorage.setItem('athleteId', athleteId.toString());
   }
 
   ngOnInit() {
-   // this.coachId = +localStorage.getItem('id');
-    //this.getAthletes();
-   // this.get();
-   this.router.navigate([{ outlets: { popup: null }}]);
-this.currentUser = new Coach();
-this.athletes = new Array ();
-this.currentUser.name = 'joey flexx';
-this.currentUser.email = 'theschoolof@flexx.com';
-this.athletes.push(new Athlete());
-this.athletes.push(new Athlete());
-this.athletes.push(new Athlete());
-this.athletes.push(new Athlete());
-this.athletes[0].name = 'russ';
-this.athletes[1].name = 'amanda';
-this.athletes[2].name = 'sean';
-this.athletes[3].name = 'daniella';
+    this.coachId = +localStorage.getItem('id');
+    console.log(this.coachId);
+    this.get();
+    this.getAthletes();
+    this.router.navigate([{ outlets: { popup: null } }]);
 
   }
 }

@@ -14,7 +14,7 @@
     <div class="form-group">
       <input
         type="checkbox"
-        [(ngModel)]="loginAsCoach"
+        [(ngModel)]="isChecked"
         [ngModelOptions]="{ standalone: true }"
         id="chkInputIsCoach"
       />
@@ -32,7 +32,6 @@
     <button
       type="submit"
       class="btn btn-success login-btn-submit"
-      id="loginBtnSubmit"
       (click)="loginCoach()"
       *ngIf="isChecked"
     >

@@ -6,6 +6,7 @@ interface Data {
   isLoggedIn: Boolean;
   routerLink: String;
   message: String;
+  id: number;
 }
 
 @Injectable({
@@ -19,7 +20,8 @@ export class LoginService {
   data: Data = {
     isLoggedIn: false,
     routerLink: "",
-    message: ""
+    message: "",
+    id: NaN
   };
 
   constructor(private http: HttpClient) {}
