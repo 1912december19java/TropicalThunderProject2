@@ -78,7 +78,9 @@ public class CoachDaoImpl {
 
 	public List<Program> getPrograms(int coachId, int athleteId) {
 		Session session = sf.getCurrentSession();
-		SQLQuery q = session.createSQLQuery("Select * from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId + ";" );
+		//SQLQuery q = session.createSQLQuery("Select * from program_table where coach_id = " + coachId + " AND athlete_id = " + athleteId + ";" );
+		Query q = session.createQuery("from Program p where p.athlete.athleteId = :athleteId");
+		q.setInteger("athleteId", athleteId);
 		@SuppressWarnings("unchecked")
 		List<Program> programs = q.list();
 		return programs;

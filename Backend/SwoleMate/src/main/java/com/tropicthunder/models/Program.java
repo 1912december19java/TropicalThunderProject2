@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -45,10 +46,9 @@ public class Program {
 	@Column(name = "program_is_complete")
 	private boolean isComplete;
 
-//	@OneToMany(mappedBy = "program_id", fetch = FetchType.EAGER)
-//	@JsonIgnoreProperties()
-//	@Column(name = "program_exercises")
-//	private List<Exercise> exercises;
+	@OneToMany(mappedBy = "program", fetch = FetchType.EAGER)
+	@JsonIgnoreProperties("program")
+	private List<Exercise> programExercises;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinColumn(name = "coach_id")
@@ -100,13 +100,15 @@ public class Program {
 		this.isComplete = isComplete;
 	}
 
-//	public List<Exercise> getExercises() {
-//		return exercises;
-//	}
-//
-//	public void setExercises(List<Exercise> exercises) {
-//		this.exercises = exercises;
-//	}
+
+
+	public List<Exercise> getProgramExercises() {
+		return programExercises;
+	}
+
+	public void setProgramExercises(List<Exercise> programExercises) {
+		this.programExercises = programExercises;
+	}
 
 	public Coach getCoach() {
 		return coach;
