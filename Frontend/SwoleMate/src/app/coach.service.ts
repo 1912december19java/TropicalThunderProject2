@@ -35,13 +35,17 @@ export class CoachServiceService {
     this.http.delete<Coach>(`${this.baseUrl}/${id}`);
   }
 
-  createProgram(program: Program): void {
-    this.http.post(`${this.baseUrl}/program`, program);
+  /**
+   * 
+   * @param program Provides no feedback but sends program to backend
+   */
+  async createProgram(program: Program): Promise<void> {
+    await this.http.post(`${this.baseUrl}/program`, program).toPromise();
   }
 
   async getPrograms(coachId: number, athleteId: number): Promise<Program[]> {
     return this.http
-      .get<Program[]>(`${this.baseUrl}/program/${coachId}/${athleteId}`)
+      .get<Program[]>(`${this.baseUrl}/${coachId}/program/${athleteId}`)
       .toPromise();
   }
 

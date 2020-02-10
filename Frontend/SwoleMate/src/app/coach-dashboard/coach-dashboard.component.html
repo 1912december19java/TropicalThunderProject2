@@ -44,7 +44,7 @@
 </div>
 <hr/>
 <div *ngFor="let program of programs">
-  <table class="stats-bar table table-striped" *ngIf="program.isActive">
+  <table class="stats-bar table table-striped">
     <thead>
       <tr>
         <th scope="col">name</th>
@@ -91,5 +91,6 @@
 
   <button class="alert-heading" (click)="updateProgram(program)">update program</button>
 </div>
+<app-exercise-form></app-exercise-form>
 <router-outlet name="popup"></router-outlet>
 <br><br><br><br><br><br><br><br><br><br><br><br>
