@@ -10,6 +10,7 @@ export class Exercise {
   athleteNotes?: string;
   exerciseUrl?: string;
   isComplete?: boolean;
+  exerciseId: any;
 
   
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Athlete } from "./athlete"
 import { Observable } from 'rxjs';
+import { Exercise } from './exercise';
 
 
 @Injectable({
@@ -18,13 +19,15 @@ export class AthleteService {
   public coachNum: number;
   public athleteNum: number;
 
-  public getAthlete(): Observable<Athlete> {
+   getAthlete(): Observable<Athlete> {
     return this.http.get<Athlete>(this.baseUrl + "/" + this.id);
    
   }
 
-  public deleteCoach(id1:number, id2: number):Observable<any>  {
+  deleteCoach(id1:number, id2: number):Observable<any>  {
     return this.http.delete(`${this.coachUrl}/${id1}/${id2}`, {responseType: 'text'});
   }
+
+  
 
 }

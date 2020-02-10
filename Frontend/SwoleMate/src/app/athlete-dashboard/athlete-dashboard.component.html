@@ -38,26 +38,24 @@
           <th scope="row">Day</th>
           <th scope="row">Coach Note</th>
           <th scope="row">Athlete Note</th>
-          <th scope="row">Vid Upload</th>
           <th scope="row">Actions</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let item of exercise">
+      <tbody *ngFor="let item of exercise">
+        <tr *ngif = "item.programId = >
           <td>{{ item.exerciseName }}</td>
           <td>{{ item.exerciseSets }}</td>
           <td>{{ item.exerciseReps }}</td>
           <td>{{ item.exerciseLoad}}</td>
           <td>{{ item.exerciseDay }}</td>
           <td>{{ item.coachNotes }}</td>
-          <td>{{ item. athleteNotes }}
+          <td>{{ item.athleteNotes }}
             <hr>
-            <div class="form-group">
+            <div >
               <textarea class="form-control" id="athleteComments" rows="3"></textarea>
-              <label for="athleteComments">Leave a Comment</label>
+              <label for="completedExercise">Leave a Comment</label>
             </div>
           </td>
-          <td>{{ item.exerciseUrl }}</td>
           <td>
             <b>
               Completed
