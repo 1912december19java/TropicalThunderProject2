@@ -133,5 +133,4 @@ public class CoachDaoImpl {
       q.executeUpdate();
     }
   }
-
 }

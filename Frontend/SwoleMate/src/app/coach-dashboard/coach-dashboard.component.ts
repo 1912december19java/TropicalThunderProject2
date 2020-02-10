@@ -1,12 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
 import { Athlete } from '../athlete';
 import { CoachServiceService } from '../coach.service';
 import { Coach } from '../coach';
 import { Program } from '../program';
-import { Exercise } from '../exercise';
-import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
 
@@ -34,7 +32,7 @@ export class CoachDashboardComponent implements OnInit {
     let athletes = await this.coachService.getAthletes(this.coachId);
     let i:number = 0;
     for (let athlete of athletes) {
-      let a = new Athlete();
+      let a = new Athlete("","","","","");
       a.athleteId = athlete[0];
       a.name = athlete[2];
       a.email = athlete[3];

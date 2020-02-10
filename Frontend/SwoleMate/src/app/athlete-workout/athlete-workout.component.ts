@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { AthleteService } from "../athlete.service";
-import { ExercisesService } from '../exercises.service';
-import { Exercises} from '../exercises'
 import { UserService } from "../user.service";
 
 

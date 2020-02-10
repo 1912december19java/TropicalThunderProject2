@@ -2,8 +2,6 @@ package com.tropicthunder.repositories;
 
 import java.util.List;
 import javax.transaction.Transactional;
-import org.hibernate.Criteria;
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

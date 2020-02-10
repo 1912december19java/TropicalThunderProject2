@@ -11,8 +11,8 @@ export class CoachServiceService {
 
 
   constructor(private http: HttpClient) { }
-  //baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/coach';
-  baseUrl = 'http://localhost:8080/SwoleMate/coach';
+  baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/SwoleMate/coach';
+  //baseUrl = 'http://localhost:8080/SwoleMate/coach';
 
   async getAthletes(id:number):Promise<Athlete[]>{
     return this.http.get<Athlete[]>(`${this.baseUrl}/${id}/athletes`)
@@ -35,8 +35,10 @@ export class CoachServiceService {
     return this.http.delete<Coach>(`${this.baseUrl}/${id}`).toPromise();
   }
 
+
   async createProgram(program: Program): Promise<Response> {
     return this.http.post<Response>(`${this.baseUrl}/program`, program).toPromise();
+
   }
 
   async getPrograms(coachId: number, athleteId: number): Promise<Program[]> {
