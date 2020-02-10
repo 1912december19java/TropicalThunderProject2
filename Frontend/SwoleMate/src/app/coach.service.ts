@@ -27,20 +27,18 @@ export class CoachServiceService {
     return this.http.get<Coach>(`${this.baseUrl}/${id}`).toPromise();
   }
 
-  update(coach: Coach) {
-    return this.http.patch(`${this.baseUrl}/${coach.id}`, coach);
+  async update(coach: Coach): Promise<Response> {
+    return this.http.patch<Response>(`${this.baseUrl}/${coach.id}`, coach).toPromise();
   }
 
-  delete(id: number) {
-    this.http.delete<Coach>(`${this.baseUrl}/${id}`);
+  async delete(id: number): Promise<Coach> {
+    return this.http.delete<Coach>(`${this.baseUrl}/${id}`).toPromise();
   }
 
-  /**
-   * 
-   * @param program Provides no feedback but sends program to backend
-   */
-  async createProgram(program: Program): Promise<void> {
-    await this.http.post(`${this.baseUrl}/program`, program).toPromise();
+
+  async createProgram(program: Program): Promise<Response> {
+    return this.http.post<Response>(`${this.baseUrl}/program`, program).toPromise();
+
   }
 
   async getPrograms(coachId: number, athleteId: number): Promise<Program[]> {
@@ -49,22 +47,21 @@ export class CoachServiceService {
       .toPromise();
   }
 
-  updateProgram(program: Program): void {
-    this.http.patch(`${this.baseUrl}/program/update`, program);
+  async updateProgram(program: Program): Promise<Response> {
+    return this.http.patch<Response>(`${this.baseUrl}/program/update`, program).toPromise();
   }
 
-  deleteProgram(id: number): void {
-    this.http.delete(`${this.baseUrl}/program/${id}`);
+  async deleteProgram(id: number): Promise<Response> {
+    return this.http.delete<Response>(`${this.baseUrl}/program/${id}`).toPromise();
   }
 
 
-  addAthlete(coachId:number, athleteId:number):void{
-    this.http.get(`${this.baseUrl}/${coachId}/${athleteId}`);
+  async addAthlete(coachId:number, athleteId:number):Promise<Response>{
+    return this.http.get<Response>(`${this.baseUrl}/${coachId}/${athleteId}`).toPromise();
   }
 
-  deleteAthlete(coachId:number, athleteId:number):void{
-    this.http.delete(`${this.baseUrl}/${coachId}/${athleteId}`);
-
+  async deleteAthlete(coachId:number, athleteId:number):Promise<Response>{
+    return this.http.delete<Response>(`${this.baseUrl}/${coachId}/${athleteId}`).toPromise();
   }
 
 

@@ -10,6 +10,7 @@ import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
 import { AthleteService } from '../athlete.service';
 import { Athlete } from '../athlete';
+import { Coach } from '../coach';
 
 @Component({
   selector: "app-exercise-form",
@@ -159,8 +160,6 @@ export class ExerciseFormComponent implements OnInit {
       this.workoutForm4,
       this.workoutForm5
     ];
-    program.programDuration = 1;
-    program.programFrequency = 5;
     for (let i = 0; i < 5; i++) {
       program.programExercises.push(
         new Exercise(
@@ -195,8 +194,15 @@ export class ExerciseFormComponent implements OnInit {
         )
       );
     }
-    program.coachId = +localStorage.getItem('id');
-    program.athleteId = +localStorage.getItem('athleteId');
+    program.coach = new Coach();
+    program.athlete = new Athlete();
+    program.coach.id = +localStorage.getItem('id');
+    program.athlete.athleteId = +localStorage.getItem('athleteId');
+    program.isActive = true;
+    program.isComplete = false;
+    program.programDuration = 1;
+    program.programFrequency = 5;
+    console.log(program);
     this.coachService.createProgram(program);
   }
   closePopup(){

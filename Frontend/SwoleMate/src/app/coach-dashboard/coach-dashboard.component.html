@@ -18,11 +18,6 @@
       </nav>
     </div>
     <div class="col-4 bg-spot border-dark " style="width: 20rem;">
-      <img
-        class="card-img-top"
-        src="https://images.unsplash.com/photo-1563685759732-3b118f9445c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-
-        alt="Card image cap"/>
 
     </div>
     <div class="col-5 bg-spot border-dark">
@@ -33,7 +28,7 @@
         <ngb-panel *ngFor="let athlete of athletes; let i= index" title="{{athlete.name}}" id="panel-{{i}}">
           <ng-template ngbPanelContent>
             <button (click)="getProgram(athlete.athleteId)">current program</button>
-            <button (click)="createProgram(athlete.athleteId)" [routerLink]="[{ outlets: { popup: '/program' }}]">add new program</button>
+            <button (click)="createProgram(athlete.athleteId)" (click)="makeProgram()">add new program</button>
             <button class="alert-danger" (click)="deleteAthlete(athlete.athleteId)">drop athlete</button>
 
           </ng-template>
@@ -91,6 +86,6 @@
 
   <button class="alert-heading" (click)="updateProgram(program)">update program</button>
 </div>
-<app-exercise-form></app-exercise-form>
-<router-outlet name="popup"></router-outlet>
+<app-exercise-form *ngIf="newProgram"></app-exercise-form>
+
 <br><br><br><br><br><br><br><br><br><br><br><br>

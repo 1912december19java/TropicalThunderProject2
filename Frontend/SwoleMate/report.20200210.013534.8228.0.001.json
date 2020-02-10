@@ -1,0 +1,466 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200210.013534.8228.0.001.json",
+    "dumpEventTime": "2020-02-10T01:35:34Z",
+    "dumpEventTimeStamp": "1581316534832",
+    "processId": 8228,
+    "cwd": "C:\\Users\\Corey\\project2\\TropicalThunderProject2\\Frontend\\SwoleMate",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Corey\\project2\\TropicalThunderProject2\\Frontend\\SwoleMate\\node_modules\\@ngtools\\webpack\\src\\type_checker_worker.js",
+      "9d93e901-158a-4cf9-ba1b-2f0582ffcfeb"
+    ],
+    "nodejsVersion": "v12.14.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Home",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i3-5020U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 13152328,
+        "nice": 0,
+        "sys": 8668578,
+        "idle": 105617484,
+        "irq": 1491734
+      },
+      {
+        "model": "Intel(R) Core(TM) i3-5020U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 13982468,
+        "nice": 0,
+        "sys": 6789375,
+        "idle": 106666265,
+        "irq": 577062
+      },
+      {
+        "model": "Intel(R) Core(TM) i3-5020U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 17037140,
+        "nice": 0,
+        "sys": 6803171,
+        "idle": 103597796,
+        "irq": 122109
+      },
+      {
+        "model": "Intel(R) Core(TM) i3-5020U CPU @ 2.20GHz",
+        "speed": 2195,
+        "user": 15763265,
+        "nice": 0,
+        "sys": 6520093,
+        "idle": 105154750,
+        "irq": 142640
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "ac:d1:b8:e6:16:eb",
+        "address": "2601:145:4300:6330::133b",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "ac:d1:b8:e6:16:eb",
+        "address": "2601:145:4300:6330:e0fd:f227:fba0:6b0e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "ac:d1:b8:e6:16:eb",
+        "address": "2601:145:4300:6330:31bb:16a3:4dd1:b5d7",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "ac:d1:b8:e6:16:eb",
+        "address": "2601:145:4300:6330:ecb4:c1e4:5563:a212",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "ac:d1:b8:e6:16:eb",
+        "address": "fe80::e0fd:f227:fba0:6b0e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 13
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "ac:d1:b8:e6:16:eb",
+        "address": "10.0.0.6",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "LAPTOP-PEPPU755"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff676c01759",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff676c05b7c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28316"
+    },
+    {
+      "pc": "0x00007ff676c04b38",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24152"
+    },
+    {
+      "pc": "0x00007ff676cf433b",
+      "symbol": "v8::base::CPU::has_sse+37723"
+    },
+    {
+      "pc": "0x00007ff6774f8c5e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff6774e0ca1",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff6773ae56c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff6773b6671",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3761"
+    },
+    {
+      "pc": "0x00007ff6773abcd3",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff6773aa4a4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2356"
+    },
+    {
+      "pc": "0x00007ff6773cb775",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff677137a49",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+4057"
+    },
+    {
+      "pc": "0x00007ff67792463d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+567949"
+    },
+    {
+      "pc": "0x00007ff6779897fe",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+982094"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x00007ff6778a41cc",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+42524"
+    },
+    {
+      "pc": "0x000003a286cbad21",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 136212480,
+    "totalCommittedMemory": 136212480,
+    "usedMemory": 130996944,
+    "availableMemory": 2067206712,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 1048576,
+        "capacity": 1047488,
+        "used": 1047448,
+        "available": 40
+      },
+      "old_space": {
+        "memorySize": 103395328,
+        "committedMemory": 103395328,
+        "capacity": 103180104,
+        "used": 101560288,
+        "available": 1619816
+      },
+      "code_space": {
+        "memorySize": 2260992,
+        "committedMemory": 2260992,
+        "capacity": 1925472,
+        "used": 1766336,
+        "available": 159136
+      },
+      "map_space": {
+        "memorySize": 3411968,
+        "committedMemory": 3411968,
+        "capacity": 3407200,
+        "used": 859360,
+        "available": 2547840
+      },
+      "large_object_space": {
+        "memorySize": 25784320,
+        "committedMemory": 25784320,
+        "capacity": 25727664,
+        "used": 25727664,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3552,
+        "used": 3552,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1047488,
+        "used": 0,
+        "available": 1047488
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 76.562,
+    "kernelCpuSeconds": 6.5,
+    "cpuConsumptionPercent": 3.36147,
+    "maxRss": 237547520,
+    "pageFaults": {
+      "IORequired": 413165,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 2392,
+      "writes": 100
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "ACLOCAL_PATH": "C:\\Program Files\\Git\\mingw64\\share\\aclocal;C:\\Program Files\\Git\\usr\\share\\aclocal",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\Corey\\AppData\\Roaming",
+    "BROWSERSLIST_IGNORE_OLD_DATA": "1",
+    "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "LAPTOP-PEPPU755",
+    "COMSPEC": "C:\\WINDOWS\\system32\\cmd.exe",
+    "configsetroot": "C:\\WINDOWS\\ConfigSetRoot",
+    "CONFIG_SITE": "C:/Program Files/Git/mingw64/etc/config.site",
+    "DISPLAY": "needs-to-be-defined",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "easyplussdk": "\"C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin\"",
+    "EXEPATH": "C:\\Program Files\\Git",
+    "HOME": "C:\\Users\\Corey",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Corey",
+    "HOSTNAME": "LAPTOP-PEPPU755",
+    "INFOPATH": "C:\\Program Files\\Git\\usr\\local\\info;C:\\Program Files\\Git\\usr\\share\\info;C:\\Program Files\\Git\\usr\\info;C:\\Program Files\\Git\\share\\info",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_231",
+    "LANG": "en_US.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\Corey\\AppData\\Local",
+    "LOGONSERVER": "\\\\LAPTOP-PEPPU755",
+    "MANPATH": "C:\\Program Files\\Git\\mingw64\\local\\man;C:\\Program Files\\Git\\mingw64\\share\\man;C:\\Program Files\\Git\\usr\\local\\man;C:\\Program Files\\Git\\usr\\share\\man;C:\\Program Files\\Git\\usr\\man;C:\\Program Files\\Git\\share\\man",
+    "MINGW_CHOST": "x86_64-w64-mingw32",
+    "MINGW_PACKAGE_PREFIX": "mingw-w64-x86_64",
+    "MINGW_PREFIX": "C:/Program Files/Git/mingw64",
+    "MSYSTEM": "MINGW64",
+    "MSYSTEM_CARCH": "x86_64",
+    "MSYSTEM_CHOST": "x86_64-w64-mingw32",
+    "MSYSTEM_PREFIX": "C:/Program Files/Git/mingw64",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OLDPWD": "C:/Users/Corey/project2/TropicalThunderProject2",
+    "OneDrive": "C:\\Users\\Corey\\OneDrive",
+    "ORIGINAL_PATH": "C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Corey\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\PROGRAM FILES (X86)\\INTEL\\ICLS CLIENT;C:\\PROGRAM FILES\\INTEL\\ICLS CLIENT;C:\\PROGRAM FILES (X86)\\LENOVO\\FUSIONENGINE;C:\\WINDOWS\\SYSTEM32;C:\\WINDOWS;C:\\WINDOWS\\SYSTEM32\\WBEM;C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0;C:\\PROGRAM FILES (X86)\\COMMON FILES\\LENOVO\\EASYPLUSSDK\\BIN;C:\\PROGRAM FILES (X86)\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\DAL;C:\\PROGRAM FILES\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\DAL;C:\\PROGRAM FILES (X86)\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\IPT;C:\\PROGRAM FILES\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\IPT;C:\\PROGRAM FILES (X86)\\SKYPE\\PHONE;C:\\PROGRAM FILES\\JAVA\\JDK1.8.0_144\\BIN;C:\\WINDOWS\\SYSTEM32\\OPENSSH;C:\\Program Files\\PuTTY;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C:\\WINDOWS\\System32\\OpenSSH;C:\\Program Files\\nodejs;C:\\Users\\Corey\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\Corey\\Desktop\\apache-maven-3.6.3\\bin;C:\\Users\\Corey\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Corey\\AppData\\Roaming\\npm",
+    "ORIGINAL_TEMP": "C:/Users/Corey/AppData/Local/Temp",
+    "ORIGINAL_TMP": "C:/Users/Corey/AppData/Local/Temp",
+    "OS": "Windows_NT",
+    "PATH": "C:\\Users\\Corey\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Corey\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\PROGRAM FILES (X86)\\INTEL\\ICLS CLIENT;C:\\PROGRAM FILES\\INTEL\\ICLS CLIENT;C:\\PROGRAM FILES (X86)\\LENOVO\\FUSIONENGINE;C:\\WINDOWS\\SYSTEM32;C:\\WINDOWS;C:\\WINDOWS\\SYSTEM32\\WBEM;C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0;C:\\PROGRAM FILES (X86)\\COMMON FILES\\LENOVO\\EASYPLUSSDK\\BIN;C:\\PROGRAM FILES (X86)\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\DAL;C:\\PROGRAM FILES\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\DAL;C:\\PROGRAM FILES (X86)\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\IPT;C:\\PROGRAM FILES\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\IPT;C:\\PROGRAM FILES (X86)\\SKYPE\\PHONE;C:\\PROGRAM FILES\\JAVA\\JDK1.8.0_144\\BIN;C:\\WINDOWS\\SYSTEM32\\OPENSSH;C:\\Program Files\\PuTTY;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C:\\WINDOWS\\System32\\OpenSSH;C:\\Program Files\\nodejs;C:\\Users\\Corey\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\Corey\\Desktop\\apache-maven-3.6.3\\bin;C:\\Users\\Corey\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Corey\\AppData\\Roaming\\npm;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+    "PKG_CONFIG_PATH": "C:\\Program Files\\Git\\mingw64\\lib\\pkgconfig;C:\\Program Files\\Git\\mingw64\\share\\pkgconfig",
+    "PLINK_PROTOCOL": "ssh",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 61 Stepping 4, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "3d04",
+    "ProgramData": "C:\\ProgramData",
+    "PROGRAMFILES": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PSModulePath": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "PWD": "C:/Users/Corey/project2/TropicalThunderProject2/Frontend/SwoleMate",
+    "SESSIONNAME": "Console",
+    "SHELL": "C:\\Program Files\\Git\\usr\\bin\\bash.exe",
+    "SHLVL": "2",
+    "SSH_ASKPASS": "C:/Program Files/Git/mingw64/libexec/git-core/git-gui--askpass",
+    "SYSTEMDRIVE": "C:",
+    "SYSTEMROOT": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\Corey\\AppData\\Local\\Temp",
+    "TERM": "xterm",
+    "TMP": "C:\\Users\\Corey\\AppData\\Local\\Temp",
+    "TMPDIR": "C:\\Users\\Corey\\AppData\\Local\\Temp",
+    "USERDOMAIN": "LAPTOP-PEPPU755",
+    "USERDOMAIN_ROAMINGPROFILE": "LAPTOP-PEPPU755",
+    "USERNAME": "Corey",
+    "USERPROFILE": "C:\\Users\\Corey",
+    "WEBPACK_DEV_SERVER": "true",
+    "WINDIR": "C:\\WINDOWS",
+    "_": "C:/Program Files/nodejs/node"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\System32\\UMPDC.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll"
+  ]
+}

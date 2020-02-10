@@ -27,6 +27,7 @@ export class CoachDashboardComponent implements OnInit {
 
   constructor(private coachService: CoachServiceService, private router: Router) { }
 
+  newProgram:boolean = false;
   async getAthletes() {
     let athletes = await this.coachService.getAthletes(this.coachId);
     let i:number = 0;
@@ -42,6 +43,7 @@ export class CoachDashboardComponent implements OnInit {
 
   async getProgram(athleteId: number) {
     this.programs = await this.coachService.getPrograms(athleteId, this.coachId);
+    
   }
 
   async get() {
@@ -68,5 +70,9 @@ export class CoachDashboardComponent implements OnInit {
     this.getAthletes();
     this.router.navigate([{ outlets: { popup: null } }]);
 
+  }
+
+  makeProgram(){
+    this.newProgram = !this.newProgram;
   }
 }

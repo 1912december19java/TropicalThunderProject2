@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.tropicthunder.models.Athlete;
 import com.tropicthunder.models.Coach;
+import com.tropicthunder.models.Exercise;
 import com.tropicthunder.models.Program;
 import com.tropicthunder.repositories.CoachDaoImpl;
 
@@ -62,5 +63,9 @@ public class CoachService implements ModelService<Coach> {
 
 	public void deleteAthlete(int athleteId) {
 		coachDaoImpl.deleteAthlete(athleteId);
+	}
+	
+	public void createProgramExercises(List<Exercise> exercises) {
+	  coachDaoImpl.createProgramExercises(exercises);
 	}
 }
