@@ -33,7 +33,7 @@
         <ngb-panel *ngFor="let athlete of athletes; let i= index" title="{{athlete.name}}" id="panel-{{i}}">
           <ng-template ngbPanelContent>
             <button (click)="getProgram(athlete.athleteId)">current program</button>
-            <button (click)="createProgram(athlete.athleteId)" [routerLink]="[{ outlets: { popup: '/program' }}]">add new program</button>
+            <button (click)="createProgram(athlete.athleteId)" (click)="makeProgram()">add new program</button>
             <button class="alert-danger" (click)="deleteAthlete(athlete.athleteId)">drop athlete</button>
 
           </ng-template>
@@ -91,5 +91,5 @@
 
   <button class="alert-heading" (click)="updateProgram(program)">update program</button>
 </div>
-<router-outlet name="popup"></router-outlet>
+<app-exercise-form *ngIf="newProgram"></app-exercise-form>
 <br><br><br><br><br><br><br><br><br><br><br><br>

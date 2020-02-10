@@ -19,7 +19,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "program_table")
 public class Program {
 
-	public Program() {
+	@Override
+  public String toString() {
+    return "Program [programId=" + programId + ", programDuration=" + programDuration
+        + ", programFrequency=" + programFrequency + ", isActive=" + isActive + ", isComplete="
+        + isComplete + ", coach=" + coach + ", athlete=" + athlete + "]";
+  }
+
+  public Program() {
 		super();
 	}
 
@@ -28,10 +35,8 @@ public class Program {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int programId;
 
-//	@Column(name = "coach_id")
-//	private int coachId;
+//	private int id;
 //
-//	@Column(name = "athlete_id")
 //	private int athleteId;
 
 	@Column(name = "program_duration")
@@ -89,7 +94,31 @@ public class Program {
 		return isActive;
 	}
 
-	public void setIsActive(boolean isActive) {
+//	public int getId() {
+//    return id;
+//  }
+//
+//  public void setId(int id) {
+//    this.id = id;
+//  }
+//
+//  public int getAthleteId() {
+//    return athleteId;
+//  }
+//
+//  public void setAthleteId(int athleteId) {
+//    this.athleteId = athleteId;
+//  }
+
+  public void setActive(boolean isActive) {
+    this.isActive = isActive;
+  }
+
+  public void setComplete(boolean isComplete) {
+    this.isComplete = isComplete;
+  }
+
+  public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 

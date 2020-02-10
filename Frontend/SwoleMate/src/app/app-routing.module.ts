@@ -37,7 +37,7 @@ const routes: Routes = [
     component: AthleteWorkoutComponent
   },
   {
-    path: "/program",
+    path: "program",
     component: ExerciseFormComponent,
     outlet: "popup"
   },

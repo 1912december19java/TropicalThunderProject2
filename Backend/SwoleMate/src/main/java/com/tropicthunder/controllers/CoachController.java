@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tropicthunder.models.Athlete;
 import com.tropicthunder.models.Coach;
+import com.tropicthunder.models.Exercise;
 import com.tropicthunder.models.Program;
 import com.tropicthunder.services.CoachService;
 
@@ -24,69 +25,75 @@ import com.tropicthunder.services.CoachService;
 @CrossOrigin
 public class CoachController {
 
-	@Autowired
-	private CoachService coachService;
-	
-	private ObjectMapper om = new ObjectMapper();
+  @Autowired
+  private CoachService coachService;
 
-	@GetMapping("/{id}/athletes")
-	public List<Athlete> getAthletes(@PathVariable int id) {
-		return coachService.getAthletes(id);
-	}
 
-	@PostMapping(consumes = "application/json")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	public void create(@RequestBody Coach coach) {
-		coachService.saveOrUpdate(coach);
-	}
+  @GetMapping("/{id}/athletes")
+  public List<Athlete> getAthletes(@PathVariable int id) {
+    return coachService.getAthletes(id);
+  }
 
-	@GetMapping("/{id}")
-	public Coach get(@PathVariable int id) {
-		return coachService.get(id);
-	}
+  @PostMapping(consumes = "application/json")
+  @ResponseStatus(code = HttpStatus.CREATED)
+  public void create(@RequestBody Coach coach) {
+    coachService.saveOrUpdate(coach);
+  }
 
-	@PatchMapping(consumes = "application/json")
-	public void update(@RequestBody Coach coach) {
-		coachService.saveOrUpdate(coach);
-	}
+  @GetMapping("/{id}")
+  public Coach get(@PathVariable int id) {
+    return coachService.get(id);
+  }
 
-	@DeleteMapping("/{id}")
-	public void delete(@PathVariable int id) {
-		Coach coach = new Coach();
-		coach.setId(id);
-		coachService.delete(coach);
-	}
+  @PatchMapping(consumes = "application/json")
+  public void update(@RequestBody Coach coach) {
+    coachService.saveOrUpdate(coach);
+  }
 
-	@PostMapping(path = "/program", consumes = "application/json")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	public void createProgram(@RequestBody Program program) {
-		coachService.saveOrUpdateProgram(program);
-	}
+  @DeleteMapping("/{id}")
+  public void delete(@PathVariable int id) {
+    Coach coach = new Coach();
+    coach.setId(id);
+    coachService.delete(coach);
+  }
 
-	@GetMapping("/{coachId}/program/{athleteId}")
-	public List<Program> getPrograms(@PathVariable int coachId, @PathVariable int athleteId) {
-		return coachService.getPrograms(coachId, athleteId);
-	}
+  @PostMapping(path = "/program", consumes = "application/json")
+  @ResponseStatus(code = HttpStatus.CREATED)
+  public void createProgram(@RequestBody Program program) {
+    coachService.saveOrUpdateProgram(program);
+  }
 
-	@PatchMapping("/program/update")
-	public void updateProgram(@RequestBody Program program) {
-		coachService.saveOrUpdateProgram(program);
-	}
+  @PostMapping(path = "/program/exercises", consumes = "application/json")
+  @ResponseStatus(code = HttpStatus.CREATED)
+  public void createProgramExercises(@RequestBody List<Exercise> exercises) {
+    coachService.createProgramExercises(exercises);
+  }
 
-	@DeleteMapping("/program/{id}")
-	public void deleteProgram(@PathVariable int id) {
-		Program program = new Program();
-		program.setProgramId(id);
-		coachService.deleteProgram(program);
-	}
+  @GetMapping("/{coachId}/program/{athleteId}")
+  public List<Program> getPrograms(@PathVariable int coachId, @PathVariable int athleteId) {
+    System.out.println(coachService.getPrograms(coachId, athleteId).toString());
+    return coachService.getPrograms(athleteId, coachId);
+  }
 
-	@PatchMapping("/{coachId}/{athleteId}")
-	public void addAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
-		coachService.addAthlete(coachId, athleteId);
-	}
+  @PatchMapping("/program/update")
+  public void updateProgram(@RequestBody Program program) {
+    coachService.saveOrUpdateProgram(program);
+  }
 
-	@DeleteMapping("/{coachId}/{athleteId}")
-	public void deleteAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
-		coachService.deleteAthlete(athleteId);
-	}
+  @DeleteMapping("/program/{id}")
+  public void deleteProgram(@PathVariable int id) {
+    Program program = new Program();
+    program.setProgramId(id);
+    coachService.deleteProgram(program);
+  }
+
+  @PatchMapping("/{coachId}/{athleteId}")
+  public void addAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
+    coachService.addAthlete(coachId, athleteId);
+  }
+
+  @DeleteMapping("/{coachId}/{athleteId}")
+  public void deleteAthlete(@PathVariable int coachId, @PathVariable int athleteId) {
+    coachService.deleteAthlete(athleteId);
+  }
 }

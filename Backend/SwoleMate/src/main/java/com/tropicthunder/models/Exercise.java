@@ -123,7 +123,7 @@ public class Exercise {
 		this.exerciseUrl = exerciseUrl;
 	}
 
-	public boolean getIsComplete(boolean isComplete) {
+	public boolean getIsComplete() {
 		return isComplete;
 	}
 
