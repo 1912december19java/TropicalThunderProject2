@@ -11,6 +11,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class SwoleConfig {
 
+	/**
+	 * Configures Spring WebMVC
+	 * handles cross origin request processing
+	 * 
+	 */
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurerAdapter() {
