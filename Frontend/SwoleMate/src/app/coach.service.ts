@@ -11,7 +11,7 @@ export class CoachServiceService {
 
 
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/coach';
+  baseUrl = 'http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/SwoleMate/coach';
   //baseUrl = 'http://localhost:8080/SwoleMate/coach';
 
   async getAthletes(id:number):Promise<Athlete[]>{
