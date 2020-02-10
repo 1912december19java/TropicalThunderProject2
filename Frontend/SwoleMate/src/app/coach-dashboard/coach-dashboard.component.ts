@@ -33,7 +33,7 @@ export class CoachDashboardComponent implements OnInit {
     let athletes = await this.coachService.getAthletes(this.coachId);
     let i:number = 0;
     for (let athlete of athletes) {
-      let a = new Athlete();
+      let a = new Athlete("","","","","");
       a.athleteId = athlete[0];
       a.name = athlete[2];
       a.email = athlete[3];
