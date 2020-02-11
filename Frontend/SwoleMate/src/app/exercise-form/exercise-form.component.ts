@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 import { AthleteService } from '../athlete.service';
 import { Athlete } from '../athlete';
 import { Coach } from '../coach';
+import { Exercises } from '../exercises';
+import { ExercisesService } from '../exercises.service';
 
 @Component({
   selector: "app-exercise-form",
@@ -19,15 +21,15 @@ import { Coach } from '../coach';
 })
 export class ExerciseFormComponent implements OnInit {
 
-  athleteName:string;
-  
-  constructor(private fb: FormBuilder, private coachService: CoachServiceService, private router: Router, private athleteService:AthleteService) { }
-  
+  athleteName: string;
+
+  constructor(private fb: FormBuilder, private coachService: CoachServiceService, private router: Router, private athleteService: AthleteService, private exercisesService: ExercisesService) { }
+
   ngOnInit() {
     this.athleteService.get(+localStorage.getItem('athleteId'))
-    .subscribe(
-      data=> this.athleteName = data.name
-    );
+      .subscribe(
+        data => this.athleteName = data.name
+      );
   }
 
 
@@ -161,38 +163,35 @@ export class ExerciseFormComponent implements OnInit {
       this.workoutForm5
     ];
     for (let i = 0; i < 5; i++) {
-      program.programExercises.push(
-        new Exercise(
-          workouts[i].value.exercise1.name,
-          workouts[i].value.exercise1.sets,
-          workouts[i].value.exercise1.reps,
-          workouts[i].value.exercise1.load,
-          workouts[i].value.exercise1.coachNotes,
-          i + 1
-        )
-      );
+      let e: Exercise = new Exercise();
+      e.exerciseName = workouts[i].value.exercise1.name;
+      e.exerciseSets = workouts[i].value.exercise1.sets;
+      e.exerciseReps = workouts[i].value.exercise1.reps;
+      e.exerciseLoad = workouts[i].value.exercise1.load;
+      e.coachNotes = workouts[i].value.exercise1.coachNotes;
+      e.exerciseDay = i + 1;
+      e.isComplete = false;
+      program.programExercises.push(e);
 
-      program.programExercises.push(
-        new Exercise(
-          workouts[i].value.exercise2.name,
-          workouts[i].value.exercise2.sets,
-          workouts[i].value.exercise2.reps,
-          workouts[i].value.exercise2.load,
-          workouts[i].value.exercise2.coachNotes,
-          i + 1
-        )
-      );
+      e = new Exercise();
+      e.exerciseName = workouts[i].value.exercise2.name;
+      e.exerciseSets = workouts[i].value.exercise2.sets;
+      e.exerciseReps = workouts[i].value.exercise2.reps;
+      e.exerciseLoad = workouts[i].value.exercise2.load;
+      e.coachNotes = workouts[i].value.exercise2.coachNotes;
+      e.exerciseDay = i + 1;
+      e.isComplete = false;
+      program.programExercises.push(e);
 
-      program.programExercises.push(
-        new Exercise(
-          workouts[i].value.exercise3.name,
-          workouts[i].value.exercise3.sets,
-          workouts[i].value.exercise3.reps,
-          workouts[i].value.exercise3.load,
-          workouts[i].value.exercise3.coachNotes,
-          i + 1
-        )
-      );
+      e = new Exercise();
+      e.exerciseName = workouts[i].value.exercise3.name;
+      e.exerciseSets = workouts[i].value.exercise3.sets;
+      e.exerciseReps = workouts[i].value.exercise3.reps;
+      e.exerciseLoad = workouts[i].value.exercise3.load;
+      e.coachNotes = workouts[i].value.exercise3.coachNotes;
+      e.exerciseDay = i + 1;
+      e.isComplete = false;
+      program.programExercises.push(e);
     }
     program.coach = new Coach();
     program.athlete = new Athlete();
@@ -202,12 +201,10 @@ export class ExerciseFormComponent implements OnInit {
     program.isComplete = false;
     program.programDuration = 1;
     program.programFrequency = 5;
-    console.log(program);
-    this.coachService.createProgram(program);
+    let id = this.coachService.createProgram(program);
+    for (let a of program.programExercises) {
+       a.program.programId = +id;
+    }
+    this.exercisesService.saveProgramExercises(program.programExercises);
   }
-  closePopup(){
-    this.router.navigate([{ outlets: { popup: null }}]);
-  }
-
-  
 }

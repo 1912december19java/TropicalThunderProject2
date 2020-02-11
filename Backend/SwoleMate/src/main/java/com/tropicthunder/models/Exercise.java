@@ -159,14 +159,4 @@ public class Exercise {
 	public Exercise() {
 		super();
 	}
-
-	@Override
-	public String toString() {
-		return "Exercise [exerciseId=" + exerciseId + ", exerciseSets=" + exerciseSets + ", exerciseReps="
-				+ exerciseReps + ", exerciseLoad=" + exerciseLoad + ", exerciseName=" + exerciseName + ", exerciseDay="
-				+ exerciseDay + ", coachNotes=" + coachNotes + ", athleteNotes=" + athleteNotes + ", exerciseUrl="
-				+ exerciseUrl + ", isComplete=" + isComplete + ", program=" + program + "]";
-	}
-	
-	
 }

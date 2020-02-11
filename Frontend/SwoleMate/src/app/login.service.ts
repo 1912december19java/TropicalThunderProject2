@@ -13,9 +13,8 @@ interface Data {
   providedIn: "root"
 })
 export class LoginService {
-  baseUrl: string =
-    "http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/SwoleMate/login";
-  // baseUrl: String = 'http://localhost:8080/SwoleMate/login';
+  //baseUrl: string = "http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/SwoleMate/login";
+  baseUrl: String = 'http://localhost:8080/SwoleMate/login';
 
   data: Data = {
     isLoggedIn: false,

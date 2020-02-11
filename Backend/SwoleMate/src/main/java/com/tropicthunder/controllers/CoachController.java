@@ -58,8 +58,8 @@ public class CoachController {
 
   @PostMapping(path = "/program", consumes = "application/json")
   @ResponseStatus(code = HttpStatus.CREATED)
-  public void createProgram(@RequestBody Program program) {
-    coachService.saveOrUpdateProgram(program);
+  public int createProgram(@RequestBody Program program) {
+    return coachService.saveOrUpdateProgram(program);
   }
 
   @PostMapping(path = "/program/exercises", consumes = "application/json")

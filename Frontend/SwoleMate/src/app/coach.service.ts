@@ -38,7 +38,6 @@ export class CoachServiceService {
 
   async createProgram(program: Program): Promise<Response> {
     return this.http.post<Response>(`${this.baseUrl}/program`, program).toPromise();
-
   }
 
   async getPrograms(coachId: number, athleteId: number): Promise<Program[]> {
@@ -63,6 +62,4 @@ export class CoachServiceService {
   async deleteAthlete(coachId:number, athleteId:number):Promise<Response>{
     return this.http.delete<Response>(`${this.baseUrl}/${coachId}/${athleteId}`).toPromise();
   }
-
-
 }

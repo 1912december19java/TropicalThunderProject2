@@ -27,7 +27,7 @@
       <ngb-accordion [closeOthers]="true">
         <ngb-panel *ngFor="let athlete of athletes; let i= index" title="{{athlete.name}}" id="panel-{{i}}">
           <ng-template ngbPanelContent>
-            <button (click)="getProgram(athlete.athleteId)">current program</button>
+            <button (click)="getProgram(athlete.athleteId)" (click)="getProgramExercises(athlete.athleteId)">current program</button>
             <button (click)="createProgram(athlete.athleteId)" (click)="makeProgram()">add new program</button>
             <button class="alert-danger" (click)="deleteAthlete(athlete.athleteId)">drop athlete</button>
 
@@ -47,44 +47,41 @@
         <th scope="col">reps</th>
         <th scope="col">load</th>
         <th scope="col">coach notes</th>
-        <th scope="col">athlete notes</th>
         <th scope="col">day</th>
+        <th scope="col">athlete notes</th>
         <th scope="col">video</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let exercise of program.programExercises; let i = index">
+      <tr *ngFor="let exercise of programExercises; let i = index">
         <td>
-
-          <input type="text" value="{{program.programExercises[i].name}}" [(ngModel)]="program.Exercises[i].name">
+          <input type="text" [(ngModel)]="exercise.exerciseName">
         </td>
         <td>
-          <input type="number" value="{{program.programExercises[i].sets}}" [(ngModel)]="program.Exercises[i].sets">
+          <input type="number" [(ngModel)]="exercise.exerciseSets">
         </td>
         <td>
-          <input type="number" value="{{program.programExercises[i].reps}}" [(ngModel)]="program.Exercises[i].reps">
+          <input type="number" [(ngModel)]="exercise.exerciseReps">
         </td>
         <td>
-          <input type="text" value="{{program.programExercises[i].load}}" [(ngModel)]="program.Exercises[i].load">
+          <input type="text" [(ngModel)]="exercise.exerciseLoad">
         </td>
         <td>
-          <input type="text" value="{{program.programExercises[i].coachNotes}}" [(ngModel)]="program.Exercises[i].coachNotes">
+          <textarea [(ngModel)]="exercise.coachNotes"></textarea>
         </td>
         <td>
-          <input type="number" value="{{program.programExercises[i].day}}" [(ngModel)]="program.Exercises[i].day">
+          <input type="number" [(ngModel)]="exercise.exerciseDay">
         </td>
         <td>
-          {{program.programExercises[i].athleteNotes}}
+          {{exercise.athleteNotes}}
         </td>
         <td>
-          <a href="{{program.programExercises[i].exerciseUrl}}">video link</a>
-
+          <a href="{{exercise.exerciseUrl}}">video link</a>
         </td>
       </tr>
     </tbody>
   </table>
-
-  <button class="alert-heading" (click)="updateProgram(program)">update program</button>
+  <button class="alert-heading" (click)="updateProgram(programs[i])">update program</button>
 </div>
 <app-exercise-form *ngIf="newProgram"></app-exercise-form>
 

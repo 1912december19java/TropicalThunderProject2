@@ -49,8 +49,8 @@ public class CoachService implements ModelService<Coach> {
 		return coachDaoImpl.getPrograms(coachId, athleteId);
 	}
 
-	public void saveOrUpdateProgram(Program program) {
-		coachDaoImpl.saveOrUpdateProgram(program);
+	public int saveOrUpdateProgram(Program program) {
+		return coachDaoImpl.saveOrUpdateProgram(program);
 	}
 
 	public void deleteProgram(Program program) {

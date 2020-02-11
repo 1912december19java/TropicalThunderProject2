@@ -30,7 +30,7 @@ public interface ModelService<T> {
     throw new ServiceMethodNotImplementedException();
 }
 
-  void saveOrUpdateProgram(Program program);
+  int saveOrUpdateProgram(Program program);
 
   default Program getCurrentProgram(int id) {
     throw new ServiceMethodNotImplementedException();

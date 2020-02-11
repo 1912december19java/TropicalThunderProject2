@@ -8,19 +8,28 @@ import { Exercises } from './exercises';
   providedIn: 'root'
 })
 export class ExercisesService {
-  private exerciseUrl: string = "//ec2-35-175-147-247.compute-1.amazonaws.com:8085/SwoleMate/exercises"
+  //private exerciseUrl: string = "http://ec2-35-175-147-247.compute-1.amazonaws.com:8085/SwoleMate/exercises"
+  exerciseUrl: string = 'http://localhost:8080/SwoleMate/exercises';
 
   constructor(private http: HttpClient) { }
-  programId: number = 13
 
   getExercises(): Observable<Exercises[]> {
-    
     return this.http.get<Exercises[]>(this.exerciseUrl);
   }
 
   updateExercise(id:number, value: any): Observable<void>{
-    return this.http.put<void>(`${this.exerciseUrl}/${id}`, value);
-    
+    return this.http.put<void>(`${this.exerciseUrl}/${id}`, value); 
   }
 
+  getProgram(id:number):Observable<Exercise[]>{
+    return this.http.get<Exercise[]>(`${this.exerciseUrl}/program/${id}`);
+  }
+
+  saveProgramExercises(exercises:Exercise[]):Observable<Response>{
+    return this.http.post<Response>(`${this.exerciseUrl}/program`, exercises);
+  }
+
+  updateProgramExercises(exercises:Exercise[]):Observable<Response>{
+    return this.http.patch<Response>(`${this.exerciseUrl}/program`, exercises);
+  }
 }

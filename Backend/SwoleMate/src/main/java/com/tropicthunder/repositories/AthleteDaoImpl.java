@@ -93,10 +93,14 @@ public class AthleteDaoImpl {
     return coach.get(0);
   }
 
-  public void saveOrUpdateProgram(Program program) {
+  public int saveOrUpdateProgram(Program program) {
     Session session = sf.getCurrentSession();
-
     session.save(program);
+    SQLQuery q = session.createSQLQuery(
+        "Select program_id from program_table where is_active = true AND athlete_id = " + program.getAthlete() + ";");
+    @SuppressWarnings("unchecked")
+    List<Integer> programId = q.list();
+    return programId.get(0);
   }
   
   public Program getCurrentProgram(int athleteId) {

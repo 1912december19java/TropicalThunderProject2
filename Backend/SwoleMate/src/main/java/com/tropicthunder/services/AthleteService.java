@@ -58,8 +58,8 @@ public class AthleteService implements ModelService<Athlete> {
     return athleteDao.getCoach(id);
   }
 
-  public void saveOrUpdateProgram(Program program) {
-    athleteDao.saveOrUpdateProgram(program);
+  public int saveOrUpdateProgram(Program program) {
+    return athleteDao.saveOrUpdateProgram(program);
   }
 
   public Program getCurrentProgram(int athleteId) {
